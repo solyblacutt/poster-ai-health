@@ -24,7 +24,7 @@ export default function ProposalSection({ content }: ProposalSectionProps) {
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8 }}
         >
-          <Card className="p-16 backdrop-blur-md bg-gradient-to-br from-purple-900/30 via-white/10 to-purple-900/30 border-2 border-purple-400/50 hover-elevate transition-all shadow-2xl shadow-purple-500/30">
+          <Card className="p-16 backdrop-blur-md bg-purple-900/60 border-2 border-purple-400 hover-elevate transition-all shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(168,85,247,0.2)]">
             <div className="relative">
               <div className="absolute -top-8 -left-8 w-24 h-24 bg-purple-500/40 rounded-full blur-2xl animate-pulse" />
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-400/40 rounded-full blur-2xl animate-pulse" />
