@@ -11,7 +11,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 px-6">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="relative">
           <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-400 via-purple-500 to-transparent rounded-full" />
@@ -20,7 +20,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold mb-6 text-white"
+            className="text-3xl md:text-4xl font-bold mb-8 text-white"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             data-testid="text-introduction-title"
           >

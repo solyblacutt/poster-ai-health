@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroBackgroundImage from "@assets/Titulo y nombre de integrantes (1)_1762390628733.png";
+import heroBackgroundImage from "@assets/image_1762390820835.png";
 
 interface HeroSectionProps {
   title: string;
@@ -17,9 +17,9 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Planet horizon image at 50% opacity to show stars through */}
+      {/* Purple planet horizon background */}
       <div 
-        className="absolute inset-0 z-0 opacity-50"
+        className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
           backgroundSize: 'cover',
@@ -27,8 +27,8 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
         }}
       />
       
-      {/* Subtle gradient overlay for smooth blending */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]/60" />
+      {/* Gradient overlay for smooth blending to next section */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]" />
       
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
         <motion.h1
