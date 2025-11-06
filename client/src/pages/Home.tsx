@@ -51,7 +51,7 @@ export default function Home() {
       <SpaceBackground />
       
       <HeroSection 
-        title="Space Exploration & Technology"
+        title="A Hippocratic Oath for Medical AI Agents in Deep-Space Missions"
         teamMembers={["Xiaoyu Shan", "Bianca Steffen", "Noriyasu Shibata", "Grazia Testa", "Solange Blacutt", "Mializo Razanakoto", "Aruna"]}
       />
 
