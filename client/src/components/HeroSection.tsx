@@ -17,9 +17,9 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Transparent planet horizon image layered over stars */}
+      {/* Planet horizon image with purple glow */}
       <div 
-        className="absolute inset-0 z-0 opacity-70"
+        className="absolute inset-0 z-0 opacity-95"
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
           backgroundSize: 'cover',
@@ -28,7 +28,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       />
       
       {/* Subtle gradient overlay for smooth blending */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]/80" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]/60" />
       
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
         <motion.h1
