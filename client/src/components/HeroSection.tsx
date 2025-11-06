@@ -17,18 +17,26 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Purple planet horizon background */}
-      <div 
+      {/* Purple planet horizon background with zoom-in animation */}
+      <motion.div 
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
       />
       
-      {/* Gradient overlay for smooth blending to next section */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]" />
+      {/* Gradient overlay with fade-in animation */}
+      <motion.div 
+        className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, delay: 0.3 }}
+      />
       
       {/* Title positioned higher */}
       <div className="relative z-10 flex-1 flex items-start justify-center pt-32">
