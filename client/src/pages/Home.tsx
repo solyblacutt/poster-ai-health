@@ -5,11 +5,6 @@ import ComparativeSection from "@/components/ComparativeSection";
 import ProposalSection from "@/components/ProposalSection";
 import ConclusionsSection from "@/components/ConclusionsSection";
 
-import issImage from "@assets/generated_images/ISS_satellite_orbital_view_609a170c.png";
-import satImage from "@assets/generated_images/Communication_satellite_in_orbit_627a2035.png";
-import marsImage from "@assets/generated_images/Mars_rover_exploration_scene_0422cee2.png";
-import telescopeImage from "@assets/generated_images/Space_telescope_in_orbit_61b62f42.png";
-
 export default function Home() {
   const comparative1Data = [
     {
@@ -25,22 +20,17 @@ export default function Home() {
         {
           title: "Ethics",
           description: "Robotic vehicles designed to traverse the Martian terrain, analyzing soil composition, searching for signs of past water, and preparing for human missions.",
-          image: marsImage
+          icon: "Scale"
         },
         {
           title: "Symbiotic Relationship",
           description: "Orbital observatories free from atmospheric distortion, capturing unprecedented images of distant galaxies, nebulae, and exoplanets in multiple wavelengths.",
-          image: telescopeImage
+          icon: "Users"
         },
         {
           title: "Limitations",
           description: "Spacecraft designed to touch down on the Moon's surface for scientific exploration, resource mapping, and establishing infrastructure for future bases.",
-          image: issImage
-        },
-        {
-          title: "Interplanetary Probes",
-          description: "Unmanned spacecraft traveling to outer planets and beyond, collecting data on planetary atmospheres, magnetic fields, and cosmic radiation.",
-          image: satImage
+          icon: "AlertCircle"
         }
       ]
     }

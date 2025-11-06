@@ -6,7 +6,7 @@ import DetailItem from "./DetailItem";
 interface DetailData {
   title: string;
   description: string;
-  image: string;
+  icon: string;
 }
 
 interface ComparativeSectionProps {
@@ -58,13 +58,13 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
               transition={{ duration: 0.5 }}
               className="overflow-hidden"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {expandableComparative.details.map((detail, detailIndex) => (
                   <DetailItem
                     key={detailIndex}
                     title={detail.title}
                     description={detail.description}
-                    image={detail.image}
+                    icon={detail.icon}
                     index={detailIndex}
                   />
                 ))}
