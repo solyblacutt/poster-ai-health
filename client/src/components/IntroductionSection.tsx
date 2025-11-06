@@ -13,26 +13,30 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
   return (
     <section ref={ref} className="py-24 px-6">
       <div className="container mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
+        <div className="relative">
           <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-400 via-purple-500 to-transparent rounded-full" />
           
-          <h2 
+          <motion.h2 
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl md:text-4xl font-bold mb-6 text-white"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             data-testid="text-introduction-title"
           >
             Introduction
-          </h2>
+          </motion.h2>
           
-          <p className="text-lg text-purple-100 leading-relaxed" data-testid="text-introduction-content">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-lg text-purple-100 leading-relaxed" 
+            data-testid="text-introduction-content"
+          >
             {content}
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
       </div>
     </section>
   );

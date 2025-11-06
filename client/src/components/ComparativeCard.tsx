@@ -25,8 +25,8 @@ export default function ComparativeCard({
       transition={{ duration: 0.5 }}
     >
       <Card 
-        className={`p-8 backdrop-blur-md bg-white/5 border border-purple-500/30 transition-all ${
-          isExpandable ? 'cursor-pointer hover-elevate active-elevate-2' : 'hover-elevate'
+        className={`p-8 backdrop-blur-md bg-white/5 border border-purple-500/30 transition-all duration-300 ${
+          isExpandable ? 'cursor-pointer hover-elevate active-elevate-2 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20' : 'hover-elevate hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20'
         }`}
         onClick={isExpandable ? onToggle : undefined}
         data-testid={`card-comparative-${title.toLowerCase().replace(/\s+/g, '-')}`}

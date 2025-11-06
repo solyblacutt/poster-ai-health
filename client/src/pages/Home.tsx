@@ -1,6 +1,6 @@
 import SpaceBackground from "@/components/SpaceBackground";
-import FloatingObjects from "@/components/FloatingObjects";
 import HeroSection from "@/components/HeroSection";
+import PlanetHorizon from "@/components/PlanetHorizon";
 import IntroductionSection from "@/components/IntroductionSection";
 import ComparativeSection from "@/components/ComparativeSection";
 import ProposalSection from "@/components/ProposalSection";
@@ -50,12 +50,13 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <SpaceBackground />
-      <FloatingObjects />
       
       <HeroSection 
         title="Space Exploration & Technology"
         teamMembers={["Dr. Maria Garcia", "Prof. John Smith", "Dr. Sarah Chen", "Alex Rodriguez"]}
       />
+
+      <PlanetHorizon />
 
       <IntroductionSection 
         content="Space exploration represents humanity's most ambitious endeavor to understand our place in the cosmos. From the first artificial satellites launched in the mid-20th century to today's sophisticated orbital networks and deep space missions, we have continuously expanded our technological capabilities. This journey encompasses advanced orbital mechanics, revolutionary communication technologies, autonomous robotics, and the dream of interplanetary colonization. Understanding these technologies helps us appreciate both the complexity of space systems and the incredible achievements that make modern space exploration possible."

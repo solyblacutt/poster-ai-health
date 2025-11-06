@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@assets/generated_images/Cosmic_nebula_hero_background_1a7df9b5.png";
 
 interface HeroSectionProps {
   title: string;
@@ -17,12 +16,6 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#1a0b2e]/60 to-[#1a0b2e]" />
-      </div>
       
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
         <motion.h1

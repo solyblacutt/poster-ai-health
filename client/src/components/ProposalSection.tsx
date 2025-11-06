@@ -13,29 +13,51 @@ export default function ProposalSection({ content }: ProposalSectionProps) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 px-6 relative">
-      <div className="container mx-auto max-w-4xl relative z-10">
+    <section ref={ref} className="py-32 px-6 relative">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container mx-auto max-w-5xl relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.8 }}
         >
-          <Card className="p-12 backdrop-blur-md bg-white/5 border border-purple-500/30 hover-elevate transition-all">
+          <Card className="p-16 backdrop-blur-md bg-gradient-to-br from-purple-900/30 via-white/10 to-purple-900/30 border-2 border-purple-400/50 hover-elevate transition-all shadow-2xl shadow-purple-500/30">
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-12 h-12 bg-purple-500/30 rounded-full blur-xl" />
-              <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-purple-400/30 rounded-full blur-xl" />
+              <div className="absolute -top-8 -left-8 w-24 h-24 bg-purple-500/40 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-400/40 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute top-1/2 left-0 w-2 h-24 bg-gradient-to-b from-transparent via-purple-400 to-transparent rounded-full" />
+              <div className="absolute top-1/2 right-0 w-2 h-24 bg-gradient-to-b from-transparent via-purple-400 to-transparent rounded-full" />
               
-              <h2 
-                className="text-3xl md:text-4xl font-bold mb-6 text-white text-center"
+              <motion.h2 
+                initial={{ opacity: 0, y: -20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-4xl md:text-5xl font-bold mb-8 text-white text-center"
                 style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 data-testid="text-proposal-title"
               >
                 Proposed Future
-              </h2>
+              </motion.h2>
               
-              <p className="text-lg text-purple-100 leading-relaxed text-center" data-testid="text-proposal-content">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-purple-400 to-transparent"
+              />
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="text-xl text-purple-50 leading-relaxed text-center" 
+                data-testid="text-proposal-content"
+              >
                 {content}
-              </p>
+              </motion.p>
             </div>
           </Card>
         </motion.div>
