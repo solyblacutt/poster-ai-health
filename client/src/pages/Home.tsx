@@ -4,6 +4,7 @@ import IntroductionSection from "@/components/IntroductionSection";
 import ComparativeSection from "@/components/ComparativeSection";
 import ProposalSection from "@/components/ProposalSection";
 import ConclusionsSection from "@/components/ConclusionsSection";
+import ScrollAnimatedLine from "@/components/ScrollAnimatedLine";
 
 export default function Home() {
   const comparative1Data = [
@@ -39,6 +40,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <SpaceBackground />
+      <ScrollAnimatedLine />
       
       <HeroSection 
         title="A Hippocratic Oath for Medical AI Agents in Deep-Space Missions"
