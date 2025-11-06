@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import heroBackgroundImage from "@assets/Titulo y nombre de integrantes (1)_1762389911663.png";
 
 interface HeroSectionProps {
   title: string;
@@ -16,6 +17,18 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Dark space background image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroBackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      {/* Gradient overlay for smooth blending */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/40 via-transparent to-[#1a0b2e]" />
       
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">
         <motion.h1
