@@ -6,32 +6,35 @@ export default function ScrollAnimatedLine() {
   
   const { scrollYProgress } = useScroll();
 
-  // Calculate the path based on viewport dimensions
-  // Starting point: center-left, between Introduction and Comparative sections
-  // Path: smooth curve right while descending through Comparative Analysis, 
-  // then smooth curve crossing to center-left at Hippocratic Oath
+  // Calculate the path centered on screen for maximum visibility
+  // Smooth flowing S-curve through the middle of the viewport
   
-  // Using percentage-based positioning for better visibility
   const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : 1920;
-  const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1080;
   
-  const startX = viewportWidth * 0.3; // 30% from left - more centered
-  const startY = 1100; // Between Introduction and Comparative Analysis
+  // Calculate centered positions - max content width is typically 1280px
+  const centerX = viewportWidth / 2;
+  const flowWidth = Math.min(600, viewportWidth * 0.4); // How far the curve extends from center
   
-  const midX = viewportWidth * 0.7; // 70% from left - right side but visible
-  const midY = 1700; // Through Comparative Analysis
+  // Start point: slightly left of center, between Introduction and Comparative
+  const startX = centerX - flowWidth * 0.5;
+  const startY = 1100;
   
-  const endX = viewportWidth * 0.25; // 25% from left - center-left
-  const endY = 2300; // At Hippocratic Oath section
+  // Mid point: slightly right of center, through Comparative Analysis
+  const midX = centerX + flowWidth * 0.5;
+  const midY = 1700;
   
-  // Using cubic bezier curves for smooth transitions
+  // End point: slightly left of center, at Hippocratic Oath
+  const endX = centerX - flowWidth * 0.6;
+  const endY = 2300;
+  
+  // Create smooth flowing S-curve with gentle control points
   const pathD = `
     M ${startX} ${startY}
-    C ${startX + (midX - startX) * 0.4} ${startY + (midY - startY) * 0.3},
-      ${startX + (midX - startX) * 0.6} ${startY + (midY - startY) * 0.7},
+    C ${startX + flowWidth * 0.3} ${startY + 200},
+      ${midX - flowWidth * 0.3} ${midY - 200},
       ${midX} ${midY}
-    C ${midX - (midX - endX) * 0.4} ${midY + (endY - midY) * 0.3},
-      ${midX - (midX - endX) * 0.6} ${midY + (endY - midY) * 0.7},
+    C ${midX - flowWidth * 0.2} ${midY + 150},
+      ${endX + flowWidth * 0.2} ${endY - 150},
       ${endX} ${endY}
   `;
 
