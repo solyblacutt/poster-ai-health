@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroBackgroundImage from "@assets/Titulo y nombre de integrantes (1)_1762390093644.png";
+import heroBackgroundImage from "@assets/Titulo y nombre de integrantes (1)_1762390628733.png";
 
 interface HeroSectionProps {
   title: string;
@@ -17,9 +17,9 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Planet horizon image with purple glow */}
+      {/* Planet horizon image at 50% opacity to show stars through */}
       <div 
-        className="absolute inset-0 z-0 opacity-95"
+        className="absolute inset-0 z-0 opacity-50"
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
           backgroundSize: 'cover',
