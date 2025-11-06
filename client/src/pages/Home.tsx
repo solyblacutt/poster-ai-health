@@ -13,27 +13,27 @@ import telescopeImage from "@assets/generated_images/Space_telescope_in_orbit_61
 export default function Home() {
   const comparative1Data = [
     {
-      title: "Orbital Technology",
+      title: "AI Assistant",
       description: "Advanced systems operating in Earth's orbit, providing essential services for global communication, navigation, and scientific research.",
       isExpandable: false
     },
     {
-      title: "Deep Space Exploration",
+      title: "AI Agent",
       description: "Missions venturing beyond Earth's orbit to study distant planets, moons, and celestial phenomena, expanding our understanding of the universe.",
       isExpandable: true,
       details: [
         {
-          title: "Mars Surface Rovers",
+          title: "Ethics",
           description: "Robotic vehicles designed to traverse the Martian terrain, analyzing soil composition, searching for signs of past water, and preparing for human missions.",
           image: marsImage
         },
         {
-          title: "Space Telescopes",
+          title: "Symbiotic Relationship",
           description: "Orbital observatories free from atmospheric distortion, capturing unprecedented images of distant galaxies, nebulae, and exoplanets in multiple wavelengths.",
           image: telescopeImage
         },
         {
-          title: "Lunar Landing Missions",
+          title: "Limitations",
           description: "Spacecraft designed to touch down on the Moon's surface for scientific exploration, resource mapping, and establishing infrastructure for future bases.",
           image: issImage
         },

@@ -39,7 +39,7 @@ export default function ProposalSection({ content }: ProposalSectionProps) {
                 style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 data-testid="text-proposal-title"
               >
-                Proposed Future
+                Hippocratic Oath
               </motion.h2>
               
               <motion.div
