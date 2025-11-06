@@ -16,32 +16,12 @@ export default function Home() {
     {
       title: "Orbital Technology",
       description: "Advanced systems operating in Earth's orbit, providing essential services for global communication, navigation, and scientific research.",
-      details: [
-        {
-          title: "International Space Station",
-          description: "A habitable artificial satellite serving as a microgravity research laboratory where scientific experiments are conducted in astrobiology, astronomy, and physics.",
-          image: issImage
-        },
-        {
-          title: "Communication Satellites",
-          description: "Orbital platforms that relay and amplify radio telecommunications signals via transponders, enabling global television, internet, and telephone services.",
-          image: satImage
-        },
-        {
-          title: "Weather Monitoring",
-          description: "Geostationary and polar-orbiting satellites that track atmospheric conditions, cloud formations, and climate patterns for accurate meteorological forecasting.",
-          image: telescopeImage
-        },
-        {
-          title: "GPS Navigation Systems",
-          description: "Constellation of satellites providing precise geolocation and time information to GPS receivers on Earth for navigation and positioning applications.",
-          image: satImage
-        }
-      ]
+      isExpandable: false
     },
     {
       title: "Deep Space Exploration",
       description: "Missions venturing beyond Earth's orbit to study distant planets, moons, and celestial phenomena, expanding our understanding of the universe.",
+      isExpandable: true,
       details: [
         {
           title: "Mars Surface Rovers",
@@ -61,7 +41,7 @@ export default function Home() {
         {
           title: "Interplanetary Probes",
           description: "Unmanned spacecraft traveling to outer planets and beyond, collecting data on planetary atmospheres, magnetic fields, and cosmic radiation.",
-          image: telescopeImage
+          image: satImage
         }
       ]
     }
@@ -94,8 +74,8 @@ export default function Home() {
         content="Space exploration continues to inspire and unite humanity in pursuit of knowledge and discovery. Through relentless technological innovation, unprecedented international cooperation, and unwavering determination, we are steadily unlocking the profound mysteries of the cosmos. As we gaze toward the stars with increasingly sophisticated instruments, we carry forward the dreams of past pioneers who dared to imagine the impossible, while simultaneously shouldering the aspirations of future generations who will inherit the fruits of our labor. United in our quest to explore the infinite frontier, we stand at the threshold of becoming a truly spacefaring civilization."
       />
 
-      <footer className="relative z-10 py-8 px-6 border-t border-border/50 backdrop-blur-sm">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
+      <footer className="relative z-10 py-8 px-6 border-t border-purple-500/30 backdrop-blur-sm">
+        <div className="container mx-auto text-center text-sm text-purple-300">
           <p>Space Exploration & Technology © 2025</p>
         </div>
       </footer>

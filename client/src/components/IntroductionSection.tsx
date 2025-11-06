@@ -19,17 +19,17 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-purple-500 to-transparent rounded-full" />
+          <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-400 via-purple-500 to-transparent rounded-full" />
           
           <h2 
-            className="text-3xl md:text-4xl font-bold mb-6 text-foreground"
+            className="text-3xl md:text-4xl font-bold mb-6 text-white"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             data-testid="text-introduction-title"
           >
             Introduction
           </h2>
           
-          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-introduction-content">
+          <p className="text-lg text-purple-100 leading-relaxed" data-testid="text-introduction-content">
             {content}
           </p>
         </motion.div>

@@ -21,7 +21,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#1a0b2e]/60 to-[#1a0b2e]" />
       </div>
       
       <div className="relative z-10 container mx-auto px-6 py-20 text-center">

@@ -15,8 +15,8 @@ export default function DetailItem({ title, description, image, index }: DetailI
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className="overflow-hidden h-full hover-elevate transition-all" data-testid={`card-detail-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-        <div className="aspect-video w-full overflow-hidden bg-muted">
+      <Card className="overflow-hidden h-full hover-elevate active-elevate-2 transition-all backdrop-blur-md bg-white/5 border border-purple-500/30" data-testid={`card-detail-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+        <div className="aspect-video w-full overflow-hidden bg-black/30">
           <img 
             src={image} 
             alt={title}
@@ -25,13 +25,13 @@ export default function DetailItem({ title, description, image, index }: DetailI
         </div>
         <div className="p-6">
           <h4 
-            className="text-xl font-semibold mb-2 text-card-foreground"
+            className="text-xl font-semibold mb-2 text-white"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             data-testid={`text-detail-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
           >
             {title}
           </h4>
-          <p className="text-sm text-muted-foreground" data-testid={`text-detail-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+          <p className="text-sm text-purple-200" data-testid={`text-detail-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
             {description}
           </p>
         </div>

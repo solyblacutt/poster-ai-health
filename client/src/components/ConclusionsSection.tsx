@@ -13,13 +13,6 @@ export default function ConclusionsSection({ content }: ConclusionsSectionProps)
 
   return (
     <section ref={ref} className="py-32 px-6 relative overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${galaxyBg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/60" />
-      </div>
-      
       <div className="container mx-auto max-w-4xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -28,19 +21,19 @@ export default function ConclusionsSection({ content }: ConclusionsSectionProps)
           className="text-center"
         >
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-8 text-foreground"
+            className="text-4xl md:text-5xl font-bold mb-8 text-white"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             data-testid="text-conclusions-title"
           >
             Conclusions
           </h2>
           
-          <p className="text-xl text-muted-foreground leading-relaxed mb-12" data-testid="text-conclusions-content">
+          <p className="text-xl text-purple-100 leading-relaxed mb-12" data-testid="text-conclusions-content">
             {content}
           </p>
 
           <motion.div
-            className="inline-block px-8 py-3 rounded-md bg-primary/20 border border-primary/40 text-primary font-semibold"
+            className="inline-block px-8 py-3 rounded-md bg-purple-500/20 border border-purple-400/40 text-purple-200 font-semibold hover-elevate active-elevate-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

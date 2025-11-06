@@ -10,17 +10,17 @@ interface Particle {
 }
 
 export default function SpaceBackground() {
-  const particles: Particle[] = Array.from({ length: 50 }, (_, i) => ({
+  const particles: Particle[] = Array.from({ length: 80 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
-    size: Math.random() * 3 + 1,
+    size: Math.random() * 2.5 + 0.5,
     delay: Math.random() * 3,
-    duration: Math.random() * 3 + 2,
+    duration: Math.random() * 2 + 2,
   }));
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#0a0118] via-[#1a0b2e] to-[#16001e]">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e]">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
@@ -32,8 +32,8 @@ export default function SpaceBackground() {
             height: particle.size,
           }}
           animate={{
-            opacity: [0.2, 1, 0.2],
-            scale: [1, 1.5, 1],
+            opacity: [0.3, 1, 0.3],
+            scale: [1, 1.8, 1],
           }}
           transition={{
             duration: particle.duration,
