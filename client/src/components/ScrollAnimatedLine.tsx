@@ -7,23 +7,32 @@ export default function ScrollAnimatedLine() {
   const { scrollYProgress } = useScroll();
 
   // Calculate the path based on viewport dimensions
-  // Starting point: left side, middle height between Introduction and Comparative sections
-  // Path: go right while descending through Comparative Analysis, then cross to left at Hippocratic Oath
+  // Starting point: center-left, between Introduction and Comparative sections
+  // Path: smooth curve right while descending through Comparative Analysis, 
+  // then smooth curve crossing to center-left at Hippocratic Oath
   
-  // Using absolute pixel values that will be calculated
-  const startX = 80; // Left side with margin
-  const startY = 1200; // Between Introduction and Comparative Analysis
+  // Using percentage-based positioning for better visibility
+  const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : 1920;
+  const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1080;
   
-  const midX = window.innerWidth - 80; // Right side with margin
-  const midY = 1800; // Descending through Comparative Analysis
+  const startX = viewportWidth * 0.3; // 30% from left - more centered
+  const startY = 1100; // Between Introduction and Comparative Analysis
   
-  const endX = 80; // Back to left side
-  const endY = 2400; // At Hippocratic Oath section
+  const midX = viewportWidth * 0.7; // 70% from left - right side but visible
+  const midY = 1700; // Through Comparative Analysis
   
+  const endX = viewportWidth * 0.25; // 25% from left - center-left
+  const endY = 2300; // At Hippocratic Oath section
+  
+  // Using cubic bezier curves for smooth transitions
   const pathD = `
     M ${startX} ${startY}
-    L ${midX} ${midY}
-    L ${endX} ${endY}
+    C ${startX + (midX - startX) * 0.4} ${startY + (midY - startY) * 0.3},
+      ${startX + (midX - startX) * 0.6} ${startY + (midY - startY) * 0.7},
+      ${midX} ${midY}
+    C ${midX - (midX - endX) * 0.4} ${midY + (endY - midY) * 0.3},
+      ${midX - (midX - endX) * 0.6} ${midY + (endY - midY) * 0.7},
+      ${endX} ${endY}
   `;
 
   // Animate the line drawing based on scroll
