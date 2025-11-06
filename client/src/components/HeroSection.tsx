@@ -16,7 +16,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Purple planet horizon background */}
       <div 
         className="absolute inset-0 z-0"
@@ -30,19 +30,25 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       {/* Gradient overlay for smooth blending to next section */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]" />
       
-      <div className="relative z-10 container mx-auto px-6 py-20 text-center">
-        <motion.h1
-          className="text-5xl md:text-7xl font-bold mb-8 text-white"
-          style={{ fontFamily: "Space Grotesk, sans-serif" }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {title}
-        </motion.h1>
+      {/* Title positioned higher */}
+      <div className="relative z-10 flex-1 flex items-center justify-center pt-20">
+        <div className="container mx-auto px-6 text-center">
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold text-white"
+            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {title}
+          </motion.h1>
+        </div>
+      </div>
 
+      {/* Team members positioned near bottom */}
+      <div className="relative z-10 pb-24">
         <motion.div
-          className="flex flex-wrap gap-4 justify-center items-center mt-12"
+          className="flex flex-wrap gap-4 justify-center items-center px-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -64,7 +70,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
       <motion.button
         onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors z-20"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         data-testid="button-scroll-down"
