@@ -26,7 +26,7 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
   const expandableIndex = comparatives.findIndex(c => c.isExpandable);
 
   return (
-    <section className="py-24 px-6">
+    <section className="pt-24 pb-32 px-6">
       <div className="container mx-auto max-w-6xl">
         <h2 
           className="text-4xl md:text-5xl font-bold mb-16 text-center text-white"
