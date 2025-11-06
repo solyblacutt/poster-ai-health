@@ -52,7 +52,7 @@ export default function Home() {
       
       <HeroSection 
         title="Space Exploration & Technology"
-        teamMembers={["Dr. Maria Garcia", "Prof. John Smith", "Dr. Sarah Chen", "Alex Rodriguez"]}
+        teamMembers={["Xiaoyu Shan", "Bianca Steffen", "Noriyasu Shibata", "Grazia Testa", "Solange Blacutt", "Mializo Razanakoto", "Aruna"]}
       />
 
       <IntroductionSection 
