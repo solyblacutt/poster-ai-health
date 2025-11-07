@@ -29,7 +29,7 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
   const expandedComparative = expandedIndex !== null ? comparatives[expandedIndex] : null;
 
   return (
-    <section className="pt-24 pb-32 px-6">
+    <section className="relative min-h-screen py-32 px-6">
       <div className="container mx-auto max-w-6xl">
         <h2 
           className="text-4xl md:text-5xl font-bold mb-16 text-center text-white"
