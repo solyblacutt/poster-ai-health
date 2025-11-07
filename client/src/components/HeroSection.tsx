@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroBackgroundImage from "@assets/image_1762390820835.png";
+import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
 
 interface HeroSectionProps {
   title: string;
@@ -32,7 +32,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       
       {/* Gradient overlay with fade-in animation */}
       <motion.div 
-        className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#1a0b2e]"
+        className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#0a1f1f]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.3 }}

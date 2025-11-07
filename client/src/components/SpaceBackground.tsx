@@ -20,7 +20,7 @@ export default function SpaceBackground() {
   }));
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e]">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#0a1f1f] via-[#0f2d2d] to-[#0a1f1f]">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
