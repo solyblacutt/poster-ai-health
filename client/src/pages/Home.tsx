@@ -1,12 +1,11 @@
 import SpaceBackground from "@/components/SpaceBackground";
 import HeroSection from "@/components/HeroSection";
+import AbstractSection from "@/components/AbstractSection";
 import IntroductionSection from "@/components/IntroductionSection";
 import ComparativeSection from "@/components/ComparativeSection";
-import GridSection from "@/components/GridSection";
 import ContentSection from "@/components/ContentSection";
 import HippocraticOathButton from "@/components/HippocraticOathButton";
 import ConclusionsSection from "@/components/ConclusionsSection";
-import ScrollAnimatedLine from "@/components/ScrollAnimatedLine";
 
 export default function Home() {
   const comparative1Data = [
@@ -59,19 +58,22 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <SpaceBackground />
-      <ScrollAnimatedLine />
       
       <HeroSection 
         title="A Hippocratic Oath for Medical AI Agents in Deep-Space Missions"
         teamMembers={[
-          { name: "Xiaoyu Shan", profession: "Space Medicine Researcher", contact: "xiaoyu.shan@example.com" },
-          { name: "Bianca Steffen", profession: "AI Ethics Specialist", contact: "bianca.steffen@example.com" },
-          { name: "Noriyasu Shibata", profession: "Deep Space Systems Engineer", contact: "noriyasu.shibata@example.com" },
-          { name: "Grazia Testa", profession: "Biomedical AI Researcher", contact: "grazia.testa@example.com" },
-          { name: "Solange Blacutt", profession: "Medical AI Developer", contact: "solange.blacutt@example.com" },
-          { name: "Mializo Razanakoto", profession: "Space Health Specialist", contact: "mializo.razanakoto@example.com" },
-          { name: "Aruna", profession: "AI Integration Lead", contact: "aruna@example.com" }
+          { name: "Xiaoyu Shan", profession: "Space Medicine Researcher", contact: "xiaoyu.shan@example.com", contribution: "Research on space medicine protocols and AI integration" },
+          { name: "Bianca Steffen", profession: "AI Ethics Specialist", contact: "bianca.steffen@example.com", contribution: "Development of ethical frameworks for medical AI systems" },
+          { name: "Noriyasu Shibata", profession: "Deep Space Systems Engineer", contact: "noriyasu.shibata@example.com", contribution: "Integration of AI systems in deep-space mission architecture" },
+          { name: "Grazia Testa", profession: "Biomedical AI Researcher", contact: "grazia.testa@example.com", contribution: "Development of biomedical AI algorithms and decision-support systems" },
+          { name: "Solange Blacutt", profession: "Medical AI Developer", contact: "solange.blacutt@example.com", contribution: "Implementation of medical AI agent software and testing" },
+          { name: "Mializo Razanakoto", profession: "Space Health Specialist", contact: "mializo.razanakoto@example.com", contribution: "Analysis of astronaut health requirements in deep-space environments" },
+          { name: "Aruna", profession: "AI Integration Lead", contact: "aruna@example.com", contribution: "Coordination of AI system integration across mission components" }
         ]}
+      />
+
+      <AbstractSection 
+        content="This research explores the development of ethical medical AI agents for deep-space missions where communication delays make real-time Earth-based medical support impossible. As humanity ventures beyond Earth's orbit, autonomous AI systems must make critical medical decisions while adhering to established medical ethics principles. We propose a modern equivalent of the Hippocratic Oath specifically designed for medical AI agents, ensuring they operate with beneficence, non-maleficence, respect for autonomy, and justice even in the most extreme conditions of space exploration."
       />
 
       <IntroductionSection 
@@ -81,17 +83,6 @@ export default function Home() {
       <ComparativeSection 
         title="Comparative Analysis" 
         comparatives={comparative1Data}
-      />
-
-      <GridSection
-        title="Core Principles"
-        introduction="Establishing foundational guidelines for medical AI systems operating in extreme deep-space environments."
-        items={[
-          { title: "Patient Autonomy", icon: "Heart" },
-          { title: "Intelligent Decision-Making", icon: "Brain" },
-          { title: "Safety & Protection", icon: "Shield" },
-          { title: "Adaptability", icon: "Telescope" }
-        ]}
       />
 
       <ContentSection
