@@ -40,10 +40,22 @@ Preferred communication style: Simple, everyday language.
 - Custom animations: floating particles, parallax scrolling, fade-in on scroll
 
 **Interactive Features**
-- Clickable team member names in hero section that open dialogs with contact information (name, profession, email)
+- Clickable team member names in hero section that open dialogs with detailed information:
+  - Contribution (team member's role in the project)
+  - Profession (their professional title)
+  - Contact (email address)
+  - Dialog labels use darker teal color (#286F65)
 - Expandable comparative cards for AI Assistant and AI Agent with detailed information
-- Scroll-animated white centerline with smooth S-curve
 - Clickable Hippocratic Oath button opening modal with neon border effect
+
+**Page Sections**
+- Hero: Vertically centered title with team member buttons at bottom
+- Abstract: Two-column layout with AI poster logo on left, title and content on right
+- Introduction: Project background and context
+- Comparative Analysis: Expandable cards comparing AI Assistant and AI Agent
+- Medical AI Ethics: Discussion of ethical considerations
+- Hippocratic Oath: Interactive button to view the proposed oath
+- Conclusions: Final thoughts and vision for the future
 
 ### Backend Architecture
 
@@ -107,7 +119,7 @@ Preferred communication style: Simple, everyday language.
 - Google Fonts API: Space Grotesk and Inter font families
 - Generated space-themed images stored in `attached_assets/generated_images/`
 - Hero background: "horizon green" image (`attached_assets/horizon green_1762478563215.png`)
-- AI poster logo (`attached_assets/AI Poster Logo (1)_1762478460895.png`) displayed in hero section center
+- AI poster logo (`attached_assets/AI Poster Logo (1)_1762478460895.png`) displayed in Abstract section on the left side
 - Custom logo and background assets
 
 **Path Aliases**
