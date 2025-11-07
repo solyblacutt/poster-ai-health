@@ -2,55 +2,72 @@ import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ScrollAnimatedLine() {
-  const [pathLength, setPathLength] = useState(0);
-  
+  // Ancho/alto de viewport reactivos (se actualizan con resize/zoom)
+  const [vw, setVw] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1920
+  );
+  const [vh, setVh] = useState(
+    typeof window !== "undefined" ? window.innerHeight : 1080
+  );
+
+  useEffect(() => {
+    const onResize = () => {
+      setVw(window.innerWidth);
+      setVh(window.innerHeight);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const { scrollYProgress } = useScroll();
 
-  // Calculate the path centered on screen for maximum visibility
-  // Smooth flowing S-curve through the middle of the viewport
-  
-  const viewportWidth = typeof window !== 'undefined' ? window.innerWidth : 1920;
-  
-  // Calculate centered positions - max content width is typically 1280px
-  const centerX = viewportWidth / 2;
-  const flowWidth = Math.min(600, viewportWidth * 0.4); // How far the curve extends from center
-  
-  // Start point: slightly left of center, between Introduction and Comparative
-  const startX = centerX - flowWidth * 0.5;
+  // Centro horizontal real y amplitud de la curva
+  const centerX = vw / 2;
+  const flowWidth = Math.min(600, vw * 0.4); // abre/cierra la S respecto del centro
+
+  // Y fijos (según tu layout/scroll actual)
   const startY = 1100;
-  
-  // Mid point: slightly right of center, through Comparative Analysis
-  const midX = centerX + flowWidth * 0.5;
   const midY = 1700;
-  
-  // End point: slightly left of center, at Hippocratic Oath
-  const endX = centerX - flowWidth * 0.6;
   const endY = 2300;
-  
-  // Create smooth flowing S-curve with gentle control points
+
+  // X centrados y SIMÉTRICOS respecto del centro
+  const midX = centerX;
+  const startX = centerX - flowWidth * 0.5;
+  const endX = centerX + flowWidth * 0.5;
+
+  // Curva S suave y simétrica
   const pathD = `
     M ${startX} ${startY}
     C ${startX + flowWidth * 0.3} ${startY + 200},
       ${midX - flowWidth * 0.3} ${midY - 200},
       ${midX} ${midY}
-    C ${midX - flowWidth * 0.2} ${midY + 150},
-      ${endX + flowWidth * 0.2} ${endY - 150},
+    C ${midX + flowWidth * 0.3} ${midY + 200},
+      ${endX - flowWidth * 0.3} ${endY - 200},
       ${endX} ${endY}
   `;
 
-  // Animate the line drawing based on scroll
+  // Animación del "dibujo" con el scroll
   const pathLengthValue = useTransform(scrollYProgress, [0.15, 0.45, 0.7], [0, 0.5, 1]);
 
+  // Longitud real del path para el dash
+  const [pathLength, setPathLength] = useState(0);
   useEffect(() => {
-    const path = document.querySelector("#animated-scroll-path") as SVGPathElement;
-    if (path) {
-      setPathLength(path.getTotalLength());
-    }
-  }, []);
+    const path = document.querySelector<SVGPathElement>("#animated-scroll-path");
+    if (path) setPathLength(path.getTotalLength());
+  }, [vw, vh, pathD]);
+
+  const dashOffset = useTransform(pathLengthValue, (v) => pathLength * (1 - v));
+
+  // ViewBox responsive para que el SVG escale correctamente
+  const svgHeight = Math.max(vh, endY + 200);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-20">
-      <svg className="w-full h-full">
+      <svg
+        className="w-full h-full"
+        viewBox={`0 0 ${vw} ${svgHeight}`}
+        preserveAspectRatio="xMidYMid meet"
+      >
         <defs>
           <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(255, 255, 255, 0.2)" />
@@ -58,14 +75,14 @@ export default function ScrollAnimatedLine() {
             <stop offset="100%" stopColor="rgba(255, 255, 255, 0.2)" />
           </linearGradient>
           <filter id="glow">
-            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
             <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
         </defs>
-        
+
         <motion.path
           id="animated-scroll-path"
           d={pathD}
@@ -75,10 +92,7 @@ export default function ScrollAnimatedLine() {
           filter="url(#glow)"
           strokeLinecap="round"
           strokeDasharray={pathLength}
-          strokeDashoffset={pathLength}
-          style={{
-            strokeDashoffset: useTransform(pathLengthValue, (v) => pathLength * (1 - v))
-          }}
+          style={{ strokeDashoffset: dashOffset }}
         />
       </svg>
     </div>
