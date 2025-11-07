@@ -99,8 +99,8 @@ export default function Home() {
         content="Space exploration continues to inspire and unite humanity in pursuit of knowledge and discovery. Through relentless technological innovation, unprecedented international cooperation, and unwavering determination, we are steadily unlocking the profound mysteries of the cosmos. As we gaze toward the stars with increasingly sophisticated instruments, we carry forward the dreams of past pioneers who dared to imagine the impossible, while simultaneously shouldering the aspirations of future generations who will inherit the fruits of our labor. United in our quest to explore the infinite frontier, we stand at the threshold of becoming a truly spacefaring civilization."
       />
 
-      <footer className="relative z-10 py-8 px-6 border-t border-purple-500/30 backdrop-blur-sm">
-        <div className="container mx-auto text-center text-sm text-purple-300">
+      <footer className="relative z-10 py-8 px-6 border-t border-cyan-500/30 backdrop-blur-sm">
+        <div className="container mx-auto text-center text-sm text-cyan-300">
           <p>Space Exploration & Technology © 2025</p>
         </div>
       </footer>

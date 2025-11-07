@@ -28,12 +28,12 @@ export default function ConclusionsSection({ content }: ConclusionsSectionProps)
             Conclusions
           </h2>
           
-          <p className="text-xl text-purple-100 leading-relaxed mb-12" data-testid="text-conclusions-content">
+          <p className="text-xl text-cyan-100 leading-relaxed mb-12" data-testid="text-conclusions-content">
             {content}
           </p>
 
           <motion.div
-            className="inline-block px-8 py-3 rounded-md bg-purple-500/20 border border-purple-400/40 text-purple-200 font-semibold hover-elevate active-elevate-2 cursor-pointer"
+            className="inline-block px-8 py-3 rounded-md bg-cyan-500/20 border border-cyan-400/40 text-cyan-200 font-semibold hover-elevate active-elevate-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

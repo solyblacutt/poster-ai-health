@@ -31,7 +31,7 @@ export default function FloatingObjects() {
           ease: "easeInOut",
         }}
       >
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-500/40 to-blue-500/40 blur-xl" />
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-500/40 to-blue-500/40 blur-xl" />
       </motion.div>
 
       <motion.div
@@ -46,7 +46,7 @@ export default function FloatingObjects() {
           ease: "easeInOut",
         }}
       >
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-pink-500/30 to-purple-500/30 blur-lg" />
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-pink-500/30 to-cyan-500/30 blur-lg" />
       </motion.div>
     </div>
   );

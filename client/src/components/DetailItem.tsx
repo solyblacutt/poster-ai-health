@@ -30,13 +30,13 @@ export default function DetailItem({ title, description, icon, index }: DetailIt
     >
       {/* Icon positioned outside/above the card */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10">
-        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-purple-600 to-purple-900 flex items-center justify-center border-4 border-purple-400/50 shadow-xl shadow-purple-500/50 transition-shadow">
+        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-cyan-600 to-cyan-900 flex items-center justify-center border-4 border-cyan-400/50 shadow-xl shadow-cyan-500/50 transition-shadow">
           <IconComponent className="w-14 h-14 text-white" strokeWidth={1.5} />
         </div>
       </div>
       
       {/* Card content */}
-      <Card className="overflow-visible h-full hover-elevate active-elevate-2 transition-all backdrop-blur-md bg-white/5 border border-purple-500/30 hover:border-purple-400/60 pt-20 hover:shadow-2xl hover:shadow-purple-500/40" data-testid={`card-detail-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+      <Card className="overflow-visible h-full hover-elevate active-elevate-2 transition-all backdrop-blur-md bg-white/5 border border-cyan-500/30 hover:border-cyan-400/60 pt-20 hover:shadow-2xl hover:shadow-cyan-500/40" data-testid={`card-detail-${title.toLowerCase().replace(/\s+/g, '-')}`}>
         <div className="p-6">
           <h4 
             className="text-xl font-semibold mb-3 text-white text-center"
@@ -45,7 +45,7 @@ export default function DetailItem({ title, description, icon, index }: DetailIt
           >
             {title}
           </h4>
-          <p className="text-sm text-purple-200 text-center" data-testid={`text-detail-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+          <p className="text-sm text-cyan-200 text-center" data-testid={`text-detail-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
             {description}
           </p>
         </div>

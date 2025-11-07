@@ -26,7 +26,7 @@ export default function HippocraticOathButton({
     <>
       <section className="py-48 px-6 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-3xl" />
         </div>
         
         <div className="container mx-auto max-w-5xl relative z-10 flex justify-center">
@@ -39,7 +39,7 @@ export default function HippocraticOathButton({
             {imageUrl ? (
               <button
                 onClick={() => setIsOpen(true)}
-                className="relative overflow-hidden rounded-lg hover-elevate active-elevate-2 transition-all border-2 border-purple-400 shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4)]"
+                className="relative overflow-hidden rounded-lg hover-elevate active-elevate-2 transition-all border-2 border-cyan-400 shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4)]"
                 data-testid="button-hippocratic-oath"
               >
                 <img src={imageUrl} alt={buttonText} className="w-full h-auto" />
@@ -48,7 +48,7 @@ export default function HippocraticOathButton({
               <Button
                 onClick={() => setIsOpen(true)}
                 size="lg"
-                className="text-2xl px-12 py-8 h-auto bg-purple-900/60 border-2 border-purple-400 hover:border-purple-300 backdrop-blur-md shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(168,85,247,0.2)]"
+                className="text-2xl px-12 py-8 h-auto bg-cyan-900/60 border-2 border-cyan-400 hover:border-cyan-300 backdrop-blur-md shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(168,85,247,0.2)]"
                 data-testid="button-hippocratic-oath"
               >
                 <FileText className="w-8 h-8 mr-4" />
@@ -60,12 +60,12 @@ export default function HippocraticOathButton({
       </section>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto backdrop-blur-md bg-purple-900/60 border-2 border-purple-400 shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(168,85,247,0.2)]">
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto backdrop-blur-md bg-cyan-900/60 border-2 border-cyan-400 shadow-[0_0_30px_rgba(168,85,247,0.6),0_0_60px_rgba(168,85,247,0.4),inset_0_0_20px_rgba(168,85,247,0.2)]">
           <div className="relative p-8">
-            <div className="absolute -top-8 -left-8 w-24 h-24 bg-purple-500/40 rounded-full blur-2xl animate-pulse" />
-            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-purple-400/40 rounded-full blur-2xl animate-pulse" />
-            <div className="absolute top-1/2 left-0 w-2 h-24 bg-gradient-to-b from-transparent via-purple-400 to-transparent rounded-full" />
-            <div className="absolute top-1/2 right-0 w-2 h-24 bg-gradient-to-b from-transparent via-purple-400 to-transparent rounded-full" />
+            <div className="absolute -top-8 -left-8 w-24 h-24 bg-cyan-500/40 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-cyan-400/40 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute top-1/2 left-0 w-2 h-24 bg-gradient-to-b from-transparent via-cyan-400 to-transparent rounded-full" />
+            <div className="absolute top-1/2 right-0 w-2 h-24 bg-gradient-to-b from-transparent via-cyan-400 to-transparent rounded-full" />
             
             <DialogHeader>
               <DialogTitle 
@@ -76,9 +76,9 @@ export default function HippocraticOathButton({
               </DialogTitle>
             </DialogHeader>
             
-            <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
+            <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
             
-            <p className="text-xl text-purple-50 leading-relaxed text-center relative z-10">
+            <p className="text-xl text-cyan-50 leading-relaxed text-center relative z-10">
               {content}
             </p>
           </div>

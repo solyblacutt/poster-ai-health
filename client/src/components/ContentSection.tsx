@@ -15,7 +15,7 @@ export default function ContentSection({ title, content }: ContentSectionProps) 
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="relative">
-          <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-400 via-purple-500 to-transparent rounded-full" />
+          <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-cyan-500 to-transparent rounded-full" />
           
           <motion.h2 
             initial={{ opacity: 0, x: -30 }}
@@ -32,7 +32,7 @@ export default function ContentSection({ title, content }: ContentSectionProps) 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg text-purple-100 leading-relaxed" 
+            className="text-lg text-cyan-100 leading-relaxed" 
             data-testid={`text-${title.toLowerCase().replace(/\s+/g, '-')}-content`}
           >
             {content}

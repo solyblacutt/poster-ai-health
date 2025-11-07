@@ -19,8 +19,8 @@ export default function ComparativeCard({
 }: ComparativeCardProps) {
   return (
     <Card 
-      className={`p-8 backdrop-blur-md bg-white/5 border border-purple-500/30 transition-all duration-300 ${
-        isExpandable ? 'cursor-pointer hover-elevate active-elevate-2 hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20' : 'hover-elevate hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/20'
+      className={`p-8 backdrop-blur-md bg-white/5 border border-cyan-500/30 transition-all duration-300 ${
+        isExpandable ? 'cursor-pointer hover-elevate active-elevate-2 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20' : 'hover-elevate hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/20'
       }`}
       onClick={isExpandable ? onToggle : undefined}
       data-testid={`card-comparative-${title.toLowerCase().replace(/\s+/g, '-')}`}
@@ -34,7 +34,7 @@ export default function ComparativeCard({
           >
             {title}
           </h3>
-          <p className="text-purple-200" data-testid={`text-comparative-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+          <p className="text-cyan-200" data-testid={`text-comparative-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
             {description}
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function ComparativeCard({
             animate={{ rotate: isExpanded ? 180 : 0 }}
             transition={{ duration: 0.3 }}
           >
-            <ChevronDown className="w-6 h-6 text-purple-400" />
+            <ChevronDown className="w-6 h-6 text-cyan-400" />
           </motion.div>
         )}
       </div>
