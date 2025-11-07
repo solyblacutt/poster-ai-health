@@ -11,7 +11,7 @@ export default function Home() {
   const comparative1Data = [
     {
       title: "AI Assistant",
-      description: "Advanced systems operating in Earth's orbit, providing essential services for global communication, navigation, and scientific research.",
+      description: "AI is already being used in practical applications in terrestrial medicine for the following purposes: diagnostic support (e.g., image interpretation of X-rays, CT, MRI); monitoring and wearable data analysis; telemedicine and clinical decision support; chatbots / virtual assistants; self-learning and feedback mechanisms. Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in the following areas; medications used by astronauts; wearable and biometric monitoring/data analysis; risk prediction and decision-support systems; application to training optimization; medical decision-support in-flight and pre-flight.",
       isExpandable: true,
       details: [
         {
@@ -38,17 +38,17 @@ export default function Home() {
       details: [
         {
           title: "Ethics",
-          description: "Robotic vehicles designed to traverse the Martian terrain, analyzing soil composition, searching for signs of past water, and preparing for human missions.",
+          description: "To ensure responsible medical decision-making in deep space missions, it is mandatory to familiarize AI agents with medical ethics as practiced across different regions of the world. The four pillars of Western medical ethics are: Beneficence, Non-maleficence, Autonomy and Justice. Beneficence is the obligation of the physician to actively protect the patient and work for his/her benefit by removing harmful conditions. Non maleficence states that the physician must choose the best way to treat the patients without unnecessary risks and inconveniences. Autonomy allows a competent patient to make decisions. “Every human being of adult years and sound mind has a right to determine what shall be done with his own body”–- (Cardozo, 1914, as cited in Varkey, 2021). Justice is seeking fair distribution of healthcare resources, benefits and ensuring equitable treatment for all patients. Embedding these principles into AI systems is crucial in developing a modern equivalent of a Hippocratic Oath for AI. It helps ensure the future autonomous agents act with human-centered ethical standards beyond Earth.",
           icon: "Scale"
         },
         {
           title: "Symbiotic Relationship",
-          description: "Orbital observatories free from atmospheric distortion, capturing unprecedented images of distant galaxies, nebulae, and exoplanets in multiple wavelengths.",
+          description: "In deep-space missions, survival depends not only on technology but on trust. Our research explores how astronauts and AI could form a symbiotic alliance — a partnership where both adapt, learn, and evolve together. Inspired by Asimov’s vision and the Three Laws of Robotics designed to protect human life, we investigate how ethical alignment, mutual learning, and empathic responsiveness could transform AI from a mere assistant into a genuine mission companion. The goal: to design systems that understand human needs, respect ethical boundaries, and grow alongside us— shaping a new model of coexistence and co-evolution beyond Earth.",
           icon: "Users"
         },
         {
           title: "Limitations",
-          description: "Spacecraft designed to touch down on the Moon's surface for scientific exploration, resource mapping, and establishing infrastructure for future bases.",
+          description: "At the current level, AI development is limited to requiring large data sets and predominantly focuses on drawing connections between repeating patterns. This can cause issues such as bias from over/under-representation in the data, overfitting and mistakes - misinterpretation of the importance of certain features and outcomes, and propagation of errors in the training data. One big concern is the human element - patient individuality and emotional complexity cannot be fully comprehended through an algorithm; from a doctor’s side, a personal touch and the ability to make decisions even with limited data through critical analysis are not yet replicable by AI. Finally, the question of legal accountability and responsibility for medical decisions limits the use of AI. (Khan et al, 2023; Chustecki, 2024)",
           icon: "AlertCircle"
         }
       ]
@@ -66,7 +66,7 @@ export default function Home() {
       />
 
       <IntroductionSection 
-        content="Space exploration represents humanity's most ambitious endeavor to understand our place in the cosmos. From the first artificial satellites launched in the mid-20th century to today's sophisticated orbital networks and deep space missions, we have continuously expanded our technological capabilities. This journey encompasses advanced orbital mechanics, revolutionary communication technologies, autonomous robotics, and the dream of interplanetary colonization. Understanding these technologies helps us appreciate both the complexity of space systems and the incredible achievements that make modern space exploration possible."
+        content="Deep space missions, for humanity at our current technological stage, represent an uninterruptible, long-term journey. Although we trust that astronauts undergo rigorous training to achieve extraordinary physical fitness and remarkable mental fortitude, the confined living quarters and extremely hostile external environment during the voyage and at their destination undeniably subject them to dual physiological and psychological pressures during these prolonged, arduous tasks. Such scenarios impose exceptionally high demands on real-time medical and psychological support. Simultaneously, as the sole current means of those support, communication faces significant latency issues. For example, based on China's Zhurong rover experience, communication delays from the Martian surface to Earth can reach 20 minutes or more. In the face of such substantial latency, the emergence of medical AI applications holds great potential as one solution to address this critical challenge."
       />
 
       <ComparativeSection 
