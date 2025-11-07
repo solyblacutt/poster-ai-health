@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
-import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 interface TeamMember {
   name: string;
   profession: string;
   contact: string;
+  contribution: string;
 }
 
 interface HeroSectionProps {
@@ -49,11 +49,11 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
         transition={{ duration: 1.2, delay: 0.3 }}
       />
       
-      {/* Title positioned higher */}
-      <div className="relative z-10 flex-1 flex items-start justify-center pt-32">
+      {/* Title centered vertically */}
+      <div className="relative z-10 flex-1 flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="text-5xl md:text-7xl font-bold text-white mb-12"
+            className="text-5xl md:text-7xl font-bold text-white"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,21 +61,6 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
           >
             {title}
           </motion.h1>
-          
-          {/* Logo in the center */}
-          <motion.div
-            className="flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
-            <img 
-              src={logoImage} 
-              alt="AI Poster Logo" 
-              className="w-64 h-64 md:w-80 md:h-80 object-contain"
-              data-testid="img-logo"
-            />
-          </motion.div>
         </div>
       </div>
 
@@ -108,7 +93,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
         <DialogContent className="bg-background/95 backdrop-blur-lg border-cyan-500/30">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-cyan-400" data-testid="text-member-name">
+            <DialogTitle className="text-2xl font-bold" style={{ color: '#286F65' }} data-testid="text-member-name">
               {selectedMember?.name}
             </DialogTitle>
             <DialogDescription className="sr-only">
@@ -117,11 +102,15 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
           </DialogHeader>
           <div className="space-y-4 mt-4">
             <div>
-              <h3 className="text-sm font-semibold text-cyan-300 mb-1">Profession</h3>
+              <h3 className="text-sm font-semibold mb-1" style={{ color: '#286F65' }}>Contribution</h3>
+              <p className="text-foreground" data-testid="text-member-contribution">{selectedMember?.contribution}</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold mb-1" style={{ color: '#286F65' }}>Profession</h3>
               <p className="text-foreground" data-testid="text-member-profession">{selectedMember?.profession}</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-cyan-300 mb-1">Contact</h3>
+              <h3 className="text-sm font-semibold mb-1" style={{ color: '#286F65' }}>Contact</h3>
               <p className="text-foreground" data-testid="text-member-contact">{selectedMember?.contact}</p>
             </div>
           </div>
