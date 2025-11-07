@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 interface TeamMember {
   name: string;
@@ -52,7 +53,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       <div className="relative z-10 flex-1 flex items-start justify-center pt-32">
         <div className="container mx-auto px-6 text-center">
           <motion.h1
-            className="text-5xl md:text-7xl font-bold text-white"
+            className="text-5xl md:text-7xl font-bold text-white mb-12"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,6 +61,21 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
           >
             {title}
           </motion.h1>
+          
+          {/* Logo in the center */}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            <img 
+              src={logoImage} 
+              alt="AI Poster Logo" 
+              className="w-64 h-64 md:w-80 md:h-80 object-contain"
+              data-testid="img-logo"
+            />
+          </motion.div>
         </div>
       </div>
 
@@ -95,6 +111,9 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
             <DialogTitle className="text-2xl font-bold text-cyan-400" data-testid="text-member-name">
               {selectedMember?.name}
             </DialogTitle>
+            <DialogDescription className="sr-only">
+              Contact information for {selectedMember?.name}
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 mt-4">
             <div>
