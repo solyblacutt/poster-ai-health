@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Scale, Users, AlertCircle, LucideIcon } from "lucide-react";
+import { Scale, Users, AlertCircle, Clock, BarChart, Cpu, LucideIcon } from "lucide-react";
 
 interface DetailItemProps {
   title: string;
@@ -12,7 +12,10 @@ interface DetailItemProps {
 const iconMap: Record<string, LucideIcon> = {
   Scale: Scale,
   Users: Users,
-  AlertCircle: AlertCircle
+  AlertCircle: AlertCircle,
+  Clock: Clock,
+  BarChart: BarChart,
+  Cpu: Cpu
 };
 
 export default function DetailItem({ title, description, icon, index }: DetailItemProps) {

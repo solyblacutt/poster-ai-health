@@ -20,10 +20,13 @@ interface ComparativeSectionProps {
 }
 
 export default function ComparativeSection({ title, comparatives }: ComparativeSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  const expandableComparative = comparatives.find(c => c.isExpandable);
-  const expandableIndex = comparatives.findIndex(c => c.isExpandable);
+  const handleToggle = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  const expandedComparative = expandedIndex !== null ? comparatives[expandedIndex] : null;
 
   return (
     <section className="pt-24 pb-32 px-6">
@@ -36,21 +39,55 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
           {title}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {comparatives.map((comparative, index) => (
-            <ComparativeCard
-              key={index}
-              title={comparative.title}
-              description={comparative.description}
-              isExpanded={comparative.isExpandable && isExpanded}
-              onToggle={comparative.isExpandable ? () => setIsExpanded(!isExpanded) : undefined}
-              isExpandable={comparative.isExpandable}
-            />
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          {expandedIndex === null ? (
+            <motion.div 
+              key="grid-view"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {comparatives.map((comparative, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <ComparativeCard
+                    title={comparative.title}
+                    description={comparative.description}
+                    isExpanded={false}
+                    onToggle={() => handleToggle(index)}
+                    isExpandable={true}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <motion.div
+              key={`expanded-${expandedIndex}`}
+              className="mb-8"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.4 }}
+            >
+              <ComparativeCard
+                title={comparatives[expandedIndex].title}
+                description={comparatives[expandedIndex].description}
+                isExpanded={true}
+                onToggle={() => handleToggle(expandedIndex)}
+                isExpandable={true}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <AnimatePresence>
-          {isExpanded && expandableComparative && expandableComparative.details && (
+          {expandedComparative && expandedComparative.details && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
@@ -59,7 +96,7 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
               className="overflow-hidden"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {expandableComparative.details.map((detail, detailIndex) => (
+                {expandedComparative.details.map((detail, detailIndex) => (
                   <DetailItem
                     key={detailIndex}
                     title={detail.title}

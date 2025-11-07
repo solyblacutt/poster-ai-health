@@ -11,7 +11,24 @@ export default function Home() {
     {
       title: "AI Assistant",
       description: "Advanced systems operating in Earth's orbit, providing essential services for global communication, navigation, and scientific research.",
-      isExpandable: false
+      isExpandable: true,
+      details: [
+        {
+          title: "Real-time Support",
+          description: "Provides immediate assistance and guidance for routine medical tasks, helping healthcare professionals make quick decisions in standard situations.",
+          icon: "Clock"
+        },
+        {
+          title: "Data Analysis",
+          description: "Processes large volumes of medical data to identify patterns and provide insights, supporting evidence-based decision making.",
+          icon: "BarChart"
+        },
+        {
+          title: "Task Automation",
+          description: "Handles repetitive administrative tasks and documentation, allowing medical staff to focus on patient care and complex decision-making.",
+          icon: "Cpu"
+        }
+      ]
     },
     {
       title: "AI Agent",
