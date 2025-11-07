@@ -2,7 +2,8 @@ import SpaceBackground from "@/components/SpaceBackground";
 import HeroSection from "@/components/HeroSection";
 import IntroductionSection from "@/components/IntroductionSection";
 import ComparativeSection from "@/components/ComparativeSection";
-import ProposalSection from "@/components/ProposalSection";
+import ContentSection from "@/components/ContentSection";
+import HippocraticOathButton from "@/components/HippocraticOathButton";
 import ConclusionsSection from "@/components/ConclusionsSection";
 import ScrollAnimatedLine from "@/components/ScrollAnimatedLine";
 
@@ -73,7 +74,12 @@ export default function Home() {
         comparatives={comparative1Data}
       />
 
-      <ProposalSection 
+      <ContentSection
+        title="Medical AI Ethics"
+        content="As we venture into the depths of space, the role of artificial intelligence in medical decision-making becomes increasingly critical. In deep-space missions where communication delays can span minutes or hours, AI agents must be capable of making autonomous medical decisions while adhering to the fundamental principles of medical ethics. This intersection of technology and healthcare demands a new framework that ensures AI systems respect patient autonomy, act with beneficence, avoid harm, and maintain justice in resource allocation. The challenge lies in programming ethical decision-making into systems that must balance computational logic with the nuanced complexities of human welfare."
+      />
+
+      <HippocraticOathButton 
         content="The future of space exploration envisions a multi-planetary civilization where humanity establishes permanent settlements beyond Earth. Through international collaboration, development of sustainable life support systems, and innovative propulsion technologies like nuclear thermal engines and ion drives, we will transform from mere visitors to true inhabitants of the solar system. This ambitious vision includes self-sufficient lunar bases serving as waypoints, thriving Martian colonies producing their own resources, and crewed missions to asteroids for mining operations. Advanced space telescopes will search for habitable exoplanets while quantum communication networks will connect our growing presence across the cosmos."
       />
 
