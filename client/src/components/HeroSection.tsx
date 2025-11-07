@@ -1,13 +1,23 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+
+interface TeamMember {
+  name: string;
+  profession: string;
+  contact: string;
+}
 
 interface HeroSectionProps {
   title: string;
-  teamMembers: string[];
+  teamMembers: TeamMember[];
 }
 
 export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+
   const scrollToNext = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -62,19 +72,42 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           {teamMembers.map((member, index) => (
-            <motion.div
+            <motion.button
               key={index}
-              className="px-6 py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white"
+              onClick={() => setSelectedMember(member)}
+              className="px-6 py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white cursor-pointer hover:bg-white/20 transition-colors"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               whileHover={{ scale: 1.05 }}
+              data-testid={`button-team-member-${index}`}
             >
-              {member}
-            </motion.div>
+              {member.name}
+            </motion.button>
           ))}
         </motion.div>
       </div>
+
+      {/* Team member dialog */}
+      <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
+        <DialogContent className="bg-background/95 backdrop-blur-lg border-cyan-500/30">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-cyan-400" data-testid="text-member-name">
+              {selectedMember?.name}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 mt-4">
+            <div>
+              <h3 className="text-sm font-semibold text-cyan-300 mb-1">Profession</h3>
+              <p className="text-foreground" data-testid="text-member-profession">{selectedMember?.profession}</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-cyan-300 mb-1">Contact</h3>
+              <p className="text-foreground" data-testid="text-member-contact">{selectedMember?.contact}</p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <motion.button
         onClick={scrollToNext}

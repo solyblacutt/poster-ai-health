@@ -63,7 +63,15 @@ export default function Home() {
       
       <HeroSection 
         title="A Hippocratic Oath for Medical AI Agents in Deep-Space Missions"
-        teamMembers={["Xiaoyu Shan", "Bianca Steffen", "Noriyasu Shibata", "Grazia Testa", "Solange Blacutt", "Mializo Razanakoto", "Aruna"]}
+        teamMembers={[
+          { name: "Xiaoyu Shan", profession: "Space Medicine Researcher", contact: "xiaoyu.shan@example.com" },
+          { name: "Bianca Steffen", profession: "AI Ethics Specialist", contact: "bianca.steffen@example.com" },
+          { name: "Noriyasu Shibata", profession: "Deep Space Systems Engineer", contact: "noriyasu.shibata@example.com" },
+          { name: "Grazia Testa", profession: "Biomedical AI Researcher", contact: "grazia.testa@example.com" },
+          { name: "Solange Blacutt", profession: "Medical AI Developer", contact: "solange.blacutt@example.com" },
+          { name: "Mializo Razanakoto", profession: "Space Health Specialist", contact: "mializo.razanakoto@example.com" },
+          { name: "Aruna", profession: "AI Integration Lead", contact: "aruna@example.com" }
+        ]}
       />
 
       <IntroductionSection 
