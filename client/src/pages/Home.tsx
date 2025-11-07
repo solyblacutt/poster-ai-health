@@ -2,6 +2,7 @@ import SpaceBackground from "@/components/SpaceBackground";
 import HeroSection from "@/components/HeroSection";
 import IntroductionSection from "@/components/IntroductionSection";
 import ComparativeSection from "@/components/ComparativeSection";
+import GridSection from "@/components/GridSection";
 import ContentSection from "@/components/ContentSection";
 import HippocraticOathButton from "@/components/HippocraticOathButton";
 import ConclusionsSection from "@/components/ConclusionsSection";
@@ -72,6 +73,17 @@ export default function Home() {
       <ComparativeSection 
         title="Comparative Analysis" 
         comparatives={comparative1Data}
+      />
+
+      <GridSection
+        title="Core Principles"
+        introduction="Establishing foundational guidelines for medical AI systems operating in extreme deep-space environments."
+        items={[
+          { title: "Patient Autonomy", icon: "Heart" },
+          { title: "Intelligent Decision-Making", icon: "Brain" },
+          { title: "Safety & Protection", icon: "Shield" },
+          { title: "Adaptability", icon: "Telescope" }
+        ]}
       />
 
       <ContentSection
