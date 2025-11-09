@@ -11,28 +11,23 @@ export default function Home() {
   const comparative1Data = [
     {
       title: "AI Assistant",
-      description: "AI is already being used in practical applications in terrestrial medicine for the following purposes: diagnostic support (e.g., image interpretation of X-rays, CT, MRI); monitoring and wearable data analysis; telemedicine and clinical decision support; chatbots / virtual assistants; self-learning and feedback mechanisms. Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in the following areas; medications used by astronauts; wearable and biometric monitoring/data analysis; risk prediction and decision-support systems; application to training optimization; medical decision-support in-flight and pre-flight.",
-      isExpandable: true,
-      details: [
-        {
-          title: "Real-time Support",
-          description: "Provides immediate assistance and guidance for routine medical tasks, helping healthcare professionals make quick decisions in standard situations.",
-          icon: "Clock"
-        },
-        {
-          title: "Data Analysis",
-          description: "Processes large volumes of medical data to identify patterns and provide insights, supporting evidence-based decision making.",
-          icon: "BarChart"
-        },
-        {
-          title: "Task Automation",
-          description: "Handles repetitive administrative tasks and documentation, allowing medical staff to focus on patient care and complex decision-making.",
-          icon: "Cpu"
-        }
-      ]
+      icon: "Bot",
+      description: "AI is already being used in practical applications in terrestrial medicine and astronaut health support.",
+      shortDescription: "AI is already being used in practical applications in terrestrial medicine and astronaut health support.",
+      expandedDescription: "AI is already being used in practical applications in terrestrial medicine for the following purposes:",
+      bulletPoints: [
+        "Diagnostic support (e.g., image interpretation of X-rays, CT, MRI)",
+        "Monitoring and wearable data analysis",
+        "Telemedicine and clinical decision support",
+        "Chatbots / virtual assistants",
+        "Self-learning and feedback mechanisms"
+      ],
+      closureText: "Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in areas such as medications used by astronauts, wearable and biometric monitoring/data analysis, risk prediction and decision-support systems, application to training optimization, and medical decision-support in-flight and pre-flight.",
+      isExpandable: true
     },
     {
       title: "AI Agent",
+      icon: "Sparkles",
       description: "Missions venturing beyond Earth's orbit to study distant planets, moons, and celestial phenomena, expanding our understanding of the universe.",
       isExpandable: true,
       details: [

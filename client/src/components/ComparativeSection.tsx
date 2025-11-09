@@ -16,6 +16,11 @@ interface ComparativeSectionProps {
     description: string;
     details?: DetailData[];
     isExpandable?: boolean;
+    icon?: string;
+    shortDescription?: string;
+    expandedDescription?: string;
+    bulletPoints?: string[];
+    closureText?: string;
   }[];
 }
 
@@ -62,6 +67,11 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
                     isExpanded={false}
                     onToggle={() => handleToggle(index)}
                     isExpandable={true}
+                    icon={comparative.icon}
+                    shortDescription={comparative.shortDescription}
+                    expandedDescription={comparative.expandedDescription}
+                    bulletPoints={comparative.bulletPoints}
+                    closureText={comparative.closureText}
                   />
                 </motion.div>
               ))}
@@ -81,6 +91,11 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
                 isExpanded={true}
                 onToggle={() => handleToggle(expandedIndex)}
                 isExpandable={true}
+                icon={comparatives[expandedIndex].icon}
+                shortDescription={comparatives[expandedIndex].shortDescription}
+                expandedDescription={comparatives[expandedIndex].expandedDescription}
+                bulletPoints={comparatives[expandedIndex].bulletPoints}
+                closureText={comparatives[expandedIndex].closureText}
               />
             </motion.div>
           )}

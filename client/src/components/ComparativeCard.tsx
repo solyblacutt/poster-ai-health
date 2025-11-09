@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Bot, Sparkles } from "lucide-react";
 
 interface ComparativeCardProps {
   title: string;
@@ -8,6 +8,11 @@ interface ComparativeCardProps {
   isExpanded?: boolean;
   onToggle?: () => void;
   isExpandable?: boolean;
+  icon?: string;
+  shortDescription?: string;
+  expandedDescription?: string;
+  bulletPoints?: string[];
+  closureText?: string;
 }
 
 export default function ComparativeCard({ 
@@ -15,8 +20,17 @@ export default function ComparativeCard({
   description, 
   isExpanded, 
   onToggle,
-  isExpandable = true
+  isExpandable = true,
+  icon,
+  shortDescription,
+  expandedDescription,
+  bulletPoints,
+  closureText
 }: ComparativeCardProps) {
+  const IconComponent = icon === "Bot" ? Bot : icon === "Sparkles" ? Sparkles : null;
+  
+  const displayDescription = !isExpanded && shortDescription ? shortDescription : description;
+  
   return (
     <Card 
       className={`p-8 backdrop-blur-md bg-white/5 border border-cyan-500/30 transition-all duration-300 ${
@@ -27,16 +41,45 @@ export default function ComparativeCard({
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
-          <h3 
-            className="text-2xl font-semibold mb-3 text-white"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
-            data-testid={`text-comparative-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
-          >
-            {title}
-          </h3>
-          <p className="text-cyan-200" data-testid={`text-comparative-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-            {description}
-          </p>
+          <div className="flex items-center gap-3 mb-3">
+            {IconComponent && !isExpanded && (
+              <IconComponent className="w-8 h-8 text-cyan-400" data-testid={`icon-${title.toLowerCase().replace(/\s+/g, '-')}`} />
+            )}
+            <h3 
+              className="text-2xl font-semibold text-white"
+              style={{ fontFamily: "Space Grotesk, sans-serif" }}
+              data-testid={`text-comparative-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              {title}
+            </h3>
+          </div>
+          
+          {!isExpanded ? (
+            <p className="text-cyan-200" data-testid={`text-comparative-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+              {displayDescription}
+            </p>
+          ) : (
+            <div className="space-y-4">
+              {expandedDescription && (
+                <p className="text-cyan-200">{expandedDescription}</p>
+              )}
+              {bulletPoints && bulletPoints.length > 0 && (
+                <ul className="list-disc list-inside space-y-2 text-cyan-200 ml-4">
+                  {bulletPoints.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
+              )}
+              {closureText && (
+                <p className="text-cyan-200">{closureText}</p>
+              )}
+              {!bulletPoints && (
+                <p className="text-cyan-200" data-testid={`text-comparative-description-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+                  {displayDescription}
+                </p>
+              )}
+            </div>
+          )}
         </div>
         {isExpandable && (
           <motion.div
