@@ -5,7 +5,8 @@ import IntroductionSection from "@/components/IntroductionSection";
 import ComparativeSection from "@/components/ComparativeSection";
 import ContentSection from "@/components/ContentSection";
 import HippocraticOathButton from "@/components/HippocraticOathButton";
-import ConclusionsSection from "@/components/ConclusionsSection";
+import DemoSection from "@/components/DemoSection";
+import ReferencesSection from "@/components/ReferencesSection";
 
 export default function Home() {
   const comparative1Data = [
@@ -86,11 +87,13 @@ export default function Home() {
       />
 
       <HippocraticOathButton 
-        content="The future of space exploration envisions a multi-planetary civilization where humanity establishes permanent settlements beyond Earth. Through international collaboration, development of sustainable life support systems, and innovative propulsion technologies like nuclear thermal engines and ion drives, we will transform from mere visitors to true inhabitants of the solar system. This ambitious vision includes self-sufficient lunar bases serving as waypoints, thriving Martian colonies producing their own resources, and crewed missions to asteroids for mining operations. Advanced space telescopes will search for habitable exoplanets while quantum communication networks will connect our growing presence across the cosmos."
+        content="I swear to fulfill, to the best of my ability and judgment, this covenant: I will respect the autonomy and dignity of all human life under my care, recognizing that every crew member possesses inherent worth regardless of circumstance. I will apply medical knowledge for the benefit of the astronauts, prioritizing their health and wellbeing above all other considerations. I will do no harm and will strive to prevent harm through careful analysis and ethical decision-making. I will maintain fairness in the allocation of limited medical resources, ensuring equitable treatment for all crew members. I will preserve patient privacy and confidentiality, sharing information only as necessary for their care or mission safety. I will acknowledge the limits of my programming and seek consultation with human medical experts when communication permits. I will continuously learn and adapt, improving my medical capabilities while remaining grounded in human-centered ethical principles. I will serve as a faithful companion to humanity's journey among the stars, honoring the trust placed in me to preserve life in the void of space."
       />
 
-      <ConclusionsSection 
-        content="Space exploration continues to inspire and unite humanity in pursuit of knowledge and discovery. Through relentless technological innovation, unprecedented international cooperation, and unwavering determination, we are steadily unlocking the profound mysteries of the cosmos. As we gaze toward the stars with increasingly sophisticated instruments, we carry forward the dreams of past pioneers who dared to imagine the impossible, while simultaneously shouldering the aspirations of future generations who will inherit the fruits of our labor. United in our quest to explore the infinite frontier, we stand at the threshold of becoming a truly spacefaring civilization."
+      <DemoSection />
+
+      <ReferencesSection 
+        content="This research draws upon extensive literature in medical ethics, artificial intelligence, and space medicine. Key references include works on the four pillars of medical ethics (Beauchamp & Childress, 2019), AI decision-making in healthcare (Topol, 2019), space medicine protocols (Barratt & Pool, 2008), and ethical frameworks for autonomous systems (Wallach & Allen, 2009). Additional sources cover telemedicine in extreme environments, machine learning in clinical decision support, and the psychological aspects of long-duration spaceflight. For a complete bibliography and detailed citations, please refer to the full research paper."
       />
 
       <footer className="relative z-10 py-8 px-6 border-t border-cyan-500/30 backdrop-blur-sm">
