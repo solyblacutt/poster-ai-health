@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
+import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 interface TeamMember {
@@ -49,44 +50,59 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
         transition={{ duration: 1.2, delay: 0.3 }}
       />
       
-      {/* Title centered vertically */}
-      <div className="relative z-10 flex-1 flex items-center justify-center">
-        <div className="container mx-auto px-6 text-center">
+      {/* Content: Logo, Title, Buttons */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center py-24 px-6">
+        <div className="container mx-auto text-center space-y-12">
+          {/* Logo at top with mix-blend-mode */}
+          <motion.div
+            className="flex justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <img 
+              src={logoImage} 
+              alt="AI Poster Logo" 
+              className="w-48 h-48 md:w-64 md:h-64 object-contain"
+              style={{ mixBlendMode: 'multiply' }}
+              data-testid="img-hero-logo"
+            />
+          </motion.div>
+
+          {/* Title */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold text-white"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-5xl mx-auto"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
             {title}
           </motion.h1>
-        </div>
-      </div>
 
-      {/* Team members positioned near bottom */}
-      <div className="relative z-10 pb-24">
-        <motion.div
-          className="flex flex-wrap gap-4 justify-center items-center px-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          {teamMembers.map((member, index) => (
-            <motion.button
-              key={index}
-              onClick={() => setSelectedMember(member)}
-              className="px-6 py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white cursor-pointer hover:bg-white/20 transition-colors"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              data-testid={`button-team-member-${index}`}
-            >
-              {member.name}
-            </motion.button>
-          ))}
-        </motion.div>
+          {/* Team member buttons */}
+          <motion.div
+            className="flex flex-wrap gap-4 justify-center items-center pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            {teamMembers.map((member, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setSelectedMember(member)}
+                className="px-6 py-3 rounded-md bg-white/10 backdrop-blur-md border border-white/20 text-white cursor-pointer hover:bg-white/20 transition-colors"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                data-testid={`button-team-member-${index}`}
+              >
+                {member.name}
+              </motion.button>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* Team member dialog */}
