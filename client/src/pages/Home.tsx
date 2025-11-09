@@ -56,7 +56,7 @@ export default function Home() {
       <SpaceBackground />
       
       <HeroSection 
-        title="A Hippocratic Oath for Medical AI Agents in Deep-Space Missions"
+        title="A Hippocratic Oath for Medical AI Agents | in Deep-Space Missions"
         teamMembers={[
           { name: "Xiaoyu Shan", profession: "Space Medicine Researcher", contact: "xiaoyu.shan@example.com", contribution: "Research on space medicine protocols and AI integration" },
           { name: "Bianca Steffen", profession: "AI Ethics Specialist", contact: "bianca.steffen@example.com", contribution: "Development of ethical frameworks for medical AI systems" },

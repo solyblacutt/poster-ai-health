@@ -27,6 +27,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
     });
   };
 
+  const [l1, l2] = title.includes("|") ? title.split("|") : [title, ""];
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Purple planet horizon background with zoom-in animation */}
@@ -55,7 +56,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
         <div className="container mx-auto text-center space-y-12">
           {/* Logo at top with mix-blend-mode */}
           <motion.div
-            className="flex justify-center"
+            className="flex justify-center mt-6 md:mt-10"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -69,15 +70,18 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
             />
           </motion.div>
 
+          
           {/* Title */}
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white max-w-5xl mx-auto"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-6xl md:max-w-7xl leading-[1.05] tracking-tight mx-auto"
+
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {title}
+            <span className="block">{l1}</span>
+            {l2 && <span className="block">{l2}</span>}
           </motion.h1>
 
           {/* Team member buttons */}
