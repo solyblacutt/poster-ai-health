@@ -2,7 +2,50 @@
 
 ## Overview
 
-This is a space-themed informative website built as a single-page application featuring "A Hippocratic Oath for Medical AI Agents in Deep-Space Missions". The application presents information about space exploration, AI technology in medicine, and medical ethics through visually engaging sections with animations and interactive components. The site uses a cyan/teal/green color scheme matching the AI poster logo, with a "horizon green" hero background, particle effects, and smooth scroll animations.
+This is a space-themed informative website built as a single-page application featuring "A Hippocratic Oath for Medical AI Agents in Deep-Space Missions". The application presents information about space exploration, AI technology in medicine, and medical ethics through visually engaging sections with animations and interactive components. The site uses a purple/aqua/lime color scheme with a "horizon green" hero background and smooth scroll animations.
+
+## Latest Updates (November 2025)
+
+### Design Refresh
+- **New Color Palette**: Transitioned from cyan/teal/green to purple/aqua/lime theme
+  - Primary: #6E37A6 (Brand Purple) - used for buttons and highlights
+  - Accent: #68F5D5 (Aqua) - used for borders and accents
+  - Secondary: #48358C (Indigo) - used for secondary elements
+  - Accent Lime: #B8F952 - available for future use
+  - Background: #160A26 (Deep Purple Base)
+  - Surface/Card: #261E59 (Purple Surface)
+
+### Hero Section Redesign
+- **New Logo Placement**: AI Poster Logo displayed at top with mix-blend-mode: multiply effect
+- **Vertical Layout**: Logo → Title → Team Member Buttons (centered alignment)
+- **Enhanced Animations**: Logo fade-in with scale, title slide-up, staggered button animations
+
+### Comparative Analysis Enhancements
+- **AI Assistant Card**: 
+  - Shows Bot icon before expansion
+  - Initial view displays one sentence summary
+  - Expansion reveals: same sentence + 5 bullet points + closure text about astronaut health support
+- **AI Agent Card**: 
+  - Shows Sparkles icon before expansion
+  - Maintains original expandable detail cards structure
+- **Icon Integration**: Both cards display relevant icons in collapsed state
+
+### Hippocratic Oath Button Redesign
+- **Circular Design**: 256x256px circular button with logo image
+- **Visual Effects**: Aqua border with animated pulsing glow (shadow animation)
+- **Interactive Animations**: Scale on hover, catching opening effect for dialog
+- **Updated Content**: Modern Hippocratic Oath adapted for AI agents in space
+
+### New Interactive Demo Section
+- **Circular Dice Button**: Rotating dice icon to generate random case studies
+- **Case Study Bank**: 5 medical ethics scenarios for deep-space missions
+- **Progressive Reveal**: Question → "How would an AI Agent do it?" → Response → Restart
+- **Real-world Scenarios**: Covers emergency medical decisions, resource allocation, autonomy vs. safety, psychological care, and medical data disclosure
+
+### New References Section
+- **Compact Design**: Smaller title (text-2xl) and body text (text-base)
+- **Academic Content**: Citations to medical ethics, AI healthcare, and space medicine literature
+- **Simplified Layout**: Removed "journey continues" call-to-action button
 
 ## User Preferences
 
@@ -32,30 +75,39 @@ Preferred communication style: Simple, everyday language.
 **Design System**
 - Space Grotesk font for headings (bold, futuristic aesthetic)
 - Inter font for body text (clean readability)
-- Cosmic color palette: cyan/teal/green theme (hsl 180-based) matching AI poster logo, replacing previous purple theme
-- Primary color: cyan (hsl 180 75% 45-50%)
-- Dark teal backgrounds (#0a1f1f, #0f2d2d) for space-themed atmosphere
+- Purple/Aqua/Lime color palette (November 2025 redesign)
+  - Primary: #6E37A6 (270° 50% 43%) - Brand Purple
+  - Accent: #68F5D5 (166° 87% 68%) - Aqua highlights
+  - Secondary: #48358C (253° 45% 38%) - Indigo
+  - Background: #160A26 (260° 58% 9%) - Deep Purple Base
+  - Card: #261E59 (248° 50% 23%) - Purple Surface
 - Consistent spacing primitives using Tailwind's 4/8/12/16 unit system
 - Hover/active state elevations with backdrop blur effects
-- Custom animations: floating particles, parallax scrolling, fade-in on scroll
+- Custom animations: scale on hover, fade-in on scroll, pulsing glows, rotating icons
 
 **Interactive Features**
-- Clickable team member names in hero section that open dialogs with detailed information:
+- Clickable team member buttons in hero section that open dialogs with detailed information:
   - Contribution (team member's role in the project)
   - Profession (their professional title)
   - Contact (email address)
-  - Dialog labels use darker teal color (#286F65)
-- Expandable comparative cards for AI Assistant and AI Agent with detailed information
-- Clickable Hippocratic Oath button opening modal with neon border effect
+- Expandable comparative cards for AI Assistant and AI Agent:
+  - AI Assistant: Shows Bot icon, short description → expands to bullets + closure
+  - AI Agent: Shows Sparkles icon, description → expands to detail cards
+- Circular Hippocratic Oath button (256x256px) with logo and pulsing aqua glow
+- Interactive Demo Section:
+  - Circular dice button with rotating animation
+  - Random case study generator (5 scenarios)
+  - Progressive reveal: Question → AI Response → Restart
 
 **Page Sections**
-- Hero: Vertically centered title with team member buttons at bottom
+- Hero: Logo at top → Title → Team member buttons (all centered vertically)
 - Abstract: Two-column layout with AI poster logo on left, title and content on right
 - Introduction: Project background and context
-- Comparative Analysis: Expandable cards comparing AI Assistant and AI Agent
+- Comparative Analysis: Expandable cards with icons comparing AI Assistant and AI Agent
 - Medical AI Ethics: Discussion of ethical considerations
-- Hippocratic Oath: Interactive button to view the proposed oath
-- Conclusions: Final thoughts and vision for the future
+- Hippocratic Oath: Circular button with logo opening dialog with modern AI oath
+- Demo: Interactive case studies with random question generator and AI responses
+- References: Academic citations and research sources (compact design)
 
 ### Backend Architecture
 
@@ -119,8 +171,10 @@ Preferred communication style: Simple, everyday language.
 - Google Fonts API: Space Grotesk and Inter font families
 - Generated space-themed images stored in `attached_assets/generated_images/`
 - Hero background: "horizon green" image (`attached_assets/horizon green_1762478563215.png`)
-- AI poster logo (`attached_assets/AI Poster Logo (1)_1762478460895.png`) displayed in Abstract section on the left side
-- Custom logo and background assets
+- Current logo: AI Poster Logo (2) (`attached_assets/AI Poster Logo (2)_1762704396121.png`)
+  - Displayed in Hero section at top with mix-blend-mode: multiply
+  - Displayed in circular Hippocratic Oath button
+- Old logo: AI Poster Logo (1) (`attached_assets/AI Poster Logo (1)_1762478460895.png`) displayed in Abstract section
 
 **Path Aliases**
 - `@/`: Maps to `client/src/` for component imports
