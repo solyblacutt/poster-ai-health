@@ -76,7 +76,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                   <motion.img
                     src={logoImage}
                     alt="AI Logo"
-                    className="w-full h-full object-contain p-4"
+                    className="w-full h-full rounded-full object-cover"
                     style={{ mixBlendMode: "multiply" }}
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
