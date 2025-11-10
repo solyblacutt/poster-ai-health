@@ -42,10 +42,35 @@ This is a space-themed informative website built as a single-page application fe
 - **Progressive Reveal**: Question → "How would an AI Agent do it?" → Response → Restart
 - **Real-world Scenarios**: Covers emergency medical decisions, resource allocation, autonomy vs. safety, psychological care, and medical data disclosure
 
-### New References Section
+### Introduction Section Update (November 10, 2025)
+- **Right-Aligned Layout**: Text content now right-aligned with 3/4 width
+- **Accent Line Position**: Moved accent line from left to right side of text
+- **Expandable Button**: Added circular button in 1/4 space that expands on hover to show communication delay information
+- **No Layout Shifts**: Hover expansion uses transform-based scaling to prevent layout shifts
+
+### References Section Enhancement (November 10, 2025)
+- **Numbered List Format**: Converted to numbered list (1-6) for better academic citation structure
+- **Citation System**: Created Citation component for superscript links that scroll to references
+- **Academic Content**: Six references covering medical ethics, AI healthcare, and space medicine
 - **Compact Design**: Smaller title (text-2xl) and body text (text-base)
-- **Academic Content**: Citations to medical ethics, AI healthcare, and space medicine literature
-- **Simplified Layout**: Removed "journey continues" call-to-action button
+
+### Hippocratic Oath Dialog Formatting (November 10, 2025)
+- **Structured Content**: Dialog now uses whitespace-pre-line to preserve content structure
+- **Typography Hierarchy**: Proper font sizes and spacing for different content sections
+- **Aqua Accents**: Enhanced with aqua border and glow effects matching the color palette
+
+### ISU Logo Section (November 10, 2025)
+- **New Section**: Added International Space University logo section after References
+- **Centered Display**: White ISU logo centered on dark background
+- **Asset**: Uses Logo ISU white_1762742785016.png
+
+### Color Palette Consistency (November 10, 2025)
+- **Cyan Removal**: Replaced all cyan colors (cyan-400, cyan-500, cyan-100, cyan-300) with palette tokens
+- **Consistent Colors**: Updated AbstractSection, ContentSection, DemoSection, and footer with:
+  - `accent` for aqua highlights and borders
+  - `foreground/80` for secondary text
+  - `foreground/60` for tertiary text
+- **Purple/Aqua/Lime**: Ensured consistent use of the established color palette throughout
 
 ## User Preferences
 
@@ -101,13 +126,14 @@ Preferred communication style: Simple, everyday language.
 
 **Page Sections**
 - Hero: Logo at top → Title → Team member buttons (all centered vertically)
-- Abstract: Two-column layout with AI poster logo on left, title and content on right
-- Introduction: Project background and context
+- Abstract: Two-column layout with AI poster logo on left, title and content on right, accent line on left
+- Introduction: Right-aligned text (3/4 width) with accent line on right, expandable circular button (1/4 space) showing communication delay info on hover
 - Comparative Analysis: Expandable cards with icons comparing AI Assistant and AI Agent
 - Medical AI Ethics: Discussion of ethical considerations
-- Hippocratic Oath: Circular button with logo opening dialog with modern AI oath
+- Hippocratic Oath: Circular button (256x256px) with logo opening structured dialog with modern AI oath
 - Demo: Interactive case studies with random question generator and AI responses
-- References: Academic citations and research sources (compact design)
+- References: Numbered list (1-6) of academic citations with superscript citation links throughout site
+- ISU Logo: Centered white International Space University logo section
 
 ### Backend Architecture
 
@@ -175,6 +201,7 @@ Preferred communication style: Simple, everyday language.
   - Displayed in Hero section at top with mix-blend-mode: multiply
   - Displayed in circular Hippocratic Oath button
 - Old logo: AI Poster Logo (1) (`attached_assets/AI Poster Logo (1)_1762478460895.png`) displayed in Abstract section
+- ISU Logo: Logo ISU white (`attached_assets/Logo ISU white_1762742785016.png`) displayed in ISU Logo section
 
 **Path Aliases**
 - `@/`: Maps to `client/src/` for component imports
