@@ -32,7 +32,7 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
 
           {/* Title and content on the right */}
           <div className="md:col-span-3 relative">
-            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-cyan-500 to-transparent rounded-full" />
+            <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-accent to-transparent rounded-full" />
             
             <motion.h2 
               initial={{ opacity: 0, x: -30 }}
@@ -49,7 +49,7 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-cyan-100 leading-relaxed" 
+              className="text-lg text-foreground/80 leading-relaxed" 
               data-testid="text-abstract-content"
             >
               {content}

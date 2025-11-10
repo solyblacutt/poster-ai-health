@@ -205,8 +205,8 @@ export default function Home() {
 
       <ISULogoSection />
 
-      <footer className="relative z-10 py-8 px-6 border-t border-cyan-500/30 backdrop-blur-sm">
-        <div className="container mx-auto text-center text-sm text-cyan-300">
+      <footer className="relative z-10 py-8 px-6 border-t border-accent/30 backdrop-blur-sm">
+        <div className="container mx-auto text-center text-sm text-foreground/60">
           <p>Space Exploration & Technology © 2025</p>
         </div>
       </footer>
