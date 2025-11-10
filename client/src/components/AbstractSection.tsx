@@ -4,7 +4,7 @@ import { useRef } from "react";
 import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
 
 interface AbstractSectionProps {
-  content: string;
+  content: React.ReactNode;
 }
 
 export default function AbstractSection({ content }: AbstractSectionProps) {

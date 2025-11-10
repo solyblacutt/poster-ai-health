@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
 
 interface HippocraticOathButtonProps {
-  content: string;
+  content: React.ReactNode;
 }
 
 export default function HippocraticOathButton({ 
@@ -18,21 +18,7 @@ export default function HippocraticOathButton({
 }: HippocraticOathButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Parse the oath content into structured parts
-  const parseOathContent = (text: string) => {
-    // Split by "I will" to get the pledges
-    const parts = text.split(/(?=I will)/);
-    
-    // First part is the opening covenant
-    const opening = parts[0].trim();
-    
-    // Rest are the pledges
-    const pledges = parts.slice(1).map(p => p.trim());
-    
-    return { opening, pledges };
-  };
-
-  const { opening, pledges } = parseOathContent(content);
+  // Content is already structured as React nodes, no need to parse
 
   return (
     <>
@@ -107,29 +93,8 @@ export default function HippocraticOathButton({
               
               <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-accent to-transparent" />
               
-              <div className="space-y-6 relative z-10">
-                {/* Opening covenant */}
-                <p className="text-xl text-white font-semibold leading-relaxed italic text-center">
-                  {opening}
-                </p>
-                
-                {/* Pledges list */}
-                <div className="space-y-4 mt-8">
-                  {pledges.map((pledge, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="text-accent font-bold text-lg mt-1">•</span>
-                      <p className="text-base text-foreground/90 leading-relaxed flex-1">
-                        {pledge}
-                      </p>
-                    </motion.div>
-                  ))}
-                </div>
+              <div className="relative z-10 text-base text-foreground/90 leading-relaxed whitespace-pre-line">
+                {content}
               </div>
             </div>
           </DialogContent>

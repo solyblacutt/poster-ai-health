@@ -4,7 +4,8 @@ import { useRef, useState } from "react";
 import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
 
 interface IntroductionSectionProps {
-  content: string;
+  title?: string;
+  content: React.ReactNode;
 }
 
 export default function IntroductionSection({ content }: IntroductionSectionProps) {

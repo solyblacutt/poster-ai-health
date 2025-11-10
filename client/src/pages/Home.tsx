@@ -7,6 +7,18 @@ import ContentSection from "@/components/ContentSection";
 import HippocraticOathButton from "@/components/HippocraticOathButton";
 import DemoSection from "@/components/DemoSection";
 import ReferencesSection from "@/components/ReferencesSection";
+import ISULogoSection from "@/components/ISULogoSection";
+
+// Citation component for superscript links to references
+const Citation = ({ refId }: { refId: number }) => (
+  <a 
+    href={`#ref-${refId}`}
+    className="text-accent hover:text-accent/80 no-underline transition-colors"
+    data-testid={`citation-${refId}`}
+  >
+    <sup>[{refId}]</sup>
+  </a>
+);
 
 export default function Home() {
   const comparative1Data = [
@@ -36,7 +48,7 @@ export default function Home() {
           title: "Ethics",
           description: (
             <>
-              To ensure responsible medical decision-making in deep space missions, it is mandatory to familiarize AI agents with medical ethics as practiced across different regions of the world. The four pillars of Western medical ethics are: <mark>Beneficence, Non-maleficence, Autonomy and Justice</mark>. 
+              To ensure responsible medical decision-making in deep space missions, it is mandatory to familiarize AI agents with medical ethics as practiced across different regions of the world. The four pillars of Western medical ethics<Citation refId={1} /> are: <mark>Beneficence, Non-maleficence, Autonomy and Justice</mark>. 
               <br /><br />
               <strong><em>Embedding these principles into AI systems is crucial in developing a modern equivalent of a Hippocratic Oath for AI. It helps ensure the future autonomous agents act with human-centered ethical standards beyond Earth.</em></strong>
               </>
@@ -189,9 +201,9 @@ export default function Home() {
 
       <DemoSection />
 
-      <ReferencesSection 
-        content="This research draws upon extensive literature in medical ethics, artificial intelligence, and space medicine. Key references include works on the four pillars of medical ethics (Beauchamp & Childress, 2019), AI decision-making in healthcare (Topol, 2019), space medicine protocols (Barratt & Pool, 2008), and ethical frameworks for autonomous systems (Wallach & Allen, 2009). Additional sources cover telemedicine in extreme environments, machine learning in clinical decision support, and the psychological aspects of long-duration spaceflight. For a complete bibliography and detailed citations, please refer to the full research paper."
-      />
+      <ReferencesSection />
+
+      <ISULogoSection />
 
       <footer className="relative z-10 py-8 px-6 border-t border-cyan-500/30 backdrop-blur-sm">
         <div className="container mx-auto text-center text-sm text-cyan-300">
