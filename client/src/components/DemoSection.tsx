@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Dice5, RotateCcw } from "lucide-react";
+import { Orbit, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const caseStudies = [
@@ -60,7 +60,7 @@ export default function DemoSection() {
           </h2>
           
           <p className="text-xl text-cyan-100 mb-12" data-testid="text-demo-subtitle">
-            Explore how an AI Agent guided by the Hippocratic Oath would handle real medical scenarios in deep space
+            <em>Explore how an AI Agent guided by the Hippocratic Oath would handle real medical scenarios in deep space</em>
           </p>
 
           {currentCase === null ? (
@@ -83,7 +83,7 @@ export default function DemoSection() {
                   }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 >
-                  <Dice5 className="w-24 h-24 text-primary" />
+                  <Orbit className="w-24 h-24 text-primary" />
                 </motion.div>
               </motion.button>
             </motion.div>

@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 interface ContentSectionProps {
   title: string;
-  content: string;
+  content: React.ReactNode;
 }
 
 export default function ContentSection({ title, content }: ContentSectionProps) {

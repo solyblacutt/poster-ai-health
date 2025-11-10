@@ -352,4 +352,13 @@
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
   }
+
+  @layer base {
+    mark {
+      background-color: #21D2ED; /* fondo del resaltado */
+      color: #092326;            /* color del texto resaltado */
+      @apply px-1 rounded;       /* padding y bordes suaves */
+    }
+  }
+
 }

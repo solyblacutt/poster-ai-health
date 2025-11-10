@@ -19,7 +19,7 @@ export default function HippocraticOathButton({
 
   return (
     <>
-      <section className="py-48 px-6 relative">
+      <section className="py-80 px-6 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl" />
         </div>
@@ -53,7 +53,7 @@ export default function HippocraticOathButton({
               <img 
                 src={logoImage} 
                 alt="Hippocratic Oath" 
-                className="w-full h-full object-cover p-4"
+                className="w-full h-full rounded-full object-cover"
                 data-testid="img-oath-logo"
               />
             </motion.button>

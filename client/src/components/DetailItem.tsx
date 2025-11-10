@@ -7,6 +7,8 @@ interface DetailItemProps {
   description: string;
   icon: string;
   index: number;
+  bulletPoints?: React.ReactNode[];
+  closureText?: React.ReactNode;
 }
 
 const iconMap: Record<string, LucideIcon> = {
@@ -18,7 +20,7 @@ const iconMap: Record<string, LucideIcon> = {
   Cpu: Cpu
 };
 
-export default function DetailItem({ title, description, icon, index }: DetailItemProps) {
+export default function DetailItem({ title, description, icon, index,  bulletPoints, closureText }: DetailItemProps) {
   const IconComponent = iconMap[icon] || AlertCircle;
   
   return (
@@ -49,6 +51,19 @@ export default function DetailItem({ title, description, icon, index }: DetailIt
             {description}
           </p>
         </div>
+        {bulletPoints && bulletPoints.length > 0 && (
+          <ul className="mt-4 space-y-2 list-disc list-inside text-cyan-100">
+            {bulletPoints.map((bp, i) => (
+              <li key={i}>{bp}</li>
+            ))}
+          </ul>
+        )}
+
+        {closureText && (
+          <p className="mt-4 text-cyan-200/90">
+            {closureText}
+          </p>
+        )}
       </Card>
     </motion.div>
   );

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
-import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 interface TeamMember {
@@ -52,29 +52,12 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       />
       
       {/* Content: Logo, Title, Buttons */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center py-24 px-6">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-end pb-8 md:pb-12 px-6">
         <div className="container mx-auto text-center space-y-12">
-          {/* Logo at top with mix-blend-mode */}
-          <motion.div
-            className="flex justify-center mt-6 md:mt-10"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <img 
-              src={logoImage} 
-              alt="AI Poster Logo" 
-              className="w-48 h-48 md:w-64 md:h-64 object-contain"
-              style={{ mixBlendMode: 'multiply' }}
-              data-testid="img-hero-logo"
-            />
-          </motion.div>
-
           
           {/* Title */}
           <motion.h1
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-6xl md:max-w-7xl leading-[1.05] tracking-tight mx-auto"
-
+            className="mt-0 text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-6xl md:max-w-7xl leading-[1.05] tracking-tight mx-auto"
             style={{ fontFamily: "Space Grotesk, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +69,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
           {/* Team member buttons */}
           <motion.div
-            className="flex flex-wrap gap-4 justify-center items-center pt-8"
+            className="mt-2 md:mt-4 lg:mt-6 flex flex-wrap gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -139,7 +122,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
 
       <motion.button
         onClick={scrollToNext}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors z-20"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors z-20"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         data-testid="button-scroll-down"

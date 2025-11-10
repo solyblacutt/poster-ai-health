@@ -14,7 +14,7 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center">
           {/* Logo on the left */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -31,7 +31,7 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
           </motion.div>
 
           {/* Title and content on the right */}
-          <div className="relative">
+          <div className="md:col-span-3 relative">
             <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-cyan-500 to-transparent rounded-full" />
             
             <motion.h2 
@@ -57,6 +57,7 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
           </div>
         </div>
       </div>
+      
     </section>
   );
 }

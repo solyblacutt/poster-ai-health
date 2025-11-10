@@ -5,22 +5,25 @@ import DetailItem from "./DetailItem";
 
 interface DetailData {
   title: string;
-  description: string;
+  description: React.ReactNode;
   icon: string;
+  bulletPoints?: React.ReactNode[];
+  closureText?: React.ReactNode;
 }
+
 
 interface ComparativeSectionProps {
   title: string;
   comparatives: {
     title: string;
-    description: string;
+    description: React.ReactNode;
     details?: DetailData[];
     isExpandable?: boolean;
     icon?: string;
-    shortDescription?: string;
-    expandedDescription?: string;
-    bulletPoints?: string[];
-    closureText?: string;
+    shortDescription?: React.ReactNode;
+    expandedDescription?: React.ReactNode;
+    bulletPoints?: React.ReactNode[];
+    closureText?: React.ReactNode;
   }[];
 }
 
@@ -118,6 +121,8 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
                     description={detail.description}
                     icon={detail.icon}
                     index={detailIndex}
+                    bulletPoints={detail.bulletPoints}
+                    closureText={detail.closureText}
                   />
                 ))}
               </div>
