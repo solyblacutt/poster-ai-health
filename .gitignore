@@ -1,3 +1,6 @@
+# Replit (estado local)
+.local/
+.replit
 # Dependencias
 node_modules/
 
@@ -12,6 +15,13 @@ yarn-error.log*
 pnpm-debug.log*
 *.log
 
+
+# Logs y caches
+*.log
+.eslintcache
+.vscode/
+.DS_Store
+Thumbs.db
 # Entornos / secretos
 .env
 .env.*
