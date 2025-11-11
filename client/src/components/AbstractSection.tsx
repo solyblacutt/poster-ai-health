@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
+//import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
 import { Bot } from "lucide-react"; 
 
 interface AbstractSectionProps {

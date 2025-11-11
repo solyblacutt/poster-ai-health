@@ -262,7 +262,7 @@ export default function Home() {
             </em>
           </>
         }
-        logoIcon={<Bot className="w-12 h-12 text-accent" />}
+        //logoIcon={<Bot className="w-12 h-12 text-accent" />}
       />
 
       <IntroductionSection
