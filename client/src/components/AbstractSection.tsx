@@ -17,19 +17,22 @@ export default function AbstractSection({ content, logoIcon }: AbstractSectionPr
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center">
-          {/* Logo on the left */}
+          {/* Icon on the left */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="flex justify-center"
           >
-            <img 
-              src={IconComponent ? undefined : logoImage} 
-              alt="AI Poster Logo" 
-              className="w-64 h-64 md:w-80 md:h-80 object-contain"
-              data-testid="img-abstract-logo"
-            />
+            
+            {logoIcon ?? (
+              <Bot
+                className="w-64 h-64 md:w-80 md:h-80 text-accent"
+                strokeWidth={1.75}
+                aria-hidden="true"
+                data-testid="icon-abstract-logo"
+              />
+            )}
           </motion.div>
 
           {/* Title and content on the right */}

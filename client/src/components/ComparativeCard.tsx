@@ -43,7 +43,8 @@ export default function ComparativeCard({
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-3">
             {IconComponent && !isExpanded && (
-              <IconComponent className="w-8 h-8 text-cyan-400" data-testid={`icon-${title.toLowerCase().replace(/\s+/g, '-')}`} />
+              <IconComponent className="w-8 h-8 text-cyan-400" 
+              data-testid={`icon-${title.toLowerCase().replace(/\s+/g, '-')}`} />
             )}
             <h3 
               className="text-2xl font-semibold text-white md:text[80px]"
