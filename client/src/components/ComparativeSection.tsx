@@ -40,8 +40,8 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
     <section className="relative min-h-screen py-32 px-6">
       <div className="container mx-auto max-w-6xl">
         <h2 
-          className="text-4xl md:text-5xl font-bold mb-16 text-center text-white"
-          style={{ fontFamily: "Space Grotesk, sans-serif" }}
+          className="text-4xl font-bold mb-16 text-center text-white md:text[80px]"
+          style={{ fontFamily: "Arial, sans-serif" }}
           data-testid={`text-section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
         >
           {title}
