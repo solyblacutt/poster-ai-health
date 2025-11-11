@@ -72,6 +72,16 @@ This is a space-themed informative website built as a single-page application fe
   - `foreground/60` for tertiary text
 - **Purple/Aqua/Lime**: Ensured consistent use of the established color palette throughout
 
+### Audio Player for Closing Statement (November 11, 2025)
+- **New Feature**: Added audio player button in Hippocratic Oath dialog after the Closing Statement
+- **Audio File**: "Combined AI Voices_1762853557116.MP3" - audio recording of the closing oath statement
+- **Interactive Controls**: 
+  - Play/Pause toggle button with lucide-react icons
+  - Button displays "Play Closing Statement" (with Play icon) or "Pause Audio" (with Pause icon)
+  - Aqua border and glowing shadow effects matching the color palette
+- **Server Configuration**: Express server configured to serve attached_assets folder as static files
+- **Location**: Appears at the end of the Hippocratic Oath dialog content, after section "6. Closing statement"
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

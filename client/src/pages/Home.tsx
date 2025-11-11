@@ -8,6 +8,8 @@ import HippocraticOathButton from "@/components/HippocraticOathButton";
 import DemoSection from "@/components/DemoSection";
 import ReferencesSection from "@/components/ReferencesSection";
 import ISULogoSection from "@/components/ISULogoSection";
+import { Play, Pause } from "lucide-react";
+import { useState, useRef } from "react";
 
 // Citation component for superscript links to references
 const Citation = ({ refId }: { refId: number }) => (
@@ -19,6 +21,55 @@ const Citation = ({ refId }: { refId: number }) => (
     <sup>[{refId}]</sup>
   </a>
 );
+
+// Audio Player component for closing statement
+const AudioPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+  };
+
+  return (
+    <div className="flex items-center justify-center mt-6 mb-4">
+      <audio 
+        ref={audioRef} 
+        src="/attached_assets/Combined AI Voices_1762853557116.MP3"
+        onEnded={handleEnded}
+        data-testid="audio-closing-statement"
+      />
+      <button
+        onClick={togglePlay}
+        className="flex items-center gap-3 px-6 py-3 bg-accent/20 hover:bg-accent/30 border-2 border-accent rounded-full transition-all hover-elevate active-elevate-2 shadow-[0_0_20px_rgba(104,245,213,0.4)]"
+        data-testid="button-audio-play"
+      >
+        {isPlaying ? (
+          <>
+            <Pause className="w-5 h-5 text-accent" />
+            <span className="text-white font-medium">Pause Audio</span>
+          </>
+        ) : (
+          <>
+            <Play className="w-5 h-5 text-accent" />
+            <span className="text-white font-medium">Play Closing Statement</span>
+          </>
+        )}
+      </button>
+    </div>
+  );
+};
 
 export default function Home() {
   const comparative1Data = [
@@ -191,6 +242,8 @@ export default function Home() {
             <br /><br />
             <strong>“I commit to using intelligence— artificial or otherwise—to preserve life and prevent harm, respect autonomy instead of overriding, inform rather than imposing choices, thus promoting the flourishing of humanity.” </strong>
 
+            <br /><br />
+            <AudioPlayer />
             </>
         }
 
