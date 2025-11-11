@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 
 interface TeamMember {
   name: string;
-  profession: string;
+  background: string;
   contact: string;
   contribution: string;
 }
@@ -57,8 +57,8 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
           
           {/* Title */}
           <motion.h1
-            className="mt-0 text-3xl md:text-5xl lg:text-6xl font-bold text-white max-w-6xl md:max-w-7xl leading-[1.05] tracking-tight mx-auto"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className="mt-0  font-bold text-white max-w-6xl md:max-w-7xl leading-[1.05] tracking-tight mx-auto text-[40px] md:text-[60px]"
+            style={{ fontFamily: "Arial, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -96,7 +96,7 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
       <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
         <DialogContent className="bg-background/95 backdrop-blur-lg border-cyan-500/30">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold" style={{ color: '#286F65' }} data-testid="text-member-name">
+            <DialogTitle className="text-2xl font-bold" style={{ color: '#001454' }} data-testid="text-member-name">
               {selectedMember?.name}
             </DialogTitle>
             <DialogDescription className="sr-only">
@@ -105,15 +105,15 @@ export default function HeroSection({ title, teamMembers }: HeroSectionProps) {
           </DialogHeader>
           <div className="space-y-4 mt-4">
             <div>
-              <h3 className="text-sm font-semibold mb-1" style={{ color: '#286F65' }}>Contribution</h3>
+              <h3 className="text-sm font-semibold mb-1" style={{ color: '#001454' }}>Contribution</h3>
               <p className="text-foreground" data-testid="text-member-contribution">{selectedMember?.contribution}</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-1" style={{ color: '#286F65' }}>Profession</h3>
-              <p className="text-foreground" data-testid="text-member-profession">{selectedMember?.profession}</p>
+              <h3 className="text-sm font-semibold mb-1" style={{ color: '#001454' }}>Background</h3>
+              <p className="text-foreground" data-testid="text-member-profession">{selectedMember?.background}</p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold mb-1" style={{ color: '#286F65' }}>Contact</h3>
+              <h3 className="text-sm font-semibold mb-1" style={{ color: '#001454' }}>Contact</h3>
               <p className="text-foreground" data-testid="text-member-contact">{selectedMember?.contact}</p>
             </div>
           </div>

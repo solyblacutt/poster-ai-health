@@ -32,7 +32,7 @@ export default function ContentSection({ title, content }: ContentSectionProps) 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg text-foreground/80 leading-relaxed" 
+            className="text-lg text-white leading-relaxed" 
             data-testid={`text-${title.toLowerCase().replace(/\s+/g, '-')}-content`}
           >
             {content}

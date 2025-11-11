@@ -26,8 +26,8 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-3xl md:text-4xl font-bold mb-8 text-white"
-                style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                className="text-3xl md:text-[40px] font-bold mb-8 text-white"
+                style={{ fontFamily: "Arial, sans-serif" }}
                 data-testid="text-introduction-title"
               >
                 Introduction
@@ -37,7 +37,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg text-foreground/80 leading-relaxed" 
+                className="text-lg text-white leading-relaxed md:text-[20px]" 
                 data-testid="text-introduction-content"
               >
                 {content}
@@ -47,9 +47,9 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
 
           {/* Circular button - 1/4 width */}
           <motion.div 
-            className="flex-[1] flex items-start justify-center pt-16"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            className="flex-[1] flex items-center justify-center pt-26 md:pt-5 lg:pt-20"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={isInView ? { opacity: 0.9, scale: 1.5 } : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="relative">
@@ -58,13 +58,13 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                 onMouseLeave={() => setIsHovered(false)}
                 className="relative rounded-full border-4 border-accent overflow-hidden"
                 style={{
-                  width: isHovered ? '320px' : '160px',
-                  height: isHovered ? '320px' : '160px',
+                  width: isHovered ? '200px' : '160px',
+                  height: isHovered ? '200px' : '160px',
                   boxShadow: '0 0 30px rgba(104, 245, 213, 0.5), 0 0 60px rgba(104, 245, 213, 0.3)'
                 }}
                 animate={{
-                  width: isHovered ? '320px' : '160px',
-                  height: isHovered ? '320px' : '160px',
+                  width: isHovered ? '200px' : '160px',
+                  height: isHovered ? '200px' : '160px',
                   boxShadow: isHovered 
                     ? '0 0 40px rgba(104, 245, 213, 0.6), 0 0 80px rgba(104, 245, 213, 0.4)' 
                     : '0 0 30px rgba(104, 245, 213, 0.5), 0 0 60px rgba(104, 245, 213, 0.3)'
@@ -77,7 +77,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                     src={logoImage}
                     alt="AI Logo"
                     className="w-full h-full rounded-full object-cover"
-                    style={{ mixBlendMode: "multiply" }}
+                    style={{ mixBlendMode: "normal" }}
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     data-testid="img-intro-logo"
@@ -87,10 +87,11 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3, delay: 0.1 }}
-                    className="w-full h-full flex items-center justify-center p-8 bg-card/90 backdrop-blur-sm"
+                    className="w-full h-full flex items-center justify-center p-2 bg-white/90 backdrop-blur"
                   >
-                    <p className="text-sm text-foreground text-center leading-relaxed" data-testid="text-intro-hover">
-                      Communication delays from the Martian surface to Earth can reach 20 minutes or more. In the face of such substantial latency, the emergence of medical AI applications holds great potential as one solution to address this critical challenge.
+                    <p className="text-center leading-snug text-[14px] md:text-[12px] px-4 max-w-[90%] break-words" 
+                      data-testid="text-intro-hover">
+                      <em>Communication delays from the Martian surface to Earth can reach 20 minutes or more.</em>
                     </p>
                   </motion.div>
                 )}

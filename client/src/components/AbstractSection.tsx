@@ -38,19 +38,20 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-3xl md:text-4xl font-bold mb-8 text-white"
-              style={{ fontFamily: "Space Grotesk, sans-serif" }}
+              className="text-3xl font-bold mb-8  text-white md:text-[40px]"
+              style={{ fontFamily: "Arial, arial" }}
               data-testid="text-abstract-title"
             >
               Abstract
             </motion.h2>
-            
+          
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-foreground/80 leading-relaxed" 
+              className="text-lg text-white leading-relaxed md:text-[20px]" 
               data-testid="text-abstract-content"
+              style={{ fontFamily: "Arial" }}
             >
               {content}
             </motion.p>
@@ -61,3 +62,4 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
     </section>
   );
 }
+//  text-[14px] md:text-[12px] px-4 max-w-[90%]

@@ -68,16 +68,13 @@ export default function ReferencesSection() {
                 <span className="text-accent font-bold text-sm flex-shrink-0 mt-0.5">
                   [{ref.id}]
                 </span>
-                <p className="text-base text-foreground/80 leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   {ref.citation}
                 </p>
               </motion.div>
             ))}
           </div>
           
-          <p className="text-sm text-foreground/60 text-center mt-8 italic">
-            For a complete bibliography and detailed citations, please refer to the full research paper.
-          </p>
         </motion.div>
       </div>
     </section>

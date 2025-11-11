@@ -39,7 +39,7 @@ export default function ComparativeCard({
       onClick={isExpandable ? onToggle : undefined}
       data-testid={`card-comparative-${title.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-3">
             {IconComponent && !isExpanded && (

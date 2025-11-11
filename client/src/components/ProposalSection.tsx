@@ -35,7 +35,7 @@ export default function ProposalSection({ content }: ProposalSectionProps) {
                 initial={{ opacity: 0, y: -20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-4xl md:text-5xl font-bold mb-8 text-white text-center"
+                className="text-4xl md:text-5xl font-bold mb-8 text-black text-center"
                 style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 data-testid="text-proposal-title"
               >

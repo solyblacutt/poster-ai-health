@@ -10,7 +10,7 @@ interface Particle {
 }
 
 export default function SpaceBackground() {
-  const particles: Particle[] = Array.from({ length: 80 }, (_, i) => ({
+  const particles: Particle[] = Array.from({ length: 500 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
@@ -20,7 +20,7 @@ export default function SpaceBackground() {
   }));
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#0a1f1f] via-[#0f2d2d] to-[#0a1f1f]">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-b from-[#001454] via-[#0f2d2d] to-[#0a1f1f]">
       {particles.map((particle) => (
         <motion.div
           key={particle.id}

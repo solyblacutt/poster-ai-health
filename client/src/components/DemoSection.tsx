@@ -59,7 +59,7 @@ export default function DemoSection() {
             Interactive Demo
           </h2>
           
-          <p className="text-xl text-foreground/80 mb-12" data-testid="text-demo-subtitle">
+          <p className="text-xl text-cyan-100 mb-12" data-testid="text-demo-subtitle">
             <em>Explore how an AI Agent guided by the Hippocratic Oath would handle real medical scenarios in deep space</em>
           </p>
 
@@ -72,7 +72,7 @@ export default function DemoSection() {
             >
               <motion.button
                 onClick={handleDiceClick}
-                className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary shadow-[0_0_40px_rgba(110,55,166,0.6),0_0_80px_rgba(110,55,166,0.4)] hover-elevate active-elevate-2 transition-all bg-card/50 backdrop-blur-md flex items-center justify-center"
+                className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-primary shadow-[0_0_40px_rgba(10,155,166,0.6),0_0_80px_rgba(10,155,166,0.4)] hover-elevate active-elevate-2 transition-all bg-card/50 backdrop-blur-md flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-random-case"

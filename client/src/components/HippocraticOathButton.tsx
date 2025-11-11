@@ -71,17 +71,17 @@ export default function HippocraticOathButton({
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ duration: 0.3 }}
         >
-          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto backdrop-blur-md bg-card/95 border-2 border-accent shadow-[0_0_30px_rgba(104,245,213,0.6),0_0_60px_rgba(104,245,213,0.4),inset_0_0_20px_rgba(104,245,213,0.2)]">
+          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto backdrop-blur-md bg-primary/30 border-2 border-accent shadow-[0_0_30px_rgba(104,245,213,0.6),0_0_60px_rgba(104,245,213,0.4),inset_0_0_20px_rgba(104,245,213,0.2)]">
             <div className="relative p-8">
               <div className="absolute -top-8 -left-8 w-24 h-24 bg-accent/40 rounded-full blur-2xl animate-pulse" />
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-accent/40 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute top-1/2 left-0 w-2 h-24 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
-              <div className="absolute top-1/2 right-0 w-2 h-24 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
+              <div className="absolute top-1/2 left-0 w-2 h-64 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
+              <div className="absolute top-1/2 right-0 w-2 h-64 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
               
               <DialogHeader>
                 <DialogTitle 
                   className="text-4xl md:text-5xl font-bold mb-8 text-white text-center"
-                  style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                  style={{ fontFamily: "Arial, sans-serif" }}
                   data-testid="text-oath-title"
                 >
                   Hippocratic Oath
@@ -93,7 +93,7 @@ export default function HippocraticOathButton({
               
               <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-accent to-transparent" />
               
-              <div className="relative z-10 text-base text-foreground/90 leading-relaxed whitespace-pre-line">
+              <div className="relative z-10 text-base text-card leading-relaxed whitespace-pre-line">
                 {content}
               </div>
             </div>
