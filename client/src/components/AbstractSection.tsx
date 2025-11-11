@@ -2,15 +2,17 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
+import { Bot } from "lucide-react"; 
 
 interface AbstractSectionProps {
   content: React.ReactNode;
+  logoIcon?: React.ReactNode;
 }
 
-export default function AbstractSection({ content }: AbstractSectionProps) {
+export default function AbstractSection({ content, logoIcon }: AbstractSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+  const IconComponent = logoIcon ? logoIcon : Bot;
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
       <div className="container mx-auto max-w-6xl">
@@ -23,7 +25,7 @@ export default function AbstractSection({ content }: AbstractSectionProps) {
             className="flex justify-center"
           >
             <img 
-              src={logoImage} 
+              src={IconComponent ? undefined : logoImage} 
               alt="AI Poster Logo" 
               className="w-64 h-64 md:w-80 md:h-80 object-contain"
               data-testid="img-abstract-logo"

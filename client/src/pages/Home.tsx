@@ -8,7 +8,7 @@ import HippocraticOathButton from "@/components/HippocraticOathButton";
 import DemoSection from "@/components/DemoSection";
 import ReferencesSection from "@/components/ReferencesSection";
 import ISULogoSection from "@/components/ISULogoSection";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Bot } from "lucide-react";
 import { useState, useRef } from "react";
 
 // Citation component for superscript links to references
@@ -262,6 +262,7 @@ export default function Home() {
             </em>
           </>
         }
+        logoIcon={<Bot className="w-12 h-12 text-accent" />}
       />
 
       <IntroductionSection
