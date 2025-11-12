@@ -97,7 +97,7 @@ export default function DemoSection() {
                 transition={{ duration: 0.5 }}
                 className="space-y-8"
               >
-                <div className="bg-card/50 backdrop-blur-md border border-accent/30 rounded-lg p-8">
+                <div className="bg-white/5 backdrop-blur-md border border-cyan-500/30 transition-all duration-300 rounded-lg p-8">
                   <h3 className="text-xl font-semibold mb-4 text-accent" data-testid="text-case-study">
                     Case Study {currentCase + 1}
                   </h3>
