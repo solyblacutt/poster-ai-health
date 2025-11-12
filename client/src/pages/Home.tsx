@@ -13,6 +13,7 @@ import { useState, useRef } from "react";
 import AnimatedRobot from "@/components/AnimatedRobot";
 import { FaUserAstronaut, FaRegHandshake   } from "react-icons/fa";
 import { PiWarningCircleDuotone, PiPlanetFill  } from "react-icons/pi";
+import oathAudio from "@assets/Combined AI Voices 2.mp3";
 
 
 // Citation component for superscript links to references
@@ -339,7 +340,7 @@ export default function Home() {
       />
        <audio
         ref={oathAudioRef}
-        src="/assets/Combined AI Voices 2.MP3"
+        src={oathAudio}
         preload="auto"
       />
       <HippocraticOathButton
