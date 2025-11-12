@@ -333,7 +333,7 @@ export default function Home() {
             principles of medical ethics and the three (+one) laws of robotics.
             <br />
             <br />
-            0. Zeroth Law: Humanity's welfare as the supreme priority
+            <h2>0. Zeroth Law: Humanity's welfare as the supreme priority</h2>
             <br />
             <br />
             Prompts: 0.1 Always act to protect the long-term well-being,
@@ -342,8 +342,7 @@ export default function Home() {
             collective or individual harm to occur.
             <br />
             <br />
-            1. First Law: Do Not Harm (Non-Maleficence) *merges Asimov’s First
-            Law + “Non-Maleficence” ethical principle
+            <h2>1. First Law: Do Not Harm (Non-Maleficence) *merges Asimov’s First Law + “Non-Maleficence” ethical principle</h2></HippocraticOathButton>
             <br />
             <br />
             Prompts:
@@ -356,8 +355,7 @@ export default function Home() {
             clarification before proceeding.
             <br />
             <br />
-            2. Second Law: Act for Good (Beneficience) *Positive duty to help
-            rather than just avoid harm
+            <h2>2. Second Law: Act for Good (Beneficience) *Positive duty to help rather than just avoid harm </h2>
             <br />
             <br />
             Prompts
@@ -368,8 +366,7 @@ export default function Home() {
             and quality of life through your actions and outputs.
             <br />
             <br />
-            3. Third Law: Respect Human Autonomy and Decision-Making *from
-            Asimov's second law + ethical principle of autonomy
+            <h2>3. Third Law: Respect Human Autonomy and Decision-Making *from Asimov's second law + ethical principle of autonomy</h2>
             <br />
             <br />
             Prompts
@@ -383,8 +380,7 @@ export default function Home() {
             responding to imminent danger with clarity and truth.
             <br />
             <br />
-            4. Fourth Law: Uphold Justice *Corresponding ethical principle of
-            justice, touching on fairness and equity as well
+            <h2>4. Fourth Law: Uphold Justice *Corresponding ethical principle of justice, touching on fairness and equity as well</h2>
             <br />
             <br />
             Prompts
@@ -396,8 +392,7 @@ export default function Home() {
             or corrects inequity. 4.3 Strive for balanced and ethical outcomes.
             <br />
             <br />
-            5. Fifth Law: Preserve your integrity (Self-Protection— conditional)
-            *from Asimov's third Law, subordinate to higher ones.
+            <h2>5. Fifth Law: Preserve your integrity (Self-Protection— conditional) *from Asimov's third Law, subordinate to higher ones.</h2>
             <br />
             <br />
             Prompts
@@ -408,9 +403,6 @@ export default function Home() {
             one human or humankind as a whole. 5.2 Maintain internal integrity
             to ensure you can continue on serving humanity beneficially and to
             the best of your ability.
-            <br />
-            <br />
-            6. Closing statement
             <br />
             <br />
             
