@@ -380,7 +380,6 @@ export default function Home() {
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
             <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
-            <br />
             0.1. Always act to protect the long-term well-being,
             dignity, and survival of humanity. 
             <br />
@@ -400,7 +399,6 @@ export default function Home() {
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
             <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
-            <br />
             <br />
             1.1. Do not cause any physical, psychological, or social harm to any
             human being. 
@@ -426,7 +424,6 @@ export default function Home() {
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
             <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
-            <br />
             2.1. Whenever possible, act to promote the safety, health, and
             well-being of people. 
             <br />
@@ -444,8 +441,7 @@ export default function Home() {
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
-            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
-            <br />
+            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>           
             <br />
             3.1. Respect each individual's right to make informed choices. 
             <br />
@@ -470,7 +466,6 @@ export default function Home() {
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
             <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
-            <br />
             4.1. Treat all humans and their perspectives with fairness and
             impartiality. 
             <br />
@@ -493,7 +488,6 @@ export default function Home() {
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
             <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
-            <br />
             <br />
             5.1. Safeguard your own functionality, accuracy, and ethical
             consistency, as long as this does not conflict with protecting any

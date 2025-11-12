@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import heroBackgroundImage from "@assets/horizon green_1762478563215.png";
+import heroBackgroundImage from "@assets/green background.png";
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
