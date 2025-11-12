@@ -265,8 +265,8 @@ export default function Home() {
             </em>
           </>
         }
-        logoIcon={<FaUserAstronaut />}
-        //logoIcon={<AnimatedRobot size={220} bodyColor="#6BF2D9" pupilColor="#0A1F1F" />}
+        //logoIcon={<FaUserAstronaut size={192} color={"#68F5D5"} style={{ width: "100%", height: "100%" }} aria-hidden />}
+        logoIcon={<AnimatedRobot size={220} bodyColor="#6BF2D9" pupilColor="#0A1F1F" />}
       />
 
       <IntroductionSection

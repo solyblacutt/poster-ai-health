@@ -42,7 +42,7 @@ export default function AnimatedRobot({
   const onLeave = () => setDir({ x: 0, y: 0 });
 
   // pupil travel radius (in px) scales with size
-  const travel = Math.max(6, Math.round(size * 0.045));
+  const travel = Math.max(6, Math.round(size * 2));
 
   // Eye socket positions (percentages) tuned for PiRobotFill
   const leftEye  = { top: "42%", left: "41%" };
@@ -72,7 +72,7 @@ export default function AnimatedRobot({
           ...leftEye,
           width: size * 0.11,
           height: size * 0.11,
-          transform: "translate(-50%,-50%)",
+          transform: "translate(-40%,-40%)",
           background: eyeBg,
         }}
         aria-hidden
