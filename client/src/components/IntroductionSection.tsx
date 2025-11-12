@@ -2,13 +2,15 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
+import { PiPlanetFill } from "react-icons/pi";
 
 interface IntroductionSectionProps {
   title?: string;
   content: React.ReactNode;
+  logoIcon: React.ReactNode;
 }
 
-export default function IntroductionSection({ content }: IntroductionSectionProps) {
+export default function IntroductionSection({ content, logoIcon }: IntroductionSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isHovered, setIsHovered] = useState(false);
@@ -53,7 +55,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <div className="relative">
-              <motion.button
+              <motion.div
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 className="relative rounded-full border-4 border-accent overflow-hidden"
@@ -73,15 +75,16 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                 data-testid="button-intro-expand"
               >
                 {!isHovered ? (
-                  <motion.img
-                    src={logoImage}
-                    alt="AI Logo"
-                    className="w-full h-full rounded-full object-cover"
-                    style={{ mixBlendMode: "normal" }}
-                    initial={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    data-testid="img-intro-logo"
-                  />
+                  <motion.div>
+                    {logoIcon ?? (
+                      <PiPlanetFill
+                        className="w-64 h-64 md:w-200 md:h-200 text-accent"
+                        strokeWidth={1.75}
+                        aria-hidden="true"
+                        data-testid="icon-abstract-logo"
+                      />
+                    )}
+                  </motion.div>
                 ) : (
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -95,7 +98,7 @@ export default function IntroductionSection({ content }: IntroductionSectionProp
                     </p>
                   </motion.div>
                 )}
-              </motion.button>
+              </motion.div>
             </div>
           </motion.div>
         </div>

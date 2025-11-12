@@ -12,7 +12,7 @@ import { Play, Pause, Bot } from "lucide-react";
 import { useState, useRef } from "react";
 import AnimatedRobot from "@/components/AnimatedRobot";
 import { FaUserAstronaut, FaRegHandshake   } from "react-icons/fa";
-import { PiWarningCircleDuotone } from "react-icons/pi";
+import { PiWarningCircleDuotone, PiPlanetFill  } from "react-icons/pi";
 
 
 // Citation component for superscript links to references
@@ -289,6 +289,7 @@ export default function Home() {
             critical challenge.
           </>
         }
+        logoIcon={<PiPlanetFill size={220}  />}
       />
 
       <ComparativeSection
