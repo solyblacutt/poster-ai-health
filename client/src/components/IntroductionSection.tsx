@@ -51,56 +51,62 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
           <motion.div 
             className="flex-[1] flex items-center justify-center pt-26 md:pt-5 lg:pt-20"
             initial={{ opacity: 0, scale: 0.7 }}
-            animate={isInView ? { opacity: 0.9, scale: 1.5 } : { opacity: 1, scale: 1 }}
+            animate={isInView ? { opacity: 0.9, scale: 1.0 } : { opacity: 1, scale: 1.0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="relative">
+            {/* Wrapper sin semántica de botón */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              style={{ width: 120, height: 120 }} // tamaño base del área "hover"
+            >
+              {/* Capa 1: Ícono (solo en reposo) */}
               <motion.div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                className="relative rounded-full border-4 border-accent overflow-hidden"
-                style={{
-                  width: isHovered ? '200px' : '160px',
-                  height: isHovered ? '200px' : '160px',
-                  boxShadow: '0 0 30px rgba(104, 245, 213, 0.5), 0 0 60px rgba(104, 245, 213, 0.3)'
-                }}
-                animate={{
-                  width: isHovered ? '200px' : '160px',
-                  height: isHovered ? '200px' : '160px',
-                  boxShadow: isHovered 
-                    ? '0 0 40px rgba(104, 245, 213, 0.6), 0 0 80px rgba(104, 245, 213, 0.4)' 
-                    : '0 0 30px rgba(104, 245, 213, 0.5), 0 0 60px rgba(104, 245, 213, 0.3)'
-                }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                data-testid="button-intro-expand"
+                className="absolute inset-0 flex items-center justify-center"
+                animate={{ opacity: isHovered ? 0 : 1, scale: isHovered ? 0.9 : 1 }}
+                transition={{ duration: 0.25 }}
               >
-                {!isHovered ? (
-                  <motion.div>
-                    {logoIcon ?? (
-                      <PiPlanetFill
-                        className="w-64 h-64 md:w-200 md:h-200 text-accent"
-                        strokeWidth={1.75}
-                        aria-hidden="true"
-                        data-testid="icon-abstract-logo"
-                      />
-                    )}
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    className="w-full h-full flex items-center justify-center p-2 bg-white/90 backdrop-blur"
-                  >
-                    <p className="text-center leading-snug text-[14px] md:text-[12px] px-4 max-w-[90%] break-words" 
-                      data-testid="text-intro-hover">
-                      <em>Communication delays from the Martian surface to Earth can reach 20 minutes or more.</em>
-                    </p>
-                  </motion.div>
-                )}
+                {/* Usá tu icono; de ejemplo, PiPlanetFill de react-icons */}
+                {/* import { PiPlanetFill } from "react-icons/pi"; */}
+                <PiPlanetFill
+                  className="w-24 h-24 text-accent"
+                  aria-hidden="true"
+                />
+              </motion.div>
+            
+              {/* Capa 2: Círculo expansivo con texto (aparece en hover) */}
+              <motion.div
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center p-3"
+                initial={false}
+                animate={{
+                  width: isHovered ? 200 : 0,              // diámetro al expandir
+                  height: isHovered ? 200 : 0,
+                  borderRadius: isHovered ? 9999 : 0,
+                  backgroundColor: isHovered ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0)",
+                  borderWidth: isHovered ? 4 : 0,
+                  borderColor: "hsl(var(--accent))",
+                  boxShadow: isHovered
+                    ? "0 0 40px rgba(104,245,213,0.6), 0 0 80px rgba(104,245,213,0.4)"
+                    : "0 0 0 rgba(0,0,0,0)",
+                }}
+                transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                style={{ borderStyle: "solid" }}
+              >
+                <motion.p
+                  className="text-center leading-snug text-[14px] md:text-[12px] px-4 max-w-[90%] break-words text-foreground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isHovered ? 1 : 0 }}
+                  transition={{ duration: 0.25, delay: isHovered ? 0.08 : 0 }}
+                >
+                  <em>
+                    Communication delays from the Martian surface to Earth can reach 20+ minutes...
+                  </em>
+                </motion.p>
               </motion.div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

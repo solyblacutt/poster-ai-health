@@ -289,7 +289,7 @@ export default function Home() {
             critical challenge.
           </>
         }
-        logoIcon={<PiPlanetFill size={220}  />}
+        logoIcon={<PiPlanetFill size={220} color="#6BF2D9"  />}
       />
 
       <ComparativeSection
