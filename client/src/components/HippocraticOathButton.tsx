@@ -11,8 +11,8 @@ import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
 
 interface HippocraticOathButtonProps {
   content: React.ReactNode;
-  onOpen?: () => void;
-  onClose?: () => void;
+  onOpen?: () => void;   // called when modal opens
+  onClose?: () => void;  // called when modal closes
 }
 
 export default function HippocraticOathButton({
@@ -21,17 +21,17 @@ export default function HippocraticOathButton({
   onClose
 }: HippocraticOathButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
+
   const handleOpen = () => {
     setIsOpen(true);
-    onOpen?.(); // ⬅️ play audio from parent
+    onOpen?.();           // 🔊 play audio
   };
 
   const handleOpenChange = (open: boolean) => {
     setIsOpen(open);
-    if (open) onOpen?.();
-    else onClose?.(); // ⬅️ pause/stop when closing
+    if (open) onOpen?.(); // 🔊 play again if re-opened
+    else onClose?.();     // ⏹️ pause/rewind on close
   };
-  // Content is already structured as React nodes, no need to parse
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function HippocraticOathButton({
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto max-w-5xl relative z-10 flex justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -49,7 +49,7 @@ export default function HippocraticOathButton({
             className="relative"
           >
             <motion.button
-              onClick={() => setIsOpen(true)}
+              onClick={handleOpen}                     
               className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-accent shadow-[0_0_40px_rgba(104,245,213,0.6),0_0_80px_rgba(104,245,213,0.4)] hover-elevate active-elevate-2 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -66,9 +66,9 @@ export default function HippocraticOathButton({
                 }}
                 transition={{ duration: 2, repeat: Infinity }}
               />
-              <img 
-                src={logoImage} 
-                alt="Hippocratic Oath" 
+              <img
+                src={logoImage}
+                alt="Hippocratic Oath"
                 className="w-full h-full rounded-full object-cover"
                 data-testid="img-oath-logo"
               />
@@ -77,7 +77,7 @@ export default function HippocraticOathButton({
         </div>
       </section>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={handleOpenChange}> {/* ✅ wire change */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -90,9 +90,9 @@ export default function HippocraticOathButton({
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-accent/40 rounded-full blur-2xl animate-pulse" />
               <div className="absolute top-1/2 left-0 w-2 h-64 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
               <div className="absolute top-1/2 right-0 w-2 h-64 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
-              
+
               <DialogHeader>
-                <DialogTitle 
+                <DialogTitle
                   className="text-4xl md:text-5xl font-bold mb-8 text-white text-center"
                   style={{ fontFamily: "Arial, sans-serif" }}
                   data-testid="text-oath-title"
@@ -103,9 +103,9 @@ export default function HippocraticOathButton({
                   For Medical AI Agents in Deep Space
                 </DialogDescription>
               </DialogHeader>
-              
+
               <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-accent to-transparent" />
-              
+
               <div className="relative z-10 text-base text-card leading-relaxed whitespace-pre-line">
                 {content}
               </div>

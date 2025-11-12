@@ -80,17 +80,25 @@ const AudioPlayer = () => {
 
 export default function Home() {
   const oathAudioRef = useRef<HTMLAudioElement>(null);
+
   const playOathAudio = () => {
-    // user gesture from the button click allows playback (autoplay policies)
-    oathAudioRef.current?.play().catch(() => {
-      // If the browser blocks it for any reason, ignore or show a hint
-    });
+    const el = oathAudioRef.current;
+    if (!el) return;
+    try {
+      // If you want it to always start from the beginning:
+      el.currentTime = 0;
+      void el.play();
+    } catch (e) {
+      // Some browsers may still block; you can show a small hint if needed
+      // console.debug("Audio play blocked:", e);
+    }
   };
 
   const pauseOathAudio = () => {
-    if (!oathAudioRef.current) return;
-    oathAudioRef.current.pause();
-    oathAudioRef.current.currentTime = 0; // optional: rewind
+    const el = oathAudioRef.current;
+    if (!el) return;
+    el.pause();
+    el.currentTime = 0; // rewind on close
   };
 
     <div className="relative min-h-screen"></div>
@@ -214,6 +222,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <SpaceBackground />
+       <audio ref={oathAudioRef} src={oathAudio} preload="auto" />
 
       <HeroSection
         title="A Hippocratic Oath for Medical AI Agents | in Deep Space Missions"
