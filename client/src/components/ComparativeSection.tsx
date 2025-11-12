@@ -5,7 +5,7 @@ import DetailItem from "./DetailItem";
 
 interface DetailData {
   title: string;
-  description: React.ReactNode;
+  description: string;
   icon: string;
   bulletPoints?: React.ReactNode[];
   closureText?: React.ReactNode;
@@ -16,14 +16,14 @@ interface ComparativeSectionProps {
   title: string;
   comparatives: {
     title: string;
-    description: React.ReactNode;
+    description: string;
     details?: DetailData[];
     isExpandable?: boolean;
     icon?: string;
-    shortDescription?: React.ReactNode;
-    expandedDescription?: React.ReactNode;
-    bulletPoints?: React.ReactNode[];
-    closureText?: React.ReactNode;
+    shortDescription?: string;
+    expandedDescription?: string;
+    bulletPoints?: string[];
+    closureText?: string;
   }[];
 }
 
@@ -40,7 +40,7 @@ export default function ComparativeSection({ title, comparatives }: ComparativeS
     <section className="relative min-h-screen py-32 px-6">
       <div className="container mx-auto max-w-6xl">
         <h2 
-          className="text-4xl font-bold mb-16 text-center text-white md:text[80px]"
+          className="text-4xl font-bold mb-16 text-center text-white md:text[40px]"
           style={{ fontFamily: "Arial, sans-serif" }}
           data-testid={`text-section-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
         >

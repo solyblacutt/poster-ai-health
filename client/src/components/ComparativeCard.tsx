@@ -47,7 +47,7 @@ export default function ComparativeCard({
               data-testid={`icon-${title.toLowerCase().replace(/\s+/g, '-')}`} />
             )}
             <h3 
-              className="text-2xl font-semibold text-white md:text[80px]"
+              className="text-2xl font-semibold text-white md:text[24px]"
               style={{ fontFamily: "Arial, sans-serif" }}
               data-testid={`text-comparative-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
             >
@@ -65,7 +65,7 @@ export default function ComparativeCard({
                 <p className="text-cyan-200">{expandedDescription}</p>
               )}
               {bulletPoints && bulletPoints.length > 0 && (
-                <ul className="list-disc list-inside space-y-2 text-cyan-200 ml-4 md:text[20px]">
+                <ul className="list-disc list-inside space-y-2 text-cyan-200 ml-4 md:text[24px]">
                   {bulletPoints.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))}

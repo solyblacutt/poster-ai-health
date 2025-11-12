@@ -21,8 +21,8 @@ export default function ContentSection({ title, content }: ContentSectionProps) 
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold mb-8 text-white"
-            style={{ fontFamily: "Space Grotesk, sans-serif" }}
+            className="text-3xl md:text-[40px] font-bold mb-8 text-white"
+            style={{ fontFamily: "Arial, sans-serif" }}
             data-testid={`text-${title.toLowerCase().replace(/\s+/g, '-')}-title`}
           >
             {title}
@@ -32,7 +32,7 @@ export default function ContentSection({ title, content }: ContentSectionProps) 
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg text-white leading-relaxed" 
+            className="text-lg md:text-[24px] text-white leading-relaxed" 
             data-testid={`text-${title.toLowerCase().replace(/\s+/g, '-')}-content`}
           >
             {content}

@@ -52,14 +52,14 @@ export default function DemoSection() {
           className="text-center"
         >
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-8 text-white"
+            className="text-4xl md:text-[40px] font-bold mb-8 text-white"
             style={{ fontFamily: "Arial, sans-serif" }}
             data-testid="text-demo-title"
           >
             Interactive Demo
           </h2>
           
-          <p className="text-xl text-accent italic mb-12" data-testid="text-demo-subtitle">
+          <p className="text-xl md:text-[24px] text-accent italic mb-12" data-testid="text-demo-subtitle">
             <em>Explore how an AI Agent guided by the Hippocratic Oath would handle real medical scenarios in deep space</em>
           </p>
 

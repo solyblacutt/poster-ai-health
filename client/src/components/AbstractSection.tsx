@@ -56,7 +56,7 @@ export default function AbstractSection({ content, logoIcon }: AbstractSectionPr
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-white leading-relaxed md:text-[20px]" 
+              className="text-lg text-white leading-relaxed md:text-[24px]" 
               data-testid="text-abstract-content"
               style={{ fontFamily: "Arial" }}
             >
