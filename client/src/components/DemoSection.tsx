@@ -97,11 +97,11 @@ export default function DemoSection() {
                 transition={{ duration: 0.5 }}
                 className="space-y-8"
               >
-                <div className="bg-white/5 backdrop-blur-md border border-cyan-500/30 transition-all duration-300 rounded-lg p-8">
-                  <h3 className="text-xl font-semibold mb-4 text-accent" data-testid="text-case-study">
+                <div className="bg-white/5 backdrop-blur-md border-4 border-cyan-500/30 transition-all duration-300 rounded-lg p-8">
+                  <h3 className="md:text-[25px] font-semibold mb-4 text-accent" data-testid="text-case-study">
                     Case Study {currentCase + 1}
                   </h3>
-                  <p className="text-lg text-foreground leading-relaxed" data-testid="text-case-question">
+                  <p className="md:text-[20px] text-white leading-relaxed" data-testid="text-case-question">
                     {caseStudies[currentCase].question}
                   </p>
                 </div>
@@ -126,12 +126,12 @@ export default function DemoSection() {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     transition={{ duration: 0.5 }}
-                    className="bg-primary/10 backdrop-blur-md border border-primary/30 rounded-lg p-8"
+                    className="bg-primary/10 backdrop-blur-md border-4 border-cyan-500/30 rounded-lg p-8"
                   >
-                    <h3 className="text-xl font-semibold mb-4 text-primary" data-testid="text-ai-response-title">
+                    <h3 className="md:text-[25px] font-semibold mb-4 text-primary" data-testid="text-ai-response-title">
                       AI Agent Response
                     </h3>
-                    <p className="text-lg text-foreground leading-relaxed" data-testid="text-ai-response">
+                    <p className="md:text-[20px] text-white leading-relaxed" data-testid="text-ai-response">
                       {caseStudies[currentCase].response}
                     </p>
                   </motion.div>
