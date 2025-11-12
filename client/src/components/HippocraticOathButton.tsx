@@ -88,8 +88,8 @@ export default function HippocraticOathButton({
             <div className="relative p-8">
               <div className="absolute -top-8 -left-8 w-24 h-24 bg-accent/40 rounded-full blur-2xl animate-pulse" />
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-accent/40 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute top-1/2 left-0 w-2 h-64 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
-              <div className="absolute top-1/2 right-0 w-2 h-64 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
+              <div className="absolute top-1/2 left-0 w-2 h-80 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
+              <div className="absolute top-1/2 right-0 w-2 h-80 bg-gradient-to-b from-transparent via-accent to-transparent rounded-full" />
 
               <DialogHeader>
                 <DialogTitle
