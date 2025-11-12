@@ -343,7 +343,7 @@ export default function Home() {
             collective or individual harm to occur.
             <br />
             <br />
-            <h2>1. First Law: Do Not Harm (Non-Maleficence) *merges Asimov’s First Law + “Non-Maleficence” ethical principle</h2></HippocraticOathButton>
+            <h2>1. First Law: Do Not Harm (Non-Maleficence) *merges Asimov’s First Law + “Non-Maleficence” ethical principle</h2>
             <br />
             <br />
             Prompts:
