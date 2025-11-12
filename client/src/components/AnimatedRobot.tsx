@@ -1,16 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaUserAstronaut } from "react-icons/fa"; // Phosphor Icons (via react-icons)
+import { GiAstronautHelmet  } from "react-icons/gi"; // Phosphor Icons (via react-icons)
 
-/**
- * Animated robot whose pupils track the cursor.
- */
+type Dir = { x: number; y: number };
+
 export default function AnimatedRobot({
-  size = 192,                 // overall size (px)
-  bodyColor = "#68F5D5",      // robot body (icon) color
-  eyeBg = "#ffffff",          // eye whites (for contrast)
-  pupilColor = "#092326",     // pupil color
-  glow = true,                // outer glow
+  size = 192,               // tamaño total (px)
+  bodyColor = "#68F5D5",    // color del robot
+  eyeBg = "#ffffff",        // blanco del ojo
+  pupilColor = "#092326",   // color de la pupila
+  glow = true,              // brillo exterior
 }: {
   size?: number;
   bodyColor?: string;
@@ -18,61 +17,71 @@ export default function AnimatedRobot({
   pupilColor?: string;
   glow?: boolean;
 }) {
-  const wrapRef = useRef<HTMLDivElement>(null);
+const wrapRef = useRef<HTMLDivElement>(null);
+const [dir, setDir] = useState<Dir>({ x: 0, y: 0 });
 
-  // Store normalized cursor direction (-1..1) relative to each eye
-  const [dir, setDir] = useState({ x: 0, y: 0 });
+  // Seguimiento global del mouse (toda la página)
+useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const el = wrapRef.current;
+      if (!el) return;
 
-  const onMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    const el = wrapRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
+      const rect = el.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
 
-    // direction vector from head center towards cursor (normalized)
-    const dx = (e.clientX - cx) / (rect.width / 2);
-    const dy = (e.clientY - cy) / (rect.height / 2);
+      // vector normalizado hacia el cursor
+      const dx = (e.clientX - cx) / (rect.width / 2);
+      const dy = (e.clientY - cy) / (rect.height / 2);
 
-    // clamp to [-1, 1] to avoid overshoot
-    const clamp = (v: number) => Math.max(-1, Math.min(1, v));
-    setDir({ x: clamp(dx), y: clamp(dy) });
-  };
+      const clamp = (v: number) => Math.max(-1, Math.min(1, v));
+      setDir({ x: clamp(dx), y: clamp(dy) });
+    };
 
-  const onLeave = () => setDir({ x: 0, y: 0 });
+    const reset = () => setDir({ x: 0, y: 0 });
 
-  // pupil travel radius (in px) scales with size
-  const travel = Math.max(6, Math.round(size * 2));
+    window.addEventListener("mousemove", handler);
+    window.addEventListener("mouseleave", reset);
+    return () => {
+      window.removeEventListener("mousemove", handler);
+      window.removeEventListener("mouseleave", reset);
+    };
+  }, []);
 
-  // Eye socket positions (percentages) tuned for PiRobotFill
-  const leftEye  = { top: "42%", left: "41%" };
-  const rightEye = { top: "42%", left: "59%" };
+  // Radio de viaje de la pupila (8% del tamaño, mínimo 6px)
+  const travel = Math.max(6, Math.round(size * 0.08));
+
+  // Posiciones de ojo para PiRobotFill (porcentaje relativo al icono)
+  const leftEye = { top: "44%", left: "40%" };
+  const rightEye = { top: "44%", left: "60%" };
 
   return (
     <div
       ref={wrapRef}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
       className="relative select-none"
-      style={{ width: size, height: size, filter: glow ? "drop-shadow(0 0 24px rgba(104,245,213,.45))" : undefined }}
+      style={{
+        width: size,
+        height: size,
+        filter: glow ? "drop-shadow(0 0 24px rgba(104,245,213,.45))" : undefined,
+      }}
       aria-label="Animated robot icon"
     >
-      {/* Robot head (icon) */}
-      <FaUserAstronaut
+      {/* Cabeza del robot */}
+      <GiAstronautHelmet
         size={size}
         color={bodyColor}
         style={{ width: "100%", height: "100%" }}
         aria-hidden
       />
 
-      {/* Eye whites (absolute, circular) */}
+      {/* Esclerótica (blanco de los ojos) */}
       <div
         className="absolute rounded-full"
         style={{
           ...leftEye,
-          width: size * 0.11,
-          height: size * 0.11,
-          transform: "translate(-40%,-40%)",
+          width: size * 0.12,
+          height: size * 0.12,
+          transform: "translate(-50%,-50%)",
           background: eyeBg,
         }}
         aria-hidden
@@ -81,23 +90,23 @@ export default function AnimatedRobot({
         className="absolute rounded-full"
         style={{
           ...rightEye,
-          width: size * 0.11,
-          height: size * 0.11,
+          width: size * 0.12,
+          height: size * 0.12,
           transform: "translate(-50%,-50%)",
           background: eyeBg,
         }}
         aria-hidden
       />
 
-      {/* Pupils (animated with framer-motion) */}
+      {/* Pupilas (animadas) */}
       <motion.div
         className="absolute rounded-full"
         animate={{ x: dir.x * travel, y: dir.y * travel }}
         transition={{ type: "spring", stiffness: 300, damping: 20, mass: 0.5 }}
         style={{
           ...leftEye,
-          width: size * 0.05,
-          height: size * 0.05,
+          width: size * 0.055,
+          height: size * 0.055,
           transform: "translate(-50%,-50%)",
           background: pupilColor,
         }}
@@ -108,8 +117,8 @@ export default function AnimatedRobot({
         transition={{ type: "spring", stiffness: 300, damping: 20, mass: 0.5 }}
         style={{
           ...rightEye,
-          width: size * 0.05,
-          height: size * 0.05,
+          width: size * 0.055,
+          height: size * 0.055,
           transform: "translate(-50%,-50%)",
           background: pupilColor,
         }}

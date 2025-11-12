@@ -320,12 +320,12 @@ export default function Home() {
       <HippocraticOathButton
         content={
           <>
-          <strong>
+          <strong><h1>
               “I commit to using intelligence— artificial or otherwise—to
               preserve life and prevent harm, respect autonomy instead of
               overriding, inform rather than imposing choices, thus promoting
               the flourishing of humanity.”{" "}
-            </strong>
+            </h1></strong>
             <br />
             <br />
           <AudioPlayer />
