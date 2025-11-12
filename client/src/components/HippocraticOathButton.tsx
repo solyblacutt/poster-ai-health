@@ -106,7 +106,7 @@ export default function HippocraticOathButton({
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="w-24 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-accent to-transparent" />
+              <div className="w-35 h-1 mx-auto mb-8 bg-gradient-to-r from-transparent via-accent to-transparent" />
 
               <div className="relative z-10 text-base text-card leading-relaxed whitespace-pre-line">
                 {content}
