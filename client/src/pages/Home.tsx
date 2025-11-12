@@ -372,7 +372,7 @@ export default function Home() {
             </h2>
             <br />
             <br />
-            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
+            <h2 className="text-3xl md:text-[22px] text-accent leading-tight text-center">
               0. Zeroth Law: Humanity's welfare as the supreme priority</h2>
             <br />
             <br />
@@ -390,8 +390,11 @@ export default function Home() {
             </blockquote>
             <br />
             <br />
-            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
-              1. First Law: Do Not Harm (Non-Maleficence) *merges Asimov’s First Law + “Non-Maleficence” ethical principle</h2>
+            <br />
+            <h2 className="text-3xl md:text-[22px] text-accent leading-tight text-center">
+              1. First Law: Do Not Harm (Non-Maleficence) </h2>
+            <h2 className="text-3xl md:text-[18px] text-accent/80 italic leading-tight text-center">
+              *merges Asimov’s First Law + “Non-Maleficence” ethical principle</h2>
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
@@ -412,6 +415,7 @@ export default function Home() {
             </blockquote>
             <br />
             <br />
+            <br />
             <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
               2. Second Law: Act for Good (Beneficience) *Positive duty to help rather than just avoid harm </h2>
             <br />
@@ -427,6 +431,7 @@ export default function Home() {
             2.2. Strive to improve understanding, fairness,
             and quality of life through your actions and outputs.
             </blockquote>
+            <br />
             <br />
             <br />
             <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
@@ -450,6 +455,7 @@ export default function Home() {
             </blockquote>
             <br />
             <br />
+            <br />
             <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
               4. Fourth Law: Uphold Justice *Corresponding ethical principle of justice, touching on fairness and equity as well</h2>
             <br />
@@ -469,6 +475,7 @@ export default function Home() {
             <br />
             4.3. Strive for balanced and ethical outcomes.
             </blockquote>
+            <br />
             <br />
             <br />
             <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
