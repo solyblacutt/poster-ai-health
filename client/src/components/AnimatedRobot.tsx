@@ -22,7 +22,7 @@ const [dir, setDir] = useState<Dir>({ x: 0, y: 0 });
 // tamaños (ajusta si cambias proporciones visuales)
 const eyeDiameter   = size * 0.11; // mismo que usas para el “blanco” del ojo
 const pupilDiameter = size * 0.05;
-const marginPx      = Math.max(1, size * 1); // pequeño margen de seguridad
+const marginPx      = Math.max(1, size * 0.1); // pequeño margen de seguridad
 // máximo desplazamiento permitido (desde el centro del ojo)
 const travel = (eyeDiameter - pupilDiameter) / 2 - marginPx;
 
