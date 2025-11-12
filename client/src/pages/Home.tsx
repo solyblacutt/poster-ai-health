@@ -125,6 +125,9 @@ export default function Home() {
               question of legal accountability and responsibility for medical
               decisions limits the use of AI.
               <Citation refId={1} />
+              <br />
+              <br />
+              There have been recent cases where AI has demonstrated harmful potential, especially in mental health cases, which sadly have led to at least three suicides.
             </>
           ),
           icon: "PiWarningCircleDuotone",
@@ -308,13 +311,13 @@ export default function Home() {
             bioethics is that under conditions of extreme distance and
             isolation, the ethical priority shifts to mission and crew survival,
             which necessitates limited autonomous functions. Such autonomy must
-            be supported by safeguards to ensure (1) data accuracy through
-            validated and inclusive professional datasets, (2) traceability of
-            AI decisions by providing explained logs documenting critical
-            decision pathways, (3) periodic supervision by licensed medical
-            professionals and implemented review mechanisms. AI outputs must not
-            serve as the sole basis for final medical judgments, and (4) clear
-            reporting protocols for high-risk medical situations.
+            be supported by safeguards to ensure 
+            <ul>
+              <li>Data accuracy through validated and inclusive professional datasets,</li>
+              <li>Traceability of AI decisions by providing explained logs documenting critical decision pathways,</li>
+              <li>Periodic supervision by licensed medical professionals and implemented review mechanisms. AI outputs must not serve as the sole basis for final medical judgments, and</li>
+              <li>Clear reporting protocols for high-risk medical situations.</li>
+            </ul>
           </>
         }
       />
