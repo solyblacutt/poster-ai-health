@@ -11,6 +11,7 @@ import ISULogoSection from "@/components/ISULogoSection";
 import { Play, Pause, Bot } from "lucide-react";
 import { useState, useRef } from "react";
 import AnimatedRobot from "@/components/AnimatedRobot";
+import { FaUserAstronaut } from "react-icons/fa";
 
 
 // Citation component for superscript links to references
@@ -264,7 +265,8 @@ export default function Home() {
             </em>
           </>
         }
-        logoIcon={<AnimatedRobot size={220} bodyColor="#6BF2D9" pupilColor="#0A1F1F" />}
+        logoIcon={<FaUserAstronaut />}
+        //logoIcon={<AnimatedRobot size={220} bodyColor="#6BF2D9" pupilColor="#0A1F1F" />}
       />
 
       <IntroductionSection
