@@ -359,7 +359,7 @@ export default function Home() {
           <>
           <br />
           <br />
-          <h1 className="text-3xl md:text-[60px] font-bold italic text-white leading-tight text-center">
+          <h1 className="text-3xl md:text-[30px] font-bold italic text-white leading-tight text-center">
             “I commit to using intelligence— artificial or otherwise—to
             preserve life and prevent harm, respect autonomy instead of
             overriding, inform rather than imposing choices, thus promoting
@@ -367,7 +367,7 @@ export default function Home() {
           </h1>
             <br />
             <br />
-            <h1 className="text-3xl md:text-[40px] italic text-white leading-tight text-center">
+            <h1 className="text-3xl md:text-[18px] italic text-white leading-tight text-center">
               “I commit to using intelligence— artificial or otherwise—to
               preserve life and prevent harm, respect autonomy instead of
               overriding, inform rather than imposing choices, thus promoting
