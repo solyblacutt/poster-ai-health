@@ -128,7 +128,7 @@ export default function DemoSection() {
                     transition={{ duration: 0.5 }}
                     className="bg-primary/10 backdrop-blur-md border-4 border-cyan-500/30 rounded-lg p-8"
                   >
-                    <h3 className="md:text-[25px] font-semibold mb-4 text-primary" data-testid="text-ai-response-title">
+                    <h3 className="md:text-[25px] font-semibold mb-4 text-accent" data-testid="text-ai-response-title">
                       AI Agent Response
                     </h3>
                     <p className="md:text-[20px] text-white leading-relaxed" data-testid="text-ai-response">
