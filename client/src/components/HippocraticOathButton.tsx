@@ -101,6 +101,8 @@ export default function HippocraticOathButton({
                 </DialogTitle>
                 <DialogDescription className="text-lg text-accent text-center mb-4">
                   For Medical AI Agents in Deep Space
+                  <><br />
+                  <br /></>
                 </DialogDescription>
               </DialogHeader>
 

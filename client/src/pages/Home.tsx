@@ -359,15 +359,14 @@ export default function Home() {
           <>
           <br />
           <br />
-          <strong><h1><em>
-              “I commit to using intelligence— artificial or otherwise—to
-              preserve life and prevent harm, respect autonomy instead of
-              overriding, inform rather than imposing choices, thus promoting
-              the flourishing of humanity.”{" "}
-            </em></h1></strong>
+          <h1 className="text-3xl md:text-5xl font-bold italic text-white leading-tight text-center">
+            “I commit to using intelligence— artificial or otherwise—to
+            preserve life and prevent harm, respect autonomy instead of
+            overriding, inform rather than imposing choices, thus promoting
+            the flourishing of humanity.”
+          </h1>
             <br />
             <br />
-          <AudioPlayer />
             Prompt-based ethical constitution, based on the four western
             principles of medical ethics and the three (+one) laws of robotics.
             <br />
