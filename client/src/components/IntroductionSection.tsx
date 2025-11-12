@@ -69,7 +69,7 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
               >
                 {/* Usá tu icono; de ejemplo, PiPlanetFill de react-icons */}
                 {/* import { PiPlanetFill } from "react-icons/pi"; */}
-                <PiPlanetFill size={700} className="text-accent" aria-hidden="true" />
+                <PiPlanetFill size={700} className="w-64 h-64 md:w-200 md:h-200 text-accent" aria-hidden="true" />
 
               </motion.div>
 
