@@ -339,7 +339,7 @@ export default function Home() {
       />
        <audio
         ref={oathAudioRef}
-        src="/attached_assets/Combined AI Voices_1762853557116.MP3"
+        src="/assets/Combined AI Voices 2.MP3"
         preload="auto"
       />
       <HippocraticOathButton
