@@ -365,7 +365,7 @@ export default function Home() {
             overriding, inform rather than imposing choices, thus promoting
             the flourishing of humanity.”
           </h1>
-            <br />
+            <br /> 
             <br />
             <h2 className="text-3xl md:text-[16px] italic text-white/80 leading-tight text-center">
               Prompt-based ethical constitution, based on the four western principles of medical ethics and the three (+one) laws of robotics.
