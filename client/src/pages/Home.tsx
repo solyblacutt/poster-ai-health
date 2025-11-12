@@ -121,7 +121,7 @@ export default function Home() {
         "Self-learning and feedback mechanisms",
       ],
       closureText:(
-        <>Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in areas such as medications used by astronauts, wearable and biometric monitoring/data analysis, risk prediction and decision-support systems, application to training optimization, and medical decision-support in-flight and pre-flight.",
+        <>Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in areas such as medications used by astronauts, wearable and biometric monitoring/data analysis, risk prediction and decision-support systems, application to training optimization, and medical decision-support in-flight and pre-flight.
       <Citation refId={3} />
       <Citation refId={4} />
       </>
@@ -347,11 +347,12 @@ export default function Home() {
             isolation, the ethical priority shifts to mission and crew survival,
             which necessitates limited autonomous functions. Such autonomy must
             be supported by safeguards to ensure:
+            <br />
             <ul className="list-disc pl-6">
-              <li>Data accuracy through validated and inclusive professional datasets,</li>
-              <li>Traceability of AI decisions by providing explained logs documenting critical decision pathways,</li>
-              <li>Periodic supervision by licensed medical professionals and implemented review mechanisms. AI outputs must not serve as the sole basis for final medical judgments, and</li>
-              <li>Clear reporting protocols for high-risk medical situations.</li>
+              <li>Data accuracy through validated and inclusive professional datasets</li>
+              <li>Traceability of AI decisions by providing explained logs documenting critical decision pathways</li>
+              <li>Periodic supervision by licensed medical professionals and implemented review mechanisms. AI outputs must not serve as the sole basis for final medical judgments</li>
+              <li>Clear reporting protocols for high-risk medical situations</li>
             </ul>
           </>
         }

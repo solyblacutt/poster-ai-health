@@ -17,7 +17,8 @@ const iconMap: Record<string, LucideIcon> = {
   AlertCircle: AlertCircle,
   Clock: Clock,
   BarChart: BarChart,
-  Cpu: Cpu
+  Cpu: Cpu,
+  Handshake: Handshake,
 };
 
 export default function DetailItem({ title, description, icon, index,  bulletPoints, closureText }: DetailItemProps) {

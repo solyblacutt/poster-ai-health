@@ -50,7 +50,7 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
 
           {/* Circular button - 1/4 width */}
           <motion.div 
-            className="flex-[1] flex items-center justify-center pt-26 md:pt-5 lg:pt-20"
+            className="flex-[1] flex items-center justify-center pt-20 md:pt-5 lg:pt-20"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={isInView ? { opacity: 0.9, scale: 1.0 } : { opacity: 1, scale: 1.0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
