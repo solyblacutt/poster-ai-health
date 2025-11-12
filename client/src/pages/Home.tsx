@@ -359,7 +359,7 @@ export default function Home() {
           <>
           <br />
           <br />
-          <h1 className="text-3xl md:text-5xl font-bold italic text-white leading-tight text-center">
+          <h1 className="text-3xl md:text-[60px] font-bold italic text-white leading-tight text-center">
             “I commit to using intelligence— artificial or otherwise—to
             preserve life and prevent harm, respect autonomy instead of
             overriding, inform rather than imposing choices, thus promoting
@@ -367,8 +367,12 @@ export default function Home() {
           </h1>
             <br />
             <br />
-            Prompt-based ethical constitution, based on the four western
-            principles of medical ethics and the three (+one) laws of robotics.
+            <h1 className="text-3xl md:text-[40px] italic text-white leading-tight text-center">
+              “I commit to using intelligence— artificial or otherwise—to
+              preserve life and prevent harm, respect autonomy instead of
+              overriding, inform rather than imposing choices, thus promoting
+              the flourishing of humanity.”
+            </h1>
             <br />
             <br />
             <h2>0. Zeroth Law: Humanity's welfare as the supreme priority</h2>
