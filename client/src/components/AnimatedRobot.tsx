@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { PiRobotFill } from "react-icons/pi"; // Phosphor Icons (via react-icons)
+import { FaUserAstronaut } from "react-icons/fa"; // Phosphor Icons (via react-icons)
 
 /**
  * Animated robot whose pupils track the cursor.
@@ -58,7 +58,7 @@ export default function AnimatedRobot({
       aria-label="Animated robot icon"
     >
       {/* Robot head (icon) */}
-      <PiRobotFill
+      <FaUserAstronaut
         size={size}
         color={bodyColor}
         style={{ width: "100%", height: "100%" }}
