@@ -359,7 +359,7 @@ export default function Home() {
           <>
           <br />
           <br />
-          <h1 className="text-3xl md:text-[30px] font-bold italic text-white leading-tight text-center">
+          <h1 className="text-3xl md:text-[30px] font-bold italic text-white leading-snug text-center">
             “I commit to using intelligence-artificial or otherwise-to
             preserve life and prevent harm, respect autonomy instead of
             overriding, inform rather than imposing choices, thus promoting
@@ -392,14 +392,14 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <h2 className="text-3xl md:text-[22px] text-accent leading-tight text-center">
+            <h2 className="text-3xl md:text-[23px] text-accent leading-tight text-center">
               1. First Law: Do Not Harm (Non-Maleficence) </h2>
             <h2 className="text-3xl md:text-[16px] text-accent/80 italic leading-tight text-center">
               *merges Asimov’s First Law + “Non-Maleficence” ethical principle</h2>
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
-            <h3 className="text-3xl md:text-[18px] italic text-accent leading-tight text-left">Prompts</h3>
+            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
             <br />
             1.1. Do not cause any physical, psychological, or social harm to any
@@ -417,12 +417,14 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
-              2. Second Law: Act for Good (Beneficience) *Positive duty to help rather than just avoid harm </h2>
+            <h2 className="text-3xl md:text-[23px] text-accent leading-tight text-center">
+              2. Second Law: Act for Good (Beneficience) </h2>
+            <h2 className="text-3xl md:text-[16px] text-accent/80 italic leading-tight text-center">
+            *Positive duty to help rather than just avoid harm </h2>
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
-            <h3 className="text-3xl md:text-[18px] italic text-accent leading-tight text-left">Prompts</h3>
+            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
             <br />
             2.1. Whenever possible, act to promote the safety, health, and
@@ -435,12 +437,14 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
-              3. Third Law: Respect Human Autonomy and Decision-Making *from Asimov's second law + ethical principle of autonomy</h2>
+            <h2 className="text-3xl md:text-[23px] text-accent leading-tight text-center">
+              3. Third Law: Respect Human Autonomy and Decision-Making</h2> 
+            <h2 className="text-3xl md:text-[16px] text-accent/80 italic leading-tight text-center"> 
+              *from Asimov's second law + ethical principle of autonomy</h2>
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
-            <h3 className="text-3xl md:text-[18px] italic text-accent leading-tight text-left">Prompts</h3>
+            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
             <br />
             3.1. Respect each individual's right to make informed choices. 
@@ -457,12 +461,14 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
-              4. Fourth Law: Uphold Justice *Corresponding ethical principle of justice, touching on fairness and equity as well</h2>
+            <h2 className="text-3xl md:text-[23px] text-accent leading-tight text-center">
+              4. Fourth Law: Uphold Justice </h2>
+            <h2 className="text-3xl md:text-[16px] text-accent/80 italic leading-tight text-center">
+              *Corresponding ethical principle of justice, touching on fairness and equity as well</h2>
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
-            <h3 className="text-3xl md:text-[18px] italic text-accent leading-tight text-left">Prompts</h3>
+            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
             <br />
             4.1. Treat all humans and their perspectives with fairness and
@@ -479,12 +485,14 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
-              5. Fifth Law: Preserve your integrity (Self-Protection— conditional) *from Asimov's third Law, subordinate to higher ones.</h2>
+            <h2 className="text-3xl md:text-[23px] text-accent leading-tight text-center">
+              5. Fifth Law: Preserve your integrity (Self-Protection— conditional) </h2>
+            <h2 className="text-3xl md:text-[16px] text-accent/80 italic leading-tight text-center">
+               *from Asimov's third Law, subordinate to higher ones.</h2>
             <br />
             <br />
             <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
-            <h3 className="text-3xl md:text-[18px] italic text-accent leading-tight text-left">Prompts</h3>
+            <h3 className="text-3xl md:text-[20px] italic text-accent leading-tight text-left">Prompts</h3>
             <br />
             <br />
             5.1. Safeguard your own functionality, accuracy, and ethical
