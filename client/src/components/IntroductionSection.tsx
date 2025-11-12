@@ -69,12 +69,10 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
               >
                 {/* Usá tu icono; de ejemplo, PiPlanetFill de react-icons */}
                 {/* import { PiPlanetFill } from "react-icons/pi"; */}
-                <PiPlanetFill
-                  className="w-24 h-24 text-accent"
-                  aria-hidden="true"
-                />
+                <PiPlanetFill size={128} className="text-accent" aria-hidden="true" />
+
               </motion.div>
-            
+
               {/* Capa 2: Círculo expansivo con texto (aparece en hover) */}
               <motion.div
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden flex items-center justify-center p-3"
