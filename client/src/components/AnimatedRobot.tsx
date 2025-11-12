@@ -19,6 +19,13 @@ export default function AnimatedRobot({
 }) {
 const wrapRef = useRef<HTMLDivElement>(null);
 const [dir, setDir] = useState<Dir>({ x: 0, y: 0 });
+// tamaños (ajusta si cambias proporciones visuales)
+const eyeDiameter   = size * 0.11; // mismo que usas para el “blanco” del ojo
+const pupilDiameter = size * 0.05;
+const marginPx      = Math.max(1, size * 0.01); // pequeño margen de seguridad
+// máximo desplazamiento permitido (desde el centro del ojo)
+const travel = (eyeDiameter - pupilDiameter) / 2 - marginPx;
+
 
   // Seguimiento global del mouse (toda la página)
 useEffect(() => {
@@ -31,11 +38,16 @@ useEffect(() => {
       const cy = rect.top + rect.height / 2;
 
       // vector normalizado hacia el cursor
-      const dx = (e.clientX - cx) / (rect.width / 2);
-      const dy = (e.clientY - cy) / (rect.height / 2);
+      let dx = (e.clientX - cx) / (rect.width / 2);
+      let dy = (e.clientY - cy) / (rect.height / 2);
 
-      const clamp = (v: number) => Math.max(-1, Math.min(1, v));
-      setDir({ x: clamp(dx), y: clamp(dy) });
+      // limita por longitud (círculo), no por componente (cuadrado)
+    const len = Math.hypot(dx, dy);
+    if (len > 1) { dx /= len; dy /= len; }
+
+    setDir({ x: dx, y: dy });
+      //const clamp = (v: number) => Math.max(-1, Math.min(1, v));
+      //setDir({ x: clamp(dx), y: clamp(dy) });
     };
 
     const reset = () => setDir({ x: 0, y: 0 });
@@ -49,7 +61,7 @@ useEffect(() => {
   }, []);
 
   // Radio de viaje de la pupila (8% del tamaño, mínimo 6px)
-  const travel = Math.max(6, Math.round(size * 0.08));
+  //const travel = Math.max(6, Math.round(size * 0.08));
 
   // Posiciones de ojo para PiRobotFill (porcentaje relativo al icono)
   const leftEye = { top: "44%", left: "40%" };
@@ -105,8 +117,8 @@ useEffect(() => {
         transition={{ type: "spring", stiffness: 300, damping: 20, mass: 0.5 }}
         style={{
           ...leftEye,
-          width: size * 0.055,
-          height: size * 0.055,
+          width: pupilDiameter,
+          height: pupilDiameter,
           transform: "translate(-50%,-50%)",
           background: pupilColor,
         }}
@@ -117,8 +129,8 @@ useEffect(() => {
         transition={{ type: "spring", stiffness: 300, damping: 20, mass: 0.5 }}
         style={{
           ...rightEye,
-          width: size * 0.055,
-          height: size * 0.055,
+          width: pupilDiameter,
+          height: pupilDiameter,
           transform: "translate(-50%,-50%)",
           background: pupilColor,
         }}

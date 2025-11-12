@@ -11,7 +11,8 @@ import ISULogoSection from "@/components/ISULogoSection";
 import { Play, Pause, Bot } from "lucide-react";
 import { useState, useRef } from "react";
 import AnimatedRobot from "@/components/AnimatedRobot";
-import { FaUserAstronaut } from "react-icons/fa";
+import { FaUserAstronaut, FaRegHandshake   } from "react-icons/fa";
+import { PiWarningCircleDuotone } from "react-icons/pi";
 
 
 // Citation component for superscript links to references
@@ -126,7 +127,7 @@ export default function Home() {
               <Citation refId={1} />
             </>
           ),
-          icon: "Scale",
+          icon: "PiWarningCircleDuotone",
         },
         {
           title: "Ethics",
@@ -156,7 +157,7 @@ export default function Home() {
               ethical standards beyond Earth.
             </>
           ),
-          icon: "Users",
+          icon: "Scale",
         },
         {
           title: "Symbiotic Relationship",
@@ -184,7 +185,7 @@ export default function Home() {
               be able to implement and follow.
             </>
           ),
-          icon: "AlertCircle",
+          icon: "FaRegHandshake",
         },
       ],
     },
