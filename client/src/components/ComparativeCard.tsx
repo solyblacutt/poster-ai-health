@@ -47,7 +47,7 @@ export default function ComparativeCard({
               data-testid={`icon-${title.toLowerCase().replace(/\s+/g, '-')}`} />
             )}
             <h3 
-              className="text-2xl font-semibold text-white md:text[24px]"
+              className="text-3xl font-semibold text-white md:text[24px]"
               style={{ fontFamily: "Arial, sans-serif" }}
               data-testid={`text-comparative-title-${title.toLowerCase().replace(/\s+/g, '-')}`}
             >

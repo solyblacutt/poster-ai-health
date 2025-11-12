@@ -115,7 +115,7 @@ export default function DemoSection() {
                     <Button
                       onClick={() => setShowResponse(true)}
                       size="lg"
-                      className="bg-primary/80 hover:bg-primary text-primary-foreground border-2 border-primary"
+                      className="bg-primary/80 hover:bg-primary text-primary-foreground border-2 border-primary md:text-[16px]"
                       data-testid="button-show-response"
                     >
                       How would an AI Agent do it?
@@ -148,7 +148,7 @@ export default function DemoSection() {
                     className="border-accent/50 text-accent hover:bg-accent/10"
                     data-testid="button-restart-demo"
                   >
-                    <RotateCcw className="w-4 h-4 mr-2" />
+                    <RotateCcw className="w-4 h-4 mr-2 md:text-[16px]" />
                     Try Another Case
                   </Button>
                 </motion.div>
