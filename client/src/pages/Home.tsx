@@ -8,11 +8,11 @@ import HippocraticOathButton from "@/components/HippocraticOathButton";
 import DemoSection from "@/components/DemoSection";
 import ReferencesSection from "@/components/ReferencesSection";
 import ISULogoSection from "@/components/ISULogoSection";
-import { Play, Pause, Bot } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import { useState, useRef } from "react";
 import AnimatedRobot from "@/components/AnimatedRobot";
-import { FaUserAstronaut, FaRegHandshake   } from "react-icons/fa";
-import { PiWarningCircleDuotone, PiPlanetFill  } from "react-icons/pi";
+import { FaRegHandshake } from "react-icons/fa";
+import { PiPlanetFill  } from "react-icons/pi";
 import oathAudio from "@assets/Combined AI Voices 2.mp3";
 
 
@@ -120,8 +120,12 @@ export default function Home() {
         "Chatbots / virtual assistants",
         "Self-learning and feedback mechanisms",
       ],
-      closureText:
-        "Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in areas such as medications used by astronauts, wearable and biometric monitoring/data analysis, risk prediction and decision-support systems, application to training optimization, and medical decision-support in-flight and pre-flight.",
+      closureText:(
+        <>Regarding astronaut health support, AI is not yet operational but demonstrations and tests are being conducted to move towards practical application in areas such as medications used by astronauts, wearable and biometric monitoring/data analysis, risk prediction and decision-support systems, application to training optimization, and medical decision-support in-flight and pre-flight.",
+      <Citation refId={3} />
+      <Citation refId={4} />
+      </>
+      ),
       isExpandable: true,
     },
     {
@@ -141,6 +145,7 @@ export default function Home() {
               overfitting and mistakes regarding the importance of certain
               features and outcomes, and propagation of errors in the training
               data.
+              <Citation refId={5} />
               <br />
               <br />
               One big concern is the human element - patient individuality and
@@ -149,10 +154,14 @@ export default function Home() {
               critical analysis are not yet replicable by AI. Finally, the
               question of legal accountability and responsibility for medical
               decisions limits the use of AI.
-              <Citation refId={1} />
+              <Citation refId={6} />
               <br />
               <br />
-              There have been recent cases where AI has demonstrated harmful potential, especially in mental health cases, which sadly have led to at least three suicides.
+              AI has demonstrated harmful potential in mental health cases. 
+              A 14-year-old teenager took their own life after consulting an AI chatbot about suicide methods. 
+              In 2025, at least three suicides and extended suicides linked to AI have been reported.
+              <Citation refId={7} />
+              <Citation refId={8} />
             </>
           ),
           icon: "PiWarningCircleDuotone",
@@ -173,8 +182,8 @@ export default function Home() {
               the best way to treat the patients without unnecessary risks and
               inconveniences. Autonomy allows a competent patient to make
               decisions. “Every human being of adult years and sound mind has a
-              right to determine what shall be done with his own body”–-
-              (Cardozo, 1914, as cited in Varkey, 2021). Justice is seeking fair
+              right to determine what shall be done with his own body”.<Citation refId={9} /> 
+              Justice is seeking fair
               distribution of healthcare resources, benefits and ensuring
               equitable treatment for all patients.
               <br />
@@ -309,13 +318,13 @@ export default function Home() {
             fitness and mental strength, the confined living quarters and
             extremely hostile external environment during the voyage and at
             their destination undeniably subject them to dual physiological and
-            psychological pressures during these prolonged, arduous tasks. Such
+            psychological pressures during these prolonged, arduous tasks.<Citation refId={1} /> Such
             scenarios impose exceptionally high demands on real-time medical and
             psychological support. Simultaneously, as the sole current means of
             those support, communication faces significant latency issues. In
             the face of such substantial latency, the emergence of medical AI
             applications holds great potential as one solution to address this
-            critical challenge.
+            critical challenge.<Citation refId={2} />
           </>
         }
         logoIcon={<PiPlanetFill size={220} color="#6BF2D9"  />}
