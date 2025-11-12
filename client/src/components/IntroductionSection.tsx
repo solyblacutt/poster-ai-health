@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
 import { PiPlanetFill } from "react-icons/pi";
+import { GiRingedPlanet } from "react-icons/gi";
 
 interface IntroductionSectionProps {
   title?: string;
@@ -69,7 +70,7 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
               >
                 {/* Usá tu icono; de ejemplo, PiPlanetFill de react-icons */}
                 {/* import { PiPlanetFill } from "react-icons/pi"; */}
-                <PiPlanetFill size={700} className="w-64 h-64 md:w-200 md:h-200 text-accent" aria-hidden="true" />
+                <GiRingedPlanet size={700} className="w-64 h-64 md:w-200 md:h-200 text-accent" aria-hidden="true" />
 
               </motion.div>
 

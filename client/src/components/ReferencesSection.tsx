@@ -10,7 +10,7 @@ interface Reference {
 const references: Reference[] = [
   { 
     id: 1, 
-    citation: "s: change the bracketed reference after the quote to number 9 Chan, C.Y. et al. (2024). The effect of dwelling size on the mental health and quality of life of female caregivers living in informal tiny homes in Hong Kong https://pubmed.ncbi.nlm.nih.gov/39334064/" 
+    citation: "Chan, C.Y. et al. (2024). The effect of dwelling size on the mental health and quality of life of female caregivers living in informal tiny homes in Hong Kong https://pubmed.ncbi.nlm.nih.gov/39334064/" 
   },
   { 
     id: 2, 

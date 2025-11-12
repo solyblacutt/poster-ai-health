@@ -11,7 +11,7 @@ import ISULogoSection from "@/components/ISULogoSection";
 import { Play, Pause } from "lucide-react";
 import { useState, useRef } from "react";
 import AnimatedRobot from "@/components/AnimatedRobot";
-import { FaRegHandshake } from "react-icons/fa";
+import { FaRegHandshake } from "react-icons/fa6";
 import { PiPlanetFill  } from "react-icons/pi";
 import oathAudio from "@assets/Combined AI Voices 2.mp3";
 
@@ -183,7 +183,7 @@ export default function Home() {
               inconveniences. Autonomy allows a competent patient to make
               decisions. “Every human being of adult years and sound mind has a
               right to determine what shall be done with his own body”.<Citation refId={9} /> 
-              Justice is seeking fair
+               Justice is seeking fair
               distribution of healthcare resources, benefits and ensuring
               equitable treatment for all patients.
               <br />
@@ -222,7 +222,7 @@ export default function Home() {
               be able to implement and follow.
             </>
           ),
-          icon: "FaRegHandshake",
+          icon: "Handshake",
         },
       ],
     },

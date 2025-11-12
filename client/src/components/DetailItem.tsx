@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Scale, Users, AlertCircle, Clock, BarChart, Cpu, LucideIcon } from "lucide-react";
+import { Scale, Users, AlertCircle, Clock, BarChart, Cpu, LucideIcon, Handshake } from "lucide-react";
 
 interface DetailItemProps {
   title: string;
