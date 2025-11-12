@@ -78,6 +78,22 @@ const AudioPlayer = () => {
 };
 
 export default function Home() {
+  const oathAudioRef = useRef<HTMLAudioElement>(null);
+  const playOathAudio = () => {
+    // user gesture from the button click allows playback (autoplay policies)
+    oathAudioRef.current?.play().catch(() => {
+      // If the browser blocks it for any reason, ignore or show a hint
+    });
+  };
+
+  const pauseOathAudio = () => {
+    if (!oathAudioRef.current) return;
+    oathAudioRef.current.pause();
+    oathAudioRef.current.currentTime = 0; // optional: rewind
+  };
+
+    <div className="relative min-h-screen"></div>
+
   const comparative1Data = [
     {
       title: "AI Assistant",
@@ -311,8 +327,8 @@ export default function Home() {
             bioethics is that under conditions of extreme distance and
             isolation, the ethical priority shifts to mission and crew survival,
             which necessitates limited autonomous functions. Such autonomy must
-            be supported by safeguards to ensure 
-            <ul>
+            be supported by safeguards to ensure:
+            <ul className="list-disc pl-6">
               <li>Data accuracy through validated and inclusive professional datasets,</li>
               <li>Traceability of AI decisions by providing explained logs documenting critical decision pathways,</li>
               <li>Periodic supervision by licensed medical professionals and implemented review mechanisms. AI outputs must not serve as the sole basis for final medical judgments, and</li>
@@ -321,16 +337,24 @@ export default function Home() {
           </>
         }
       />
-
+       <audio
+        ref={oathAudioRef}
+        src="/attached_assets/Combined AI Voices_1762853557116.MP3"
+        preload="auto"
+      />
       <HippocraticOathButton
+        onOpen={playOathAudio}
+        onClose={pauseOathAudio}
         content={
           <>
-          <strong><h1>
+          <br />
+          <br />
+          <strong><h1><em>
               “I commit to using intelligence— artificial or otherwise—to
               preserve life and prevent harm, respect autonomy instead of
               overriding, inform rather than imposing choices, thus promoting
               the flourishing of humanity.”{" "}
-            </h1></strong>
+            </em></h1></strong>
             <br />
             <br />
           <AudioPlayer />

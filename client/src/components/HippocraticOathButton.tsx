@@ -11,13 +11,26 @@ import logoImage from "@assets/AI Poster Logo (2)_1762704396121.png";
 
 interface HippocraticOathButtonProps {
   content: React.ReactNode;
+  onOpen?: () => void;
+  onClose?: () => void;
 }
 
-export default function HippocraticOathButton({ 
-  content
+export default function HippocraticOathButton({
+  content,
+  onOpen,
+  onClose
 }: HippocraticOathButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen(true);
+    onOpen?.(); // ⬅️ play audio from parent
+  };
 
+  const handleOpenChange = (open: boolean) => {
+    setIsOpen(open);
+    if (open) onOpen?.();
+    else onClose?.(); // ⬅️ pause/stop when closing
+  };
   // Content is already structured as React nodes, no need to parse
 
   return (
