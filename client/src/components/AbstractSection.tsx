@@ -4,15 +4,17 @@ import { useRef } from "react";
 //import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
 import { Bot } from "lucide-react"; 
 
+
 interface AbstractSectionProps {
   content: React.ReactNode;
-  logoIcon?: React.ReactNode;
+  logoIcon: React.ReactNode;
 }
 
 export default function AbstractSection({ content, logoIcon }: AbstractSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const IconComponent = logoIcon ? logoIcon : Bot;
+  
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
       <div className="container mx-auto max-w-6xl">

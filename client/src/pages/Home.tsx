@@ -10,6 +10,8 @@ import ReferencesSection from "@/components/ReferencesSection";
 import ISULogoSection from "@/components/ISULogoSection";
 import { Play, Pause, Bot } from "lucide-react";
 import { useState, useRef } from "react";
+import AnimatedRobot from "@/components/AnimatedRobot";
+
 
 // Citation component for superscript links to references
 const Citation = ({ refId }: { refId: number }) => (
@@ -262,7 +264,7 @@ export default function Home() {
             </em>
           </>
         }
-        //logoIcon={<Bot className="w-12 h-12 text-accent" />}
+        logoIcon={<AnimatedRobot size={220} bodyColor="#6BF2D9" pupilColor="#0A1F1F" />}
       />
 
       <IntroductionSection
@@ -316,6 +318,15 @@ export default function Home() {
       <HippocraticOathButton
         content={
           <>
+          <strong>
+              “I commit to using intelligence— artificial or otherwise—to
+              preserve life and prevent harm, respect autonomy instead of
+              overriding, inform rather than imposing choices, thus promoting
+              the flourishing of humanity.”{" "}
+            </strong>
+            <br />
+            <br />
+          <AudioPlayer />
             Prompt-based ethical constitution, based on the four western
             principles of medical ethics and the three (+one) laws of robotics.
             <br />
@@ -400,15 +411,7 @@ export default function Home() {
             6. Closing statement
             <br />
             <br />
-            <strong>
-              “I commit to using intelligence— artificial or otherwise—to
-              preserve life and prevent harm, respect autonomy instead of
-              overriding, inform rather than imposing choices, thus promoting
-              the flourishing of humanity.”{" "}
-            </strong>
-            <br />
-            <br />
-            <AudioPlayer />
+            
           </>
         }
       />
