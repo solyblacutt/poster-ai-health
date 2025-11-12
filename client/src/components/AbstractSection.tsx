@@ -27,7 +27,7 @@ export default function AbstractSection({ content, logoIcon }: AbstractSectionPr
             
             {logoIcon ?? (
               <Bot
-                className="w-64 h-64 md:w-80 md:h-80 text-accent"
+                className="w-64 h-64 md:w-200 md:h-200 text-accent"
                 strokeWidth={1.75}
                 aria-hidden="true"
                 data-testid="icon-abstract-logo"
