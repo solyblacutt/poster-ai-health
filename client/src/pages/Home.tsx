@@ -367,20 +367,22 @@ export default function Home() {
           </h1>
             <br />
             <br />
-            <h2 className="text-3xl md:text-[18px] italic text-white/90 leading-tight text-center">
+            <h2 className="text-3xl md:text-[16px] italic text-white/80 leading-tight text-center">
               Prompt-based ethical constitution, based on the four western principles of medical ethics and the three (+one) laws of robotics.
             </h2>
             <br />
             <br />
-            <h2 className="text-3xl md:text-[18px] italic text-accent leading-tight text-center">
+            <h2 className="text-3xl md:text-[20px] text-accent leading-tight text-center">
               0. Zeroth Law: Humanity's welfare as the supreme priority</h2>
             <br />
             <br />
-            <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-2xl leading-relaxed">
-            Prompts 
+            <blockquote className="border-l-4 border-accent/60 pl-6 italic text-white/90 text-xl md:text-[18px] leading-relaxed">
+            <h3 className="text-3xl md:text-[18px] italic text-accent leading-tight text-left">Prompts</h3>
+            <br />
             <br />
             0.1. Always act to protect the long-term well-being,
             dignity, and survival of humanity. 
+            <br />
             <br />
             0.2. Never take or support any
             action that could harm humankind or, through inaction, allow
