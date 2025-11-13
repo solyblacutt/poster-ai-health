@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 //import logoImage from "@assets/AI Poster Logo (1)_1762478460895.png";
-import { Bot } from "lucide-react"; 
+import { Bot, ChevronDown } from "lucide-react"; 
 
 
 interface AbstractSectionProps {
@@ -14,6 +14,12 @@ export default function AbstractSection({ content, logoIcon }: AbstractSectionPr
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const IconComponent = logoIcon ? logoIcon : Bot;
+    const scrollToNext = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
   
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center py-32 px-6">
@@ -65,7 +71,15 @@ export default function AbstractSection({ content, logoIcon }: AbstractSectionPr
           </div>
         </div>
       </div>
-      
+            <motion.button
+        onClick={scrollToNext}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-colors z-20"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        data-testid="button-scroll-down"
+      >
+        <ChevronDown className="w-8 h-8" />
+      </motion.button>
     </section>
   );
 }
