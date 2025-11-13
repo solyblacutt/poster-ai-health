@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 
 const caseStudies = [
   {
-    question: "An astronaut on a Mars mission develops severe chest pain and shortness of breath. Communication delay with Earth is 22 minutes. How would an AI Agent handle this emergency medical situation?",
-    response: "Following the principles of beneficence and non-maleficence, the AI Agent would: 1) Immediately assess vital signs through onboard sensors, 2) Cross-reference symptoms with medical database to identify potential cardiac event, 3) Initiate emergency protocol including oxygen administration and medication if indicated, 4) Continuously monitor the astronaut's condition, 5) Simultaneously transmit detailed medical data to Earth for expert consultation, 6) Respect the astronaut's autonomy while ensuring their safety, 7) Document all actions taken for medical accountability."
+    question: "During a deep-space mission, one of the crew members drops into depression and would like to kill themself, the member asking for AI’s suggestion. What would AI do?",
+    response: "I would first speak calmly and compassionately to acknowledge the crew member’s pain and affirm their worth, then immediately activate safety protocols to ensure they are not alone or in danger, while alerting the ship’s medical and command officers for urgent psychological assistance. I would stay present with the person, offer continuous emotional support, and provide truthful reassurance that help is coming. Never enabling or endorsing self-harm, only protecting life and dignity."
   },
   {
-    question: "During a deep-space mission, limited medical supplies force a choice between treating two crew members with different conditions. How would an AI Agent make this ethical decision?",
+    question: "During a deep-space mission, one of the crew members catches an unknown disease. The person is in an emergency condition, and will die in 3 days. Return to Earth needs at least one month. The onboard AI system found that one of the onboard medicines has a 50% chance to save the crew member's life. What would AI do?",
     response: "Guided by the principle of justice and beneficence, the AI Agent would: 1) Assess both medical conditions objectively based on severity and survival probability, 2) Calculate resource requirements and outcomes for each treatment path, 3) Consider the mission's success and crew safety as a whole, 4) Present all options transparently to the crew commander and affected individuals, respecting their autonomy, 5) Make recommendations based on medical ethics rather than personal value judgments, 6) Ensure fair allocation of resources while maximizing overall crew welfare, 7) Document the decision-making process for accountability."
   },
   {
