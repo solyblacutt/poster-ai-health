@@ -51,8 +51,8 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
           {/* Icon - 1/2 width */}
           <motion.div 
             className="flex-[1] flex items-center justify-center pt-26 md:pt-10 lg:pt-20"
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={isInView ? { opacity: 0.9, scale: 1.0 } : { opacity: 1, scale: 1.0 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 0.9, scale: 1.1 } : { opacity: 1, scale: 1.0 }}
             transition={{ duration: 1, delay: 0.9 }}
           >
             {/* Wrapper sin semántica de botón */}
@@ -93,7 +93,7 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
                 style={{ borderStyle: "solid" }}
               >
                 <motion.p
-                  className="text-center leading-snug text-[14px] md:text-[12px] px-4 max-w-[90%] break-words text-foreground"
+                  className="text-center leading-snug text-[14px] md:text-[14px] px-4 max-w-[90%] break-words text-foreground"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isHovered ? 1 : 0 }}
                   transition={{ duration: 0.25, delay: isHovered ? 0.08 : 0 }}
