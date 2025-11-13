@@ -132,7 +132,7 @@ export default function Home() {
       title: "AI Agent",
       icon: "Sparkles",
       description:
-        "Ethical integrity, current technological limitations, and the potential for a human–AI symbiotic partnership together define both the challenges and the transformative possibilities of deploying autonomous medical AI in deep space missions.",
+        "Ethical integrity, current technological limitations, and the potential for a human-AI symbiotic partnership together define both the challenges and the transformative possibilities of deploying autonomous medical AI in deep space missions.",
       isExpandable: true,
       details: [
         {
@@ -182,7 +182,7 @@ export default function Home() {
               the best way to treat the patients without unnecessary risks and
               inconveniences. Autonomy allows a competent patient to make
               decisions. “Every human being of adult years and sound mind has a
-              right to determine what shall be done with his own body”.<Citation refId={9} /> 
+              right to determine what shall be done with his own body”. <Citation refId={9} />  
                Justice is seeking fair
               distribution of healthcare resources, benefits and ensuring
               equitable treatment for all patients.
@@ -293,12 +293,12 @@ export default function Home() {
             <em>
               In the silence of deep space, when communication with Earth lags
               by minutes or even hours, AI could become the crew’s closest ally
-              in care and survival—both as a healer and companion. At the
+              in care and survival-both as a healer and companion. At the
               current stage, AI is employed as an assistant for routine tasks,
               not an agent. We consider how AI in healthcare could develop to
               think, decide, and act ethically, when humans are light-years from
               our home planet. Through a reimagined version of the Hippocratic
-              Oath, we explore a version of human–AI co-existence and
+              Oath, we explore a version of human-AI co-existence and
               co-evolution to establish productive, safe, and ethical healthcare
               in Deep Space Exploration.
             </em>
@@ -314,7 +314,7 @@ export default function Home() {
           <>
             Deep space missions, for humanity at our current technological
             stage, represent an uninterruptible, long-term journey. Even though
-            astronauts go through intense training to build exceptional physical
+            astronauts go through intense training to build physical
             fitness and mental strength, the confined living quarters and
             extremely hostile external environment during the voyage and at
             their destination undeniably subject them to dual physiological and
