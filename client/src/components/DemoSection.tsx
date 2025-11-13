@@ -105,7 +105,7 @@ export default function DemoSection() {
                   }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 >
-                  <Orbit className="w-24 h-24 text-white" />
+                  <Orbit className="w-24 h-24 text-accent" />
                 </motion.div>
               </motion.button>
             </motion.div>
