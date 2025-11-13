@@ -348,6 +348,7 @@ export default function Home() {
             which necessitates limited autonomous functions. Such autonomy must
             be supported by safeguards to ensure:
             <br />
+            <br />
             <ul className="list-disc pl-6">
               <li>Data accuracy through validated and inclusive professional datasets</li>
               <li>Traceability of AI decisions by providing explained logs documenting critical decision pathways</li>
