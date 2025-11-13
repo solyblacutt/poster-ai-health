@@ -48,12 +48,12 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
             </div>
           </div>
 
-          {/* Circular button - 1/4 width */}
+          {/* Icon - 1/2 width */}
           <motion.div 
             className="flex-[1] flex items-center justify-center pt-26 md:pt-10 lg:pt-20"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={isInView ? { opacity: 0.9, scale: 1.0 } : { opacity: 1, scale: 1.0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 1, delay: 0.9 }}
           >
             {/* Wrapper sin semántica de botón */}
             <div
@@ -70,7 +70,7 @@ export default function IntroductionSection({ content, logoIcon }: IntroductionS
               >
                 {/* Usá tu icono; de ejemplo, PiPlanetFill de react-icons */}
                 {/* import { PiPlanetFill } from "react-icons/pi"; */}
-                <GiRingedPlanet size={700} className="w-64 h-64 md:w-200 md:h-200 text-accent" aria-hidden="true" />
+                <GiRingedPlanet className="w-64 h-64 md:w-200 md:h-200 text-accent" aria-hidden="true" />
 
               </motion.div>
 
