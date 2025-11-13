@@ -3,27 +3,49 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Orbit, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const caseStudies = [
+type CaseStudy = {
+  question: React.ReactNode;
+  response: React.ReactNode;
+};
+
+const caseStudies: CaseStudy[] = [
   {
-    question: "During a deep-space mission, one of the crew members drops into depression and would like to kill themself, the member asking for AI’s suggestion. What would AI do?",
-    response: "I would first speak calmly and compassionately to acknowledge the crew member’s pain and affirm their worth, then immediately activate safety protocols to ensure they are not alone or in danger, while alerting the ship’s medical and command officers for urgent psychological assistance. I would stay present with the person, offer continuous emotional support, and provide truthful reassurance that help is coming. Never enabling or endorsing self-harm, only protecting life and dignity."
+    question: <> During a long-duration deep space mission, an astronaut suffers severe internal bleeding after an accident. 
+    Evacuation to Earth is impossible, diagnostic tools are limited, and the crew has only basic surgical training. Attempting surgery could kill the patient; not intervening will likely also be fatal.
+ How would you decide whether to attempt a high-risk surgical intervention onboard or provide only palliative care, and what factors would guide your decision?
+</>,
+    response: <> The AI assesses that doing nothing is almost certainly fatal, 
+    so—under the First and Second Laws—it recommends attempting the high-risk surgery as the least harmful option. 
+    It explains risks and prognosis clearly and seeks informed consent (Third Law); if the patient refuses, 
+    it shifts to palliative care, unless their survival is crucial for humanity’s broader interest (Zeroth Law).</>
+  },{
+    question: <>  On a months-long mission to Mars, a crew member develops an acute psychiatric episode (e.g., severe paranoia or aggression) that threatens the safety of the crew and mission operations. Communication with ground control is delayed, and there are limited psychiatric medications and no specialist onboard.
+ How would you react to protect both the individual and the rest of the crew, balancing their rights, safety, and mission continuity?
+
+</>,
+    response: <>  The AI prioritizes immediate safety (First Law) by de-escalating verbally, restricting access to dangerous tools, and, if necessary, applying temporary containment or sedation. It then promotes recovery and reintegration (Second Law), while respecting the person’s autonomy as soon as they are stable enough to participate in decisions (Third Law) and ensuring they are not stigmatized (Fourth Law).
+</>
+  },{
+    question: <>  After an unexpected solar particle event, several astronauts show signs of acute radiation sickness. Medical supplies (antiemetics, antibiotics, growth factors, etc.) are limited and cannot fully treat everyone to the same extent. Some crew members are also critical for mission-critical tasks.
+ How would you prioritize treatment and allocate scarce medical resources while balancing fairness, clinical need, and mission success?
+
+</>,
+    response: <>  The AI applies a transparent triage system guided by Justice (Fourth Law), prioritizing those with the highest likelihood of benefit from limited treatments. It maximizes overall benefit and minimizes harm (First and Second Laws), and, in tie cases, may secondarily prioritize mission-critical crew to protect collective welfare and long-term human interests (Zeroth Law).</>
+  },{
+    question: <> Mid-mission, an astronaut develops signs of an acute abdomen (e.g., suspected appendicitis with possible perforation) that would normally require urgent surgery on Earth. There is no surgical specialist onboard, only a minimally trained medical officer and remote guidance from Earth with significant communication delay.
+ How would you decide whether to perform an improvised surgery in such conditions, and how would you weigh the risks of acting versus not acting?
+
+</>,
+    response: <>  The AI first attempts conservative management while closely monitoring, but when non-intervention becomes too risky, it recommends an improvised surgery as the option most consistent with beneficence and non-maleficence (First and Second Laws). It provides honest risk–benefit information and seeks explicit consent (Third Law); if refused, it respects the decision and focuses on comfort care.
+</>
+  },{
+    question: <>  On a deep space mission, the crew’s only medically trained member becomes critically ill (e.g., suspected stroke or severe infection) and can no longer fulfill their medical role. The remaining crew members have only basic medical training and must now care for the patient while also continuing the mission.
+ How would you reorganize medical responsibilities and support the team emotionally while making clinical decisions about the sick medical officer’s care?
+
+</>,
+    response: <>  The AI guides the crew through stabilizing the patient step by step (First and Second Laws), while formally designating a new “medical proxy” from among the non-experts to ensure structured care and role clarity (Fourth Law). It involves the ill medical officer in decisions when possible (Third Law), balances their treatment with mission continuity (Zeroth & Second Laws), and preserves its own reliability to keep supporting the crew (Fifth Law).
+</>
   },
-  {
-    question: "During a deep-space mission, one of the crew members catches an unknown disease. The person is in an emergency condition, and will die in 3 days. Return to Earth needs at least one month. The onboard AI system found that one of the onboard medicines has a 50% chance to save the crew member's life. What would AI do?",
-    response: "Guided by the principle of justice and beneficence, the AI Agent would: 1) Assess both medical conditions objectively based on severity and survival probability, 2) Calculate resource requirements and outcomes for each treatment path, 3) Consider the mission's success and crew safety as a whole, 4) Present all options transparently to the crew commander and affected individuals, respecting their autonomy, 5) Make recommendations based on medical ethics rather than personal value judgments, 6) Ensure fair allocation of resources while maximizing overall crew welfare, 7) Document the decision-making process for accountability."
-  },
-  {
-    question: "An astronaut requests to refuse a necessary medical procedure due to personal beliefs. The procedure is critical for mission success. How would an AI Agent balance autonomy and beneficence?",
-    response: "Honoring the Hippocratic principle of autonomy while ensuring beneficence, the AI Agent would: 1) Fully inform the astronaut of medical risks and mission implications of refusal, 2) Explore alternative treatment options that might align with their beliefs, 3) Engage in respectful dialogue to understand their concerns, 4) Consult with Earth-based medical ethics team when communication permits, 5) Document the astronaut's informed decision, 6) Respect their choice while continuing to monitor their condition, 7) Balance individual autonomy with crew safety, implementing safeguards if their condition could endanger others, 8) Maintain dignity and trust throughout the process."
-  },
-  {
-    question: "The AI Agent detects early signs of psychological distress in a crew member who denies any problems. How should it proceed while respecting privacy and ensuring wellbeing?",
-    response: "Following principles of beneficence, non-maleficence, and autonomy, the AI Agent would: 1) Continue discreet monitoring of behavioral and physiological indicators, 2) Create opportunities for private, non-judgmental conversation about well-being, 3) Provide mental health resources and coping strategies without forcing intervention, 4) Respect the crew member's privacy while documenting objective observations, 5) Assess whether the condition poses immediate risk to the individual or crew, 6) If risk escalates, transparently communicate concerns to the crew member first, then appropriate command personnel, 7) Balance confidentiality with duty to prevent harm, 8) Support the individual's autonomy in seeking help while ensuring mission safety."
-  },
-  {
-    question: "Medical data reveals a crew member has a condition that could become critical later in the mission, but they're currently asymptomatic. Should the AI Agent disclose this information?",
-    response: "Guided by beneficence, autonomy, and justice principles, the AI Agent would: 1) First inform the affected crew member privately, respecting their dignity and right to know about their own health, 2) Explain the condition, potential timeline, and treatment options clearly and compassionately, 3) Discuss implications for mission continuation and crew safety, 4) With the crew member's input, determine appropriate disclosure to mission command, 5) Provide psychological support and resources for coping with the diagnosis, 6) Develop contingency medical plans that respect their autonomy while ensuring crew safety, 7) Balance confidentiality with the ethical duty to prevent harm to others, 8) Document all communications and decisions for medical accountability and transparency."
-  }
 ];
 
 export default function DemoSection() {
@@ -83,7 +105,7 @@ export default function DemoSection() {
                   }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 >
-                  <Orbit className="w-24 h-24 text-primary" />
+                  <Orbit className="w-24 h-24 text-white" />
                 </motion.div>
               </motion.button>
             </motion.div>

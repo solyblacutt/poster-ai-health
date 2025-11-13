@@ -241,28 +241,28 @@ export default function Home() {
             background: "Aeronautical and Astronautical Engineer",
             contact: "shanxiaoyu1992@gmail.com",
             contribution:
-              "Research on space medicine protocols and AI integration",
+              "Research & Content Writing for Crisis Examples/Audio Generate and Edit",
           },
           {
             name: "Bianca Steffen",
-            background: "Physiotherapist",
-            contact: "bianca.steffen@community.isunet.edu",
+            background: "Life Sciences & Media/Communication",
+            contact: "bsteffen.online@hotmail.com",
             contribution:
-              "Development of ethical frameworks for medical AI systems",
+              "Content/Research & Layout",
           },
           {
             name: "Noriyasu Shibata",
             background: "Lawyer",
             contact: "noriyasu.shibata@gmail.com",
             contribution:
-              "Integration of AI systems in deep-space mission architecture",
+              "Content/Research",
           },
           {
             name: "Grazia Testa",
-            background: "Interpreter and Translator",
+            background: "Interpreter and Translator/Science Communicator",
             contact: "grazia.testa@community.isunet.edu",
             contribution:
-              "Development of biomedical AI algorithms and decision-support systems",
+              "Logo Design & Visual Development/Research & Content Writing of AI-Human Symbiosis and the Hippocratic Oath for Medical AI Agents in Deep Space",
           },
           {
             name: "Solange Blacutt",
@@ -275,14 +275,14 @@ export default function Home() {
             background: "Project Management & Business Engineering",
             contact: "mializo.razanakoto@gmail.com",
             contribution:
-              "Analysis of astronaut health requirements in deep-space environments",
+              "Content/Research on medical ethics",
           },
           {
             name: "Aruna",
             background: "Physicist & Cosmologist",
             contact: "arunaharikant66@gmail.com",
             contribution:
-              "Coordination of AI system integration across mission components",
+              "Poster Design and Development",
           },
         ]}
       />

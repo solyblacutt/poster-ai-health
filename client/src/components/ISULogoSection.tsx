@@ -9,7 +9,7 @@ export default function ISULogoSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-30 px-6 relative">
+    <section ref={ref} className="py-10 px-6 relative">
       <div className="container mx-auto max-w-4xl relative z-10 flex justify-center">
         <div className="flex items-start gap-8">
           
